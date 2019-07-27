@@ -8,10 +8,18 @@
   <p class="powered-by">
     {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
 
+    <a itemprop="sameAs" rel="me" href="//github.com/gerhard" target="_blank"><i class="fab fa-github"></i></a>
+
+    &nbsp;
+
     Built on
       <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a>
     with
       <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>
+
+    &nbsp;
+
+    <a itemprop="sameAs" rel="me" href="//twitter.com/gerhardlazu" target="_blank"><i class="fab fa-twitter"></i></a>
 
     {{ if ne .Type "docs" }}
     <span class="float-right" aria-hidden="true">

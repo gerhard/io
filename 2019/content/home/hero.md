@@ -2,7 +2,7 @@
 # Hero widget.
 widget = "hero"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
+active = false  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
 title = "Keep it simple. Write tests. Measure."
@@ -38,9 +38,6 @@ hero_media = ""
 # An optional note to show underneath the links.
 [cta_note]
 +++
-
-Approaching everything as a learning opportunity, embracing change and sharing all learnings is what I do.
-I am an Extreme Programmer at heart.
 
 <ul class="network-icon" aria-hidden="true">
   <li><a itemprop="sameAs" rel="me" href="//github.com/gerhard" target="_blank"><i class="fab fa-github big-icon"></i></a></li>
