@@ -1,0 +1,64 @@
+.hero-lead {
+  max-width: 100%;
+}
+
+.card h4 {
+  font-size: 1rem;
+  color: #000 !important;
+}
+.card h4 a {
+  color: #2962ff;
+}
+.card h4 a:hover {
+  color: #2962ff;
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+.experience .exp-meta,
+.experience .card-text,
+.card-simple .article-style {
+  font-size: 0.85rem !important;
+}
+
+.experience .card-text {
+  padding-bottom: 0;
+}
+.experience .card-text ul {
+  margin-top: 0;
+  padding-left: 0;
+}
+.experience .card-body {
+  padding-bottom: 0;
+}
+
+.dark .btn-outline-primary {
+  color: #4bb4e3;
+  border-color: #4bb4e3;
+}
+.dark .btn-outline-primary:hover {
+  background-color: #536069;
+}
+
+.dark a,
+.dark .experience .card h4 a {
+  color: #4bb4e3;
+}
+
+.dark .experience .m-2 .border,
+.dark .experience .m-2 .border.exp-fill,
+.dark .experience .col.border-right {
+  border-color: #fff !important;
+}
+.dark .experience .m-2 .border.exp-fill {
+  background-color: #fff !important;
+}
+
+#talk_list h3 {
+  margin-top: 0;
+}
+
+#talk_list {
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  padding-top: 1rem;
+}

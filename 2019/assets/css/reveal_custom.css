@@ -1,0 +1,24 @@
+.reveal pre code {
+  max-height: 500px;
+}
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal .menu-title {
+  display: none;
+}
+
+.reveal .compact h1,
+.reveal .compact h2 {
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+.reveal .overlay h1,
+.reveal .overlay h2 {
+  background: #FDF6E3;
+}

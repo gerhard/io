@@ -1,0 +1,16 @@
+# Documentation: https://sourcethemes.com/academic/
+
+title = "Gerhard Lazu"
+baseurl = "https://gerhard.io/"
+copyright = ""
+
+theme = "academic"
+enableGitInfo = true
+paginate = 10  # Number of items per page in paginated lists.
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[outputs]
+  home = [ "HTML", "RSS", "JSON" ]
+  section = [ "HTML", "RSS" ]
