@@ -43,7 +43,6 @@ slides:
 {{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
 
 # [WHAT IS](#) OBSERVABILITY?
-<span class="menu-title">See how something works</span>
 
 ---
 
