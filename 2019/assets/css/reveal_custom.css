@@ -1,3 +1,8 @@
+body {
+  background: #FFF;
+  background-color: #FFF;
+}
+
 .reveal pre code {
   max-height: 500px;
 }
@@ -12,13 +17,21 @@
   display: none;
 }
 
-.reveal .compact h1,
-.reveal .compact h2 {
-  margin-bottom: 0;
+.reveal h1,
+.reveal h2 {
+  display: inline-block;
   line-height: 1.1;
+  margin-bottom: 0;
+  padding: 0 0.2em;
 }
 
-.reveal .overlay h1,
-.reveal .overlay h2 {
-  background: #FDF6E3;
+.reveal .hiviz-dark h1,
+.reveal .hiviz-dark h2 {
+  background-color: rgba(50, 50 , 50, 0.7);
+  color: #FFF;
+}
+
+.reveal .hiviz-light h1,
+.reveal .hiviz-light h2 {
+  background-color: rgba(255, 255 , 255, 0.7);
 }

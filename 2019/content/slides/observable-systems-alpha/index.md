@@ -12,10 +12,10 @@ slides:
   width: 1920
 ---
 
-{{< slide class="compact" >}}
+# [Make](#)<br><br>
 
-# [Make](#)
-## your system
+## your system<br><br>
+
 # [observable](#)
 <span class="menu-title">WHY ARE WE HERE?</span>
 
@@ -32,6 +32,7 @@ Why am I givig this talk?
 ---
 
 # [Ask](#) questions
+<br>
 ## <a href="https://twitter.com/gerhardlazu" target="_blank">📷 gerhardlazu <i class="fab fa-twitter-square"></i></a>
 <span class="menu-title">Ask, take pictures & share</span>
 
@@ -95,6 +96,7 @@ Health checks help with lifecycle, such as upgrades, scale outs, etc.
 ---
 
 # This happened when
+<br>
 ## [RabbitMQ became](#) more [observable](#)
 <span class="menu-title">OBSERVABILITY BENEFITS</span>
 
@@ -148,6 +150,7 @@ Health checks help with lifecycle, such as upgrades, scale outs, etc.
 ---
 
 # You can [take small steps](#)
+<br>
 ## and [see benefits](#) too
 
 ---
@@ -169,6 +172,7 @@ Why should you use Prometheus?
 ---
 
 ## If this feels too low-level
+<br>
 # Then [do this](#)
 <span class="menu-title">If this feels too low-level</span>
 
@@ -207,7 +211,7 @@ Why should you use Prometheus?
 
 ---
 
-{{< slide class="overlay" background="url(/img/observable-systems/cncf.png) 50% 0% / cover no-repeat" >}}
+{{< slide class="hiviz-light" background="url(/img/observable-systems/cncf.png) 50% 0% / cover no-repeat" >}}
 
 # Observability is [Highly Relevant](#)
 <span class="menu-title">Highly Relevant</span>
@@ -218,7 +222,7 @@ The complexity that comes with your container scheduler of choice is going to cr
 
 ---
 
-{{< slide background="url(/img/observable-systems/infinite-game.jpg) 100% 0% / 56% no-repeat" >}}
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/infinite-game.jpg) 100% 0% / 56% no-repeat" >}}
 
 # Observability is
 <span class="menu-title">An Infinite Game</span>
