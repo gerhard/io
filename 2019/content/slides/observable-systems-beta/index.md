@@ -114,8 +114,38 @@ slides:
 
 ---
 
+{{< slide class="hiviz-light" background="url(/img/observable-systems/same-metrics-different-contexts.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">This is just the beginning</span>
+
+---
+
 ### I DON'T RABBITMQ
 # But I [CI](#)
+
+---
+
+{{< slide background="url(/img/observable-systems/concourse.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">A continuous thinger-doer</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/concourse-simple-pipeline.mp4" background-video-loop="true" background-size="contain" >}}
+<span class="menu-title">Simple value flow</span>
+
+---
+
+{{< slide background="url(/img/observable-systems/concourse-complex-pipeline.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">Complex value flow</span>
+
+---
+
+{{< slide background="url(/img/observable-systems/concourse-at-rabbitmq.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">Value flows</span>
+
+---
+
+{{< slide background="url(/img/observable-systems/pipelineuptime-2019-07-08.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">Visualise value flow blockages</span>
 
 ---
 
@@ -137,7 +167,7 @@ slides:
 
 ---
 
-{{< slide background="#333 url(/img/observable-systems/talk-journey-beta.png) 50% 100% / 75% no-repeat" >}}
+{{< slide background-video="/img/observable-systems/talk-journey-beta.mp4" background-size="contain" >}}
 
 <span class="menu-title">FOLLOW THE JOURNEY</span>
 
