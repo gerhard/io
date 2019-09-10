@@ -70,6 +70,10 @@ DOCKER := /usr/local/bin/docker
 $(DOCKER):
 	@brew cask install docker
 
+FFMPEG := /usr/local/bin/ffmpeg
+$(FFMPEG):
+	@brew install ffmpeg
+
 
 
 ### TARGETS ###
@@ -165,3 +169,12 @@ r: readme
 update: gcloud linode ## u  | Update public website
 .PHONY: u
 u: update
+
+.PHONY: video
+video: $(FFMPEG) ## v  | Convert mov to mp4
+ifndef F
+	$(error $(BOLD)F$(NORMAL) variable must reference a valid mov file path)
+endif
+	@$(FFMPEG) -i $(F) -vcodec h264 $(subst .mov,.mp4,$(F))
+.PHONY: v
+v: video

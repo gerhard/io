@@ -27,11 +27,11 @@ body {
 
 .reveal .hiviz-dark h1,
 .reveal .hiviz-dark h2 {
-  background-color: rgba(50, 50 , 50, 0.7);
+  background-color: rgba(50, 50 , 50, 0.8);
   color: #FFF;
 }
 
 .reveal .hiviz-light h1,
 .reveal .hiviz-light h2 {
-  background-color: rgba(255, 255 , 255, 0.7);
+  background-color: rgba(255, 255 , 255, 0.8);
 }

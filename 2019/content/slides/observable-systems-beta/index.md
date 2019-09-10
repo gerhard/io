@@ -12,7 +12,6 @@ slides:
   width: 1920
   # https://github.com/hakimel/reveal.js/
   # https://developer.mozilla.org/en-US/docs/Web/CSS/background
-  # ffmpeg -i screen.mov -vcodec h264 screen.mp4
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/exploded-engine.jpg) 50% no-repeat" >}}
@@ -36,39 +35,91 @@ slides:
 
 ---
 
-{{< slide background="url(/img/observable-systems/rabbitmq-management.png) 50% 90% / 95% no-repeat" >}}
-<span class="menu-title">You see this</span>
+{{< slide background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">But you see this</span>
 
 ---
 
-{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management.png) 50% 90% / 95% no-repeat" >}}
+{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
 
 # [WHAT IS](#) OBSERVABILITY?
+<span class="menu-title">See how something works</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-management-stuck.mp4" background-video-loop="true" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-management-overview-dist-tls-stuck.mp4" background-video-loop="true" background-size="contain" >}}
 <span class="menu-title">80/20 Observability</span>
 
 ---
 
-{{< slide background-color="rgb(24, 22, 27)" background-video="/img/observable-systems/erlang-distribution-pressure.mp4" background-video-loop="true" background-size="contain" >}}
+{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
+
+# Can we [observe better](#)?
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-overview-dist-tls.mp4" background-size="contain" >}}
+<span class="menu-title">Yes, but it doesn't always help</span>
+
+---
+
+{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-is-actually-this.png) 50% 50% / 75% no-repeat" >}}
+
+# [What](#) are we missing?
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-distribution-pressure-dist-tls.mp4" background-size="contain" >}}
 <span class="menu-title">Observe Erlang Distribution</span>
 
 ---
 
-# [WHAT IS](#) OBSERVABILITY?
+{{< slide background-video="/img/observable-systems/rabbitmq-prometheus-quick-start.mp4" background-size="contain" >}}
+<span class="menu-title">Try it</span>
 
 ---
 
-{{< slide class="hiviz-light" background="url(/img/observable-systems/cncf.png) 50% 0% / cover no-repeat" >}}
+# WHAT HAPPENED [NEXT](#)?
 
-# Observability is [no longer optional](#)
-<span class="menu-title">No Longer Optional</span>
+---
 
-{{< speaker_note >}}
-The complexity that comes with your container scheduler of choice is going to crush all your hopes and dreams if you don't pay attention.
-{{< /speaker_note >}}
+{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-is-actually-this.png) 50% 50% / 75% no-repeat" >}}
+
+# Erlang [improvements](#)
+
+---
+
+{{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-10KB.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">3.9Gbit/s @ 10KB</span>
+
+---
+
+{{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-60KB.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">13.6Gbit/s @ 60KB</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-distribution-stories.mp4" background-size="contain" >}}
+<span class="menu-title">Every graph has a story</span>
+
+---
+
+{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview.png) 50% 50% / cover no-repeat" >}}
+# Tell [a better story](#)
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-overview-dashboard.mp4" background-size="contain" >}}
+<span class="menu-title">See metrics like never before</span>
+
+---
+
+### I DON'T RABBITMQ
+# But I [CI](#)
+
+---
+
+# [WHAT IS](#) OBSERVABILITY?
 
 ---
 
@@ -76,6 +127,13 @@ The complexity that comes with your container scheduler of choice is going to cr
 
 # Observability is
 <span class="menu-title">An Infinite Game</span>
+
+---
+
+{{< slide class="hiviz-light" background="url(/img/observable-systems/cncf.png) 50% 0% / cover no-repeat" >}}
+
+# Observability is [no longer optional](#)
+<span class="menu-title">No Longer Optional</span>
 
 ---
 
