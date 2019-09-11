@@ -46,7 +46,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-management-overview-dist-tls-stuck.mp4" background-video-loop="true" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-management-overview-dist-tls-stuck.mp4" background-video-loop="true" background-size="cover" >}}
 <span class="menu-title">80/20 Observability</span>
 
 ---
@@ -57,7 +57,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-overview-dist-tls.mp4" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-overview-dist-tls.mp4" background-size="cover" >}}
 <span class="menu-title">Yes, but it doesn't always help</span>
 
 ---
@@ -68,12 +68,12 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-pressure-dist-tls.mp4" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-pressure-dist-tls.mp4" background-size="cover" >}}
 <span class="menu-title">Observe Erlang Distribution</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-prometheus-quick-start.mp4" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-prometheus-quick-start.mp4" background-size="cover" >}}
 <span class="menu-title">Try it</span>
 
 ---
@@ -98,7 +98,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-stories.mp4" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-stories.mp4" background-size="cover" >}}
 <span class="menu-title">Every graph has a story</span>
 
 ---
@@ -108,7 +108,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-overview-dashboard.mp4" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-overview-dashboard.mp4" background-size="cover" >}}
 <span class="menu-title">See metrics like never before</span>
 
 ---
@@ -128,7 +128,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/concourse-simple-pipeline.mp4" background-video-loop="true" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/concourse-simple-pipeline.mp4" background-video-loop="true" background-size="cover" >}}
 <span class="menu-title">Simple value flow</span>
 
 ---
@@ -166,7 +166,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/talk-journey-beta.mp4" background-size="contain" >}}
+{{< slide background-video="/img/observable-systems/talk-journey-beta.mp4" background-size="cover" >}}
 
 <span class="menu-title">FOLLOW THE JOURNEY</span>
 

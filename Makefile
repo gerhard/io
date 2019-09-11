@@ -80,7 +80,7 @@ $(FFMPEG):
 #
 .DEFAULT_GOAL := help
 
-SEPARATOR := ----------------------------------------
+SEPARATOR := --------------------------------------------------------
 .PHONY: help
 help:
 	@grep -E '^[0-9a-zA-Z_-]+:+.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -170,11 +170,17 @@ update: gcloud linode ## u  | Update public website
 .PHONY: u
 u: update
 
+# https://trac.ffmpeg.org/wiki/Encode/H.264#iOS
+# https://trac.ffmpeg.org/wiki/Scaling
 .PHONY: video
-video: $(FFMPEG) ## v  | Convert mov to mp4
+video: $(FFMPEG) ## v  | Convert MOVs to mobile-friendly MP4s
 ifndef F
 	$(error $(BOLD)F$(NORMAL) variable must reference a valid mov file path)
 endif
-	@$(FFMPEG) -i $(F) -vcodec h264 $(subst .mov,.mp4,$(F))
+	@$(FFMPEG) -i $(F) \
+	  -vcodec h264 \
+	  -vf "scale='min(1920,iw)':'min(1080,ih)'" \
+	  -profile:v high -level 4.2 \
+	  $(subst .mov,.mp4,$(F))
 .PHONY: v
 v: video
