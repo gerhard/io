@@ -21,7 +21,7 @@ slides:
 
 ---
 
-# What is [RabbitMQ](#)?
+# [What is](#) RabbitMQ?
 
 ---
 
