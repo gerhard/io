@@ -21,6 +21,11 @@ slides:
 
 ---
 
+{{< slide background="url(/img/observable-systems/talk-journey-rc.png) 50% 0% / cover no-repeat" >}}
+<span class="menu-title">FOLLOW THE JOURNEY</span>
+
+---
+
 # [WHAT IS](#) RABBITMQ?
 
 ---
@@ -49,24 +54,26 @@ slides:
 
 ---
 
-{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
-
 # Can we [observe better](#)?
 
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-overview-dist-tls.mp4" background-size="cover" >}}
-<span class="menu-title">Yes, but it doesn't always help</span>
+<span class="menu-title">Yes, but...</span>
+
+---
+  
+# Do we [understand](#)?
 
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-pressure-dist-tls.mp4" background-size="cover" >}}
-<span class="menu-title">Observe Erlang Distribution</span>
+<span class="menu-title">Only in the right context</span>
 
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-prometheus-quick-start.mp4" background-size="cover" >}}
-<span class="menu-title">Try it</span>
+<span class="menu-title">You can do this today</span>
 
 ---
 
@@ -96,24 +103,24 @@ slides:
 ---
 
 {{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview.png) 50% 50% / cover no-repeat" >}}
-# Explained & understood [better](#)
+# [Better](#) conversations
 
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-overview-dashboard.mp4" background-size="cover" >}}
-<span class="menu-title">Understand like never before</span>
+<span class="menu-title">Explain & understand better</span>
 
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/same-metrics-different-contexts.png) 50% 50% / cover no-repeat" >}}
 
-# [Build Your Own](#) Context
+# Build Your Own [Context](#)
 
 ---
 
 ### I DON'T RABBITMQ
-# But I [CI](#)
+# [But I](#) CI
 ### And I don't get it
 
 ---
@@ -134,11 +141,11 @@ slides:
 ---
 
 {{< slide background="url(/img/observable-systems/concourse-at-rabbitmq.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">Value flows</span>
+<span class="menu-title">Many value flows</span>
 
 ---
 
-# [WHY](#) IS OBSERVABILITY IMPORTANT?
+# [WHY IS](#) OBSERVABILITY IMPORTANT?
 <span class="menu-title">WHY IS IT IMPORTANT?</span>
 
 ---
@@ -157,18 +164,12 @@ slides:
 
 ---
 
-# [Everybody wants it](#)
-<br>
-## But doesn't know where to start
+# [WHERE](#) DO YOU BEGIN?
 
 ---
+
+<span class="menu-title">3 Steps</span>
 
 # 1. [Expose metrics](#) in Prometheus format
 # 2. [Visualise them](#) with Grafana
-# 3. [Share](#) with us
-
----
-
-{{< slide background-video="/img/observable-systems/talk-journey-beta.mp4" background-size="cover" >}}
-
-<span class="menu-title">FOLLOW THE JOURNEY</span>
+# 3. [Learn](#) what works

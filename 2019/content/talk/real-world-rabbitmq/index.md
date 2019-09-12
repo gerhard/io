@@ -4,13 +4,13 @@ summary: What does succeeding with RabbitMQ in production look like?
 abstract: "We will learn from 3 different RabbitMQ enterprise messaging implementations: financial trading, vehicle telemetry & medical equipment monitoring."
 date: 2018-11-12T14:00:00Z
 
-event: RabbitMQ Summit
+event: RabbitMQ Summit 2018
 event_url: https://rabbitmqsummit.com
 location: London
 
 image:
-  caption: "Image credit: [**@DormainDrewitz**](https://twitter.com/i/moments/1062010422944038912)"
-  focal_point: Center
+  caption:
+  focal_point: Bottom
 
 
 links:
