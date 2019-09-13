@@ -16,32 +16,13 @@ slides:
 
 {{< slide class="hiviz-dark" background-video="/img/observable-systems/intro.mp4" background-video-loop="true" background-size="cover" >}}
 
-# Make your system observable
-<span class="menu-title">Introductions</span>
+# Make [your system](#) observable
+<span class="menu-title">Intro</span>
 
 ---
 
 {{< slide background="url(/img/observable-systems/talk-journey-rc.png) 50% 0% / cover no-repeat" >}}
-<span class="menu-title">FOLLOW THE JOURNEY</span>
-
----
-
-# [WHAT IS](#) RABBITMQ?
-
----
-
-{{< slide background="url(/img/observable-systems/you-imagine-rabbitmq-as.png) 50% 50% / 100% no-repeat" >}}
-<span class="menu-title">You imagine this</span>
-
----
-
-{{< slide background="url(/img/observable-systems/rabbitmq-is-actually-this.png) 50% 50% / 75% no-repeat" >}}
-<span class="menu-title">It is actually this</span>
-
----
-
-{{< slide background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">But you see this</span>
+<span class="menu-title">Context</span>
 
 ---
 
@@ -63,17 +44,28 @@ slides:
 
 ---
   
-# Do we [understand](#)?
+# How do we [understand better](#)?
 
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-pressure-dist-tls.mp4" background-size="cover" >}}
-<span class="menu-title">Only in the right context</span>
+<span class="menu-title">By setting the right context</span>
+
+---
+
+# You can [do this today](#)
+<br>
+## RabbitMQ 3.8 feature
 
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-prometheus-quick-start.mp4" background-size="cover" >}}
-<span class="menu-title">You can do this today</span>
+<span class="menu-title">This is how</span>
+
+---
+
+{{< slide background="url(/img/observable-systems/rabbitmq-for-k8s.png) 50% 0% / cover no-repeat" >}}
+<span class="menu-title">You can buy it tomorrow</span>
 
 ---
 
@@ -83,17 +75,17 @@ slides:
 
 {{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-is-actually-this.png) 50% 50% / 75% no-repeat" >}}
 
-# Erlang [improvements](#)
+# We are [helping Erlang improve](#)
 
 ---
 
 {{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-10KB.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">3.9Gbit/s @ 10KB</span>
+<span class="menu-title">Link limit @ 10KB</span>
 
 ---
 
 {{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-60KB.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">13.6Gbit/s @ 60KB</span>
+<span class="menu-title">Link limit @ 60KB</span>
 
 ---
 
@@ -103,25 +95,22 @@ slides:
 ---
 
 {{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview.png) 50% 50% / cover no-repeat" >}}
-# [Better](#) conversations
+# We have [better conversations](#)
 
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-overview-dashboard.mp4" background-size="cover" >}}
-<span class="menu-title">Explain & understand better</span>
-
+<span class="menu-title">They start like this</span>
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/same-metrics-different-contexts.png) 50% 50% / cover no-repeat" >}}
 
-# Build Your Own [Context](#)
+# Build your own [context](#)
 
 ---
 
-### I DON'T RABBITMQ
-# [But I](#) CI
-### And I don't get it
+# I DON'T RABBITMQ, [I CI](#)
 
 ---
 
@@ -152,24 +141,25 @@ slides:
 
 {{< slide class="hiviz-light" background="url(/img/observable-systems/cncf.png) 50% 0% / cover no-repeat" >}}
 
-# Observability is [no longer optional](#)
-<span class="menu-title">No Longer Optional</span>
+# It is [a requirement](#)
+
+---
+
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/linkerd-observability.mp4" background-size="cover" >}}
+
+# It is [inspiring](#)
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/infinite-game.jpg) 100% 0% / 56% no-repeat" >}}
 
-# Observability is
-<span class="menu-title">An Infinite Game</span>
+# It is
+<span class="menu-title">It makes everything better</span>
 
 ---
 
-# [WHERE](#) DO YOU BEGIN?
+# IN [SUMMARY](#)
 
----
-
-<span class="menu-title">3 Steps</span>
-
-# 1. [Expose metrics](#) in Prometheus format
-# 2. [Visualise them](#) with Grafana
-# 3. [Learn](#) what works
+1. Look for & use observable systems
+2. Make your system observable
+3. Learn what works & share

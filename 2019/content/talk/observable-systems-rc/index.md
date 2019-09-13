@@ -35,3 +35,21 @@ url_video:
 slides: observable-systems-rc
 
 ---
+
+<!--
+
+# FEEDBACK
+
+* How do I build my own dashboard?
+* Too much information on the dashboards - how do you simplify?
+  * How are the graphs correlated? Values? Dashboards?
+* How do you know which dashboard users need?
+* Please inform me when something needs my attention & help me understand the problem
+  * I don't want to know / don't care about all these metrics - I have a job to do!
+* Can you show me what problems you solved with these graphs?
+  * Chain Replication vs Raft would be great!
+* How do I enable this feature in RabbitMQ - SHOW ME!
+* How do I visualize Open Tracing?
+  * What about events?
+
+-->
