@@ -20,14 +20,13 @@ slides:
 ---
 
 # What is observability?
+### Understanding of a system through the events that it emits
 
-* Understand a system from its external outputs: metrics & events
-  * Metric: a number with limited metadata - low-cardinality
-      * Predefined or manual correlation - predictable - known-unknowns
-  * Event: a combination of properties - high-cardinality
-      * Highly dynamic correlation - non-predictable - unknown-unknowns
+* [Metrics](#) - how many times did different types of events occur?
+* [Logs](#) - what information do I need to know regarding specific events?
+* [Traces](#) - what is the event path?
 
-> Determining the behavior of the entire system from the system's outputs
+> It's all about properties of events
 
 ---
 
@@ -39,7 +38,7 @@ slides:
     * service meshes on software defined networks on physical networks
     * frameworks that use wrappers which delegate to client libraries
 * All the layering makes it hard to understand where the problems are
-* Observability enables us to understand, explain & improve
+* Observability enables us to understand, explain & improve our systems
 
 ---
 
@@ -149,13 +148,14 @@ We had to pick our battles, and focus on the end-goal
 # RabbitMQ Overview Dashboard
 ## The equivalent of RabbitMQ Management Overview
 
-* Helpful context for all metrics
-  * **i** is the new & improved **?**
-* Correlate graphs: queues, connections & channels
+* Correlate metrics by colour: node-specific
+* Correlate graphs by order: queues, channels & connections
   * queue rebalancing
 * Built-in thresholds: churn metrics
 * Spot anti-patterns: polling operations
 * Zoom in on interesting spikes or drops
+* Helpful context for all metrics
+  * **i** is the new & improved **?**
 
 > This is just a bridge from RabbitMQ Management into the new world...
 
