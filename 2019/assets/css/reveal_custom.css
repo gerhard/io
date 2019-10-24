@@ -18,7 +18,8 @@ body {
 }
 
 .reveal h1,
-.reveal h2 {
+.reveal h2,
+.reveal h3 {
   display: inline-block;
   line-height: 1.1;
   margin-bottom: 0;
@@ -26,12 +27,14 @@ body {
 }
 
 .reveal .hiviz-dark h1,
-.reveal .hiviz-dark h2 {
+.reveal .hiviz-dark h2,
+.reveal .hiviz-dark h3 {
   background-color: rgba(50, 50 , 50, 0.8);
   color: #FFF;
 }
 
 .reveal .hiviz-light h1,
-.reveal .hiviz-light h2 {
+.reveal .hiviz-light h2,
+.reveal .hiviz-light h3 {
   background-color: rgba(255, 255 , 255, 0.8);
 }

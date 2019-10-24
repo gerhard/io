@@ -172,6 +172,7 @@ u: update
 
 # https://trac.ffmpeg.org/wiki/Encode/H.264#iOS
 # https://trac.ffmpeg.org/wiki/Scaling
+SCALE = 'min(1920,iw)':'min(1080,ih)'
 .PHONY: video
 video: $(FFMPEG) ## v  | Convert MOVs to mobile-friendly MP4s
 ifndef F
@@ -179,8 +180,15 @@ ifndef F
 endif
 	@$(FFMPEG) -i $(F) \
 	  -vcodec h264 \
-	  -vf "scale='min(1920,iw)':'min(1080,ih)'" \
+	  -vf "scale=$(SCALE)" \
 	  -profile:v high -level 4.2 \
 	  $(subst .mov,.mp4,$(F))
 .PHONY: v
 v: video
+
+.PHONY: v169
+v169: video
+
+.PHONY: v43
+v43: SCALE = 'min(2048,iw)':'min(1536,ih)'
+v43: video

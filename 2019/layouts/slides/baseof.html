@@ -28,9 +28,13 @@
 
   {{ $css := resources.Get "css/reveal.css" }}
   {{ $css_custom := resources.Get "css/reveal_custom.css" }}
-  {{ $style := slice $css $css_custom | resources.Concat "css/reveal_custom.css" | resources.Minify }}
+  {{ $style := slice $css $css_custom | resources.Concat $css_custom | resources.Minify }}
 
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+  <style type="text/css">
+    {{ .Param "slides.style" | safeCSS }}
+  </style>
 
   <!-- Printing and PDF exports -->
   <script>

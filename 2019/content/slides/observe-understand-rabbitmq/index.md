@@ -7,85 +7,136 @@ categories: []
 date: "2019-11-04T11:50:00Z"
 slides:
   # see available slides. options in layouts/slides/baseof.html
-  height: 1080
+  height: 768
   theme: solarized
-  width: 1920
+  width: 1024
+  style: |
+    .reveal a {
+      color: #3274D9;
+    }
+    .reveal a:hover {
+      color: #5296FF;
+    }
+    .reveal .hiviz-dark a {
+      color: #F2CC0C;
+    }
+    .reveal .hiviz-dark a:hover {
+      color: #FFE14A;
+    }
   # https://github.com/hakimel/reveal.js/
   # https://developer.mozilla.org/en-US/docs/Web/CSS/background
 ---
 
-# Observe and Understand RabbitMQ
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/observe-understand-rabbitmq-intro.mp4" background-video-loop="true" background-size="cover" >}}
+
+## Observe && <br> [Understand](#) <br> RabbitMQ
 <span class="menu-title">Intro</span>
 
 ---
 
-# What is observability?
-### Understanding of a system through the events that it emits
+### RabbitMQ Core Engineer
 
-* [Metrics](#) - how many times did different types of events occur?
-* [Logs](#) - what information do I need to know regarding specific events?
-* [Traces](#) - what is the event path?
+<img src="/img/observable-systems/gerhard.png" height="400">
 
-> It's all about properties of events
+#### <i class="fab fa-twitter"></i> <a href="https://twitter.com/gerhardlazu" target="_blank">gerhardlazu</a> &nbsp; <i class="fab fa-github"></i> <a href="https://github.com/gerhard" target="_blank">gerhard</a>
 
 ---
 
-# Why is it important?
+### RabbitMQ for K8S PM
+
+<img src="/img/observable-systems/mkuratczyk.jpeg" height="400">
+
+#### <i class="fab fa-twitter"></i> <a href="https://twitter.com/MichalKuratczyk" target="_blank">MichalKuratczyk</a> &nbsp; <i class="fab fa-github"></i> <a href="https://github.com/mkuratczyk" target="_blank">mkuratczyk</a>
+
+---
+
+## Agenda
+
+* [`05'` INTRO](#)
+* `05'` I do not get it
+* `10'` I am starting to get it
+* `10'` Oh, wow - this is amazing
+* `05'` I did not know this existed
+* `05'` I have so many ideas now...
+
+---
+
+## What is observability?
+#### Understanding a system through its external outputs
+
+* [LOGS](#) - **What happened?** - Information
+* [METRICS](#) - **How much? How long?** - Quantity
+* [TRACES](#) - **How does it fit together?** - Correlation
+
+> Logs + Metrics + Traces
+
+---
+
+## Why is it important?
 
 * Distributed systems are hard to understand & explain
 * The landscape is becoming more complex
     * containers on VMs on physical hosts
     * service meshes on software defined networks on physical networks
-    * frameworks that use wrappers which delegate to client libraries
-* All the layering makes it hard to understand where the problems are
+* All this layering makes it hard to understand where the problems are
 * Observability enables us to understand, explain & improve our systems
 
 ---
 
-# How did we observe =< 3.7?
+## How did we observe in 3.7?
 
 * Via the `rabbitmq_management` plugin
-  * UI - lots of screenshots!
-  * JSON API - all monitoring solutions use this
-* [`rabbitmq_event_exchange`](https://www.rabbitmq.com/event-exchange.html)
-* logs & crashes (unhandled exceptions)
+  * **UI** - lots of screenshots!
+  * **JSON API** - all monitoring agents use this
+* Logs + Crash traces
 * Erlang crash dumps
+* [`rabbitmq_event_exchange`](https://www.rabbitmq.com/event-exchange.html)
 
 ---
 
-# This is too hard
+# But this is too hard
 
-* Correlating metrics from different layers is very hard
-  * RabbitMQ / Mnesia / Erlang / System / Network
-  * Impossible post-incident
-* How to access events from the event exchange?
 * Logs for a RabbitMQ cluster are hard to correlate
-  * vim skills helps, but it's still cumbersome
-  * really hard to correlate logs to metrics
+  * Editor-of-choice skills helps, but it's still hard
+  * Tools have been built to make it easier, but no traction
+* Correlating metrics from different layers was very hard
+  * RabbitMQ / Raft / Mnesia / BEAM + System / Hardware / Network
+  * Especially hard to correlate to logs / crashes
+  * Impossible post-incident - either in memory or 3rd party systems
+* Do you even use the event exchange to understand the system? I don't.
 
 ---
 
-# [No metrics](#) when...
+# Oh, and [no metrics when](#):
 
 * A node goes away or the cluster is under pressure
-  * API requests take a really long time - show request timing in Chrome Network
-* Nodes go away - state of Erlang Distribution links
-* Data in Erlang Distribution link buffers - OTP-15905 in v22.1
+  * API requests take a long time and mostly timeout
+  * Let me show you!
+* Nodes go away
+  * Watch the state of Erlang Distribution links
+* Data buffered (a.k.a. stuck) in Erlang Distribution links
+  * Watch OTP-15905 (v22.1) in action
 
 ---
 
-# What do we need to help you?
+# And when you escalate to us...
 
-* Metrics & logs from all RabbitMQ nodes
+* We need metrics & logs from all RabbitMQ nodes to be able to help
 * Best-case scenario, you send us walls of plain text
-* Hard to share & analyze, a lot of missing info
+  * Hard to capture, share & analyze
+  * Using different systems for logs & metrics makes it challenging
+  * In many cases, state is simply lost
+  * We end up with insufficient data to make informed conclusions
 
 ---
 
-# We needed a rethink
+# So we needed a rethink
 
-* Focus on metrics first, tackle events afterwards
 * Improving what we had was not going to be enough
+* We chose to focus on metrics first
+  * We expect alerts to follow closely
+* And then logs next
+* And eventually traces
 
 > If I had asked people what they wanted, <br>
 > they would have said faster horses. <br>
@@ -93,30 +144,34 @@ slides:
 
 ---
 
-# A different metrics system
+# We needed a different system
 
 * Remove the inter-node dependency
-  * How to get metrics from other nodes without the Erlang Distribution?
+  * Get metrics from other nodes without going through the Erlang Distribution
 * Minimize resources used by metrics
-  * Do not take memory away from messages
-  * Do not take reductions away from channels & queues
-* Have metrics even when RabbitMQ is under pressure or unavailable
+  * Do not aggregate server-side
+  * Use as little RabbitMQ memory & CPU as possible (and no disk)
+* Expose metrics when RabbitMQ is under extreme pressure
+* Access metrics when RabbitMQ is unavailable
+* ... and make it easy to share metrics
 
 > We didn't need a better metrics system, <br>
-> we needed a **different** metrics system
+> **we needed a different metrics system**
 
 ---
 
-# How to tell a better story?
+# Primary Goal: Tell a Better Story
 
-We had to pick our battles, and focus on the end-goal
+We had to pick our battles, and focus on the primary goal:
+
+**Tell a better story with metrics**
 
 ---
 
-# The new metrics in 3.8
+# The New Metrics System in 3.8
 
 * Do the simplest thing - only expose node local metrics
-* Expose more metrics - Raft / Mnesia / Erlang
+* Expose more metrics - Raft / Mnesia / BEAM
 * Metrics history no longer dependent on RabbitMQ
 * Querying metrics will not impact RabbitMQ
   * RabbitMQ has more resources for messaging

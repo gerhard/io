@@ -25,6 +25,6 @@ url_pdf:
 url_slides:
 url_video:
 
-slides:
+slides: observe-understand-rabbitmq
 
 ---
