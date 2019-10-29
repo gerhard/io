@@ -79,6 +79,8 @@ I assume that you have all seen Management UI not loading...
 
 ---
 
+{{< slide background-video="/img/observable-systems/collect-metrics.mp4" background-video-loop="true" background-size="cover" >}}
+
 There are no metrics to understand what is happening
 
 ---
