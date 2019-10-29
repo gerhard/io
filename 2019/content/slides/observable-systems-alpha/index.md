@@ -75,10 +75,13 @@ This is publicly accessible
 ---
 
 # The Key
-
+<br>
 ### Health Checks
+<br>
 ## [Metrics](#)
+<br>
 ### Events
+<br>
 ### Traces
 
 {{< speaker_note >}}
