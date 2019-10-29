@@ -30,11 +30,20 @@ slides:
 {{< slide class="hiviz-dark" background-video="/img/observable-systems/observe-understand-rabbitmq-intro.mp4" background-video-loop="true" background-size="cover" >}}
 
 ## Observe && <br> [Understand](#) <br> RabbitMQ
-<span class="menu-title">Intro</span>
+<span class="menu-title">INTRO</span>
+
+{{< speaker_note >}}
+* See RabbitMQ in a completely different light
+* The goal is to understand RabbitMQ
+* Have different discussions
+* Improve RabbitMQ and Erlang together
+* Relate to other CNCF projects
+{{< /speaker_note >}}
 
 ---
 
 ### RabbitMQ Core Engineer
+<span class="menu-title">Gerhard Lazu - GL</span>
 
 <img src="/img/observable-systems/gerhard.png" height="400">
 
@@ -43,6 +52,7 @@ slides:
 ---
 
 ### RabbitMQ for K8S PM
+<span class="menu-title">Michal Kuratczyk - MK</span>
 
 <img src="/img/observable-systems/mkuratczyk.jpeg" height="400">
 
@@ -50,236 +60,146 @@ slides:
 
 ---
 
-## Agenda
+<span class="menu-title">I DO NOT UNDERSTAND</span>
 
-* [`05'` INTRO](#)
-* `05'` I do not get it
-* `10'` I am starting to get it
-* `10'` Oh, wow - this is amazing
-* `05'` I did not know this existed
-* `05'` I have so many ideas now...
-
----
-
-## What is observability?
-#### Understanding a system through its external outputs
-
-* [LOGS](#) - **What happened?** - Information
-* [METRICS](#) - **How much? How long?** - Quantity
-* [TRACES](#) - **How does it fit together?** - Correlation
-
-> Logs + Metrics + Traces
+* ~~Intro~~
+* **[I DO NOT UNDERSTAND](#)**
+* I am starting to get it
+* This is amazing!
+* I had no idea that this even existed
+* We are just getting started...
 
 ---
 
-## Why is it important?
-
-* Distributed systems are hard to understand & explain
-* The landscape is becoming more complex
-    * containers on VMs on physical hosts
-    * service meshes on software defined networks on physical networks
-* All this layering makes it hard to understand where the problems are
-* Observability enables us to understand, explain & improve our systems
+> MK content here
 
 ---
 
-## How did we observe in 3.7?
+<span class="menu-title">I AM STARTING TO GET IT</span>
 
-* Via the `rabbitmq_management` plugin
-  * **UI** - lots of screenshots!
-  * **JSON API** - all monitoring agents use this
-* Logs + Crash traces
-* Erlang crash dumps
-* [`rabbitmq_event_exchange`](https://www.rabbitmq.com/event-exchange.html)
-
----
-
-# But this is too hard
-
-* Logs for a RabbitMQ cluster are hard to correlate
-  * Editor-of-choice skills helps, but it's still hard
-  * Tools have been built to make it easier, but no traction
-* Correlating metrics from different layers was very hard
-  * RabbitMQ / Raft / Mnesia / BEAM + System / Hardware / Network
-  * Especially hard to correlate to logs / crashes
-  * Impossible post-incident - either in memory or 3rd party systems
-* Do you even use the event exchange to understand the system? I don't.
+* ~~Intro~~
+* ~~I do not understand~~
+* **[I AM STARTING TO GET IT](#)**
+* This is amazing!
+* I had no idea that this even existed
+* We are just getting started...
 
 ---
 
-# Oh, and [no metrics when](#):
-
-* A node goes away or the cluster is under pressure
-  * API requests take a long time and mostly timeout
-  * Let me show you!
-* Nodes go away
-  * Watch the state of Erlang Distribution links
-* Data buffered (a.k.a. stuck) in Erlang Distribution links
-  * Watch OTP-15905 (v22.1) in action
+> MK content here
 
 ---
 
-# And when you escalate to us...
+<span class="menu-title">MK take-aways</span>
 
-* We need metrics & logs from all RabbitMQ nodes to be able to help
-* Best-case scenario, you send us walls of plain text
-  * Hard to capture, share & analyze
-  * Using different systems for logs & metrics makes it challenging
-  * In many cases, state is simply lost
-  * We end up with insufficient data to make informed conclusions
+* MK wants you to remember...
+* MK encourages you to think about...
+* MK challenges you to imagine...
 
 ---
 
-# So we needed a rethink
+<span class="menu-title">THIS IS AMAZING!</span>
 
-* Improving what we had was not going to be enough
-* We chose to focus on metrics first
-  * We expect alerts to follow closely
-* And then logs next
-* And eventually traces
-
-> If I had asked people what they wanted, <br>
-> they would have said faster horses. <br>
-> Henry Ford
+* ~~Intro~~
+* ~~I do not understand~~
+* ~~I am starting to get it~~
+* **[THIS IS AMAZING!](#)**
+* I had no idea that this even existed
+* We are just getting started...
 
 ---
 
-# We needed a different system
+Erlang Distribution - Throughput
+<br>
 
-* Remove the inter-node dependency
-  * Get metrics from other nodes without going through the Erlang Distribution
-* Minimize resources used by metrics
-  * Do not aggregate server-side
-  * Use as little RabbitMQ memory & CPU as possible (and no disk)
-* Expose metrics when RabbitMQ is under extreme pressure
-* Access metrics when RabbitMQ is unavailable
-* ... and make it easy to share metrics
-
-> We didn't need a better metrics system, <br>
-> **we needed a different metrics system**
+1. CQ
+1. QQ
 
 ---
 
-# Primary Goal: Tell a Better Story
+RabbitMQ Quorum Queue Raft
+<br>
 
-We had to pick our battles, and focus on the primary goal:
-
-**Tell a better story with metrics**
-
----
-
-# The New Metrics System in 3.8
-
-* Do the simplest thing - only expose node local metrics
-* Expose more metrics - Raft / Mnesia / BEAM
-* Metrics history no longer dependent on RabbitMQ
-* Querying metrics will not impact RabbitMQ
-  * RabbitMQ has more resources for messaging
-* Things that we chose to delegate
-  * metrics storage & querying - Prometheus
-  * metrics visualisation - Grafana
+1. Log ops
+1. Log op latency
+1. Long logs
 
 ---
 
-# How to enable the new metrics?
-
-* `rabbitmq-plugins enable rabbitmq_prometheus`
-* `curl localhost:15692/metrics`
+Share with Karl & Diana
 
 ---
 
-# How to use the new metrics?
+Erlang Memory Allocators
 
-* Given there is a Prometheus & Grafana
-* Prometheus scrapes RabbitMQ metrics periodically
-* Grafana is connected to Prometheus
-* Import Grafana dashboards that our team manages
-* Visualise RabbitMQ metrics stored in Prometheus via Grafana
-
-> Refer to the new **Monitoring with Prometheus** guide
+Ask an Erlang expert
 
 ---
 
-# RabbitMQ Overview Dashboard
-## The equivalent of RabbitMQ Management Overview
-
-* Correlate metrics by colour: node-specific
-* Correlate graphs by order: queues, channels & connections
-  * queue rebalancing
-* Built-in thresholds: churn metrics
-* Spot anti-patterns: polling operations
-* Zoom in on interesting spikes or drops
-* Helpful context for all metrics
-  * **i** is the new & improved **?**
-
-> This is just a bridge from RabbitMQ Management into the new world...
+https://grafana.com/orgs/rabbitmq
 
 ---
 
-# A Simpler RabbitMQ Overview
+<span class="menu-title">I HAD NO IDEA THIS EXISTED</span>
 
-* [LETS](#) build a simpler RabbitMQ Overview, together
-* [The Four Golden Signals](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/#xref_monitoring_golden-signals)
-  * [L](#)atency
-  * [E](#)rrors
-  * [T](#)raffic
-  * [S](#)aturation
-
-> We both know that you will not build your own, so...
+* ~~Intro~~
+* ~~I do not understand~~
+* ~~I am starting to get it~~
+* ~~This is amazing!~~
+* **[I HAD NO IDEA THAT THIS EVEN EXISTED](#)**
+* We are just getting started...
 
 ---
 
-# Discover other dashboards
-
-* grafana.com RabbitMQ team
-* RabbitMQ Raft
-* Erlang Distribution
-* Erlang Memory Allocators
+`htop`
 
 ---
-
-# Next time you need help
-
-* Share your metrics!
-
----
-
-# If you want it all integrated
-## RabbitMQ for K8S
-
-* Prometheus & Grafana integration
-  * service discovery (RabbitMQ & clients)
-  * all public dashboards, including updates
-  * automatically get new RabbitMQ dashboards
-  * system metrics for RabbitMQ & clients
-* Private dashboards
-  * e.g. fleet overview
-
----
-
-# We care about different things
-
-* We care about monitoring RabbitMQ
-* You care about monitoring the system as a whole
-  * What is the end-to-end message lantency?
-  * Open Tracing integration via Spring Boot?
-
----
-
-# Observer CLI
 
 `rabbitmq-diagnostics observer`
 
 ---
 
-# Internal events
-
 `rabbitmq-diagnostics consume_event_stream`
 
 ---
 
-# `rabbitmq-diagnostics`
+`rabbitmq-diagnostics log_tail_stream`
 
 ---
 
-# Health Checks
+<span class="menu-title">JUST GETTING STARTED</span>
+
+* ~~Intro~~
+* ~~I do not understand~~
+* ~~I am starting to get it~~
+* ~~This is amazing!~~
+* ~~I had no idea that this even existed~~
+* **[WE ARE JUST GETTING STARTED...](#)**
+
+---
+
+Queue state
+
+---
+
+Erlang Microstate Accounting
+
+---
+
+The problem with high cardinality
+
+---
+
+Logs / Events
+
+---
+
+A new Management UI?
+
+---
+
+<span class="menu-title">GL take-aways</span>
+
+* GL wants you to remember...
+* GL encourages you to think about...
+* GL challenges you to imagine...
