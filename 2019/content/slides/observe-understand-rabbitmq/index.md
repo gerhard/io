@@ -71,7 +71,19 @@ slides:
 
 ---
 
-> MK content here
+{{< speaker_note >}}
+You are familiar with the empty Management UI...
+{{< /speaker_note >}}
+
+---
+
+There are no metrics to understand what is happening
+
+---
+
+And even if you had the expected RabbitMQ metrics, <br>you still wouldn't understand what is happening
+
+You need to have and look at <br>the Erlang Distribution metrics:
 
 ---
 
@@ -86,7 +98,11 @@ slides:
 
 ---
 
-> MK content here
+Let me show you how to get started
+
+---
+
+Let me explain the new RabbitMQ Overview to you
 
 ---
 
