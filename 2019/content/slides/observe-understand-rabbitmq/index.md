@@ -104,7 +104,32 @@ Let me show you how to get started
 
 ---
 
-Let me explain the new RabbitMQ Overview to you
+The New RabbitMQ Overview
+
+{{< speaker_note >}}
+* is a transition from what you are familiar with
+* it shows more metrics than you can see on the traditional RabbitMQ Overview
+* all metrics are per node
+* some panels have sensible default thresholds
+* panels are grouped by object type: e.g. nodes, connections, etc.
+{{< /speaker_note >}}
+
+---
+
+See your cluster's imbalances
+
+{{< speaker_note >}}
+* connections
+* queues
+{{< /speaker_note >}}
+
+---
+
+`rabbitmq-queues rebalance all`
+
+{{< speaker_note >}}
+This is what it looks like to rebalance queue masters / followers
+{{< /speaker_note >}}
 
 ---
 
@@ -125,40 +150,53 @@ Let me explain the new RabbitMQ Overview to you
 * I had no idea that this even existed
 * We are just getting started...
 
----
+{{< speaker_note >}}
+* What do we want you to take-away?
+* Why is this important?
+* How do you get started and make the transition from what you already know?
 
-Erlang Distribution - Throughput
-<br>
-
-1. CQ
-1. QQ
-
----
-
-RabbitMQ Quorum Queue Raft
-<br>
-
-1. Log ops
-1. Log op latency
-1. Long logs
+Let's dig deeper so that you can appreciate the subtle and totally amazing aspects of this
+{{< /speaker_note >}}
 
 ---
 
-Share with Karl & Diana
+What happens at the Erlang Distribution level when <br>publishing and consuming from a <br>**Mirrored Classic Queue**?
 
 ---
 
-Erlang Memory Allocators
-
-Ask an Erlang expert
+How about a **Quorum Queue**?
 
 ---
 
-https://grafana.com/orgs/rabbitmq
+What happens within **Quorum Queue Raft**?
+
+{{< speaker_note >}}
+* log ops / s
+* log op latency
+* long logs
+{{< /speaker_note >}}
 
 ---
 
-<span class="menu-title">I HAD NO IDEA THIS EXISTED</span>
+This is interesting! **Let's share** with Karl & Diana
+
+---
+
+RabbitMQ ate all my memory!
+
+Show an Erlang Solutions expert this: <br>**Erlang-Memory-Allocators**
+
+---
+
+Discover more: <br>https://grafana.com/orgs/rabbitmq
+
+---
+
+Life on the cutting edge: <br>https://grafana.gcp.rabbitmq.com
+
+---
+
+<span class="menu-title">NO IDEA THIS EXISTED</span>
 
 * ~~Intro~~
 * ~~I do not understand~~
@@ -167,9 +205,17 @@ https://grafana.com/orgs/rabbitmq
 * **[I HAD NO IDEA THAT THIS EVEN EXISTED](#)**
 * We are just getting started...
 
+{{< speaker_note >}}
+Now that most of you are amazed and inspired about what is possible when combining RabbitMQ with Prometheus and Grafana, let me amaze the rest of you...
+{{< /speaker_note >}}
+
 ---
 
 `htop`
+
+{{< speaker_note >}}
+Who where spends most of their time in the Terminal?
+{{< /speaker_note >}}
 
 ---
 
@@ -196,6 +242,10 @@ https://grafana.com/orgs/rabbitmq
 
 ---
 
+The problem with high cardinality
+
+---
+
 Queue state
 
 ---
@@ -204,20 +254,20 @@ Erlang Microstate Accounting
 
 ---
 
-The problem with high cardinality
+Compare Erlang Distributions alternatives <br>**Enterprise Feature**
+
+{{< speaker_note >}}
+Open Core business model - new value-add features applicable to enterprise environments
+{{< speaker_note >}}
 
 ---
 
-Logs / Events
+<span class="menu-title">REMEMBER THIS</span>
+
+* RabbitMQ v3.8 has many amazing features
+* We are investing heavily in observability
+* It's a great time to understand your RabbitMQ
 
 ---
 
-A new Management UI?
-
----
-
-<span class="menu-title">GL take-aways</span>
-
-* GL wants you to remember...
-* GL encourages you to think about...
-* GL challenges you to imagine...
+Show us your RabbitMQ!
