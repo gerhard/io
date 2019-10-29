@@ -71,8 +71,10 @@ slides:
 
 ---
 
+{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive.mp4" background-video-loop="true" background-size="cover" >}}
+
 {{< speaker_note >}}
-You are familiar with the empty Management UI...
+I assume that you have all seen Management UI not loading...
 {{< /speaker_note >}}
 
 ---
