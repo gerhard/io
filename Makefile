@@ -140,7 +140,7 @@ linode: build
 l: linode
 
 .PHONY: linode-info
-linode-info: linode
+linode-info: linode-config
 	@$(S3CMD) ws-info s3://gerhard
 .PHONY: li
 li: linode-info
