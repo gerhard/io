@@ -172,11 +172,71 @@ Let's dig deeper so that you can appreciate the subtle and totally amazing aspec
 
 ---
 
-What happens at the Erlang Distribution level when <br>publishing and consuming from a <br>**Mirrored Classic Queue**?
+## What happens in the <br>Erlang Distribution?
+<span class="menu-title">Mirrored Classic Queue</span>
+
+* **[Mirrored Classic Queue](#)**
+* 1 Master + 2 Slaves
+* 100 msg/s @ 10KiB
+* 1 Publisher [→](#) 1 Consumer
 
 ---
 
-How about a **Quorum Queue**?
+{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-management.png" background-size="cover" >}}
+<span class="menu-title">CQ - RabbitMQ Management</span>
+
+---
+
+{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-overview.png" background-size="cover" >}}
+<span class="menu-title">CQ - New RabbitMQ Overview</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-part-1.mp4" background-size="cover" >}}
+<span class="menu-title">CQ - Erlang Distribution</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-part-2.mp4" background-size="cover" >}}
+<span class="menu-title">CQ - Inter-node traffic</span>
+
+---
+
+## What happens in the <br>Erlang Distribution?
+<span class="menu-title">Quorum Queue</span>
+
+* **[Quorum Queue](#)**
+* 1 Leader + 2 Followers
+* 100 msg/s @ 10KiB
+* 1 Publisher [→](#) 1 Consumer
+
+---
+
+{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue-rabbitmq-management.png" background-size="cover" >}}
+<span class="menu-title">QQ - RabbitMQ Management</span>
+
+---
+
+{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue.png" background-size="cover" >}}
+<span class="menu-title">QQ - Inter-node traffic</span>
+
+---
+
+## [Quorum Queues](#) 2.5x [less pressure](#) <br>on the Erlang Distribution
+than Mirrored Classic Queues
+<span class="menu-title">QQ 2.5x less pressure</span>
+
+| CQ Links | CQ Traffic | QQ Links | QQ Traffic |
+| ---      | ---        | ---      | ---        |
+| M  → S1  | 2MB        | L → F1   | 1MB        |
+| S1 → S2  | 1MB        | L → F2   | 1MB        |
+| S2 → M   | 1MB        |          |            |
+| M  → S2  | 1MB        |          |            |
+
+---
+
+## Why does <br>[Erlang Distribution traffic](#) <br>matter?
+<span class="menu-title">Erlang Distribution traffic</span>
 
 ---
 
