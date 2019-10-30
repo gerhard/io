@@ -96,6 +96,14 @@ Since management plugin provides the UI and the monitoring API, metrics are not 
 
 ---
 
+{{< slide background-image="/img/observable-systems/data-in-port-driver-buffer.png" background-size="cover" >}}
+
+{{< speaker_note >}}
+Management Plugin won't receive metrics from other nodes until all that data is flushed from the buffers
+{{< /speaker_note >}}
+
+---
+
 <span class="menu-title">I AM STARTING TO GET IT</span>
 
 * ~~Intro~~
