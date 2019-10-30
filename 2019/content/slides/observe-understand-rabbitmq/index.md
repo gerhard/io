@@ -85,6 +85,8 @@ There are no metrics to understand what is happening
 
 ---
 
+{{< slide background-video="/img/observable-systems/erlang-distribution.mp4" background-video-loop="true" background-size="cover" >}}
+
 And even if you had the expected RabbitMQ metrics, <br>you still wouldn't understand what is happening
 
 You need to have and look at <br>the Erlang Distribution metrics:
