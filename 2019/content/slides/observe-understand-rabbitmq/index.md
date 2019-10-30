@@ -163,19 +163,15 @@ This is what it looks like to rebalance queue masters / followers
 * We are just getting started...
 
 {{< speaker_note >}}
-* What do we want you to take-away?
-* Why is this important?
-* How do you get started and make the transition from what you already know?
-
-Let's dig deeper so that you can appreciate the subtle and totally amazing aspects of this
+Now that you are starting to understand how all this fits together,
+let's dig deeper so that you can better appreciate the opportunities that this opens.
 {{< /speaker_note >}}
 
 ---
 
-## What happens in the <br>Erlang Distribution?
-<span class="menu-title">Mirrored Classic Queue</span>
+## Mirrored Classic Queue
+<br>
 
-* **[Mirrored Classic Queue](#)**
 * 1 Master + 2 Slaves
 * 100 msg/s @ 10KiB
 * 1 Publisher [→](#) 1 Consumer
@@ -187,8 +183,16 @@ Let's dig deeper so that you can appreciate the subtle and totally amazing aspec
 
 ---
 
-{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-overview.png" background-size="cover" >}}
-<span class="menu-title">CQ - New RabbitMQ Overview</span>
+## For [1MB](#) of message body payload
+
+This happens in a **Classic Queue with 3 Mirrors**
+
+| Links             | Traffic  |
+| ---               | ---      |
+| Master  → Slave 1 | [2MB](#) |
+| Slave 1 → Slave 2 | [1MB](#) |
+| Slave 2 → Master  | [1MB](#) |
+| Master  → Slave 2 | [1MB](#) |
 
 ---
 
@@ -202,18 +206,34 @@ Let's dig deeper so that you can appreciate the subtle and totally amazing aspec
 
 ---
 
-## What happens in the <br>Erlang Distribution?
-<span class="menu-title">Quorum Queue</span>
-
-* **[Quorum Queue](#)**
-* 1 Leader + 2 Followers
-* 100 msg/s @ 10KiB
-* 1 Publisher [→](#) 1 Consumer
+## Why does <br>[Erlang Distribution traffic](#) <br>matter?
+<span class="menu-title">Erlang Distribution traffic</span>
 
 ---
 
-{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue-rabbitmq-management.png" background-size="cover" >}}
-<span class="menu-title">QQ - RabbitMQ Management</span>
+{{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-10KB-43.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">Link limit @ 10KB</span>
+
+---
+
+## [50,000 msg/s](#) @ 10KiB
+
+Erlang Distribution link theoretical max
+
+---
+
+## [25,000 msg/s](#) @ 10KiB
+
+Erlang Distribution link theoretical max <br>[when using **Mirrored Classic Queues**](#)
+
+---
+
+## Quorum Queue
+<br>
+
+* 1 Leader + 2 Followers
+* 100 msg/s @ 10KiB
+* 1 Publisher [→](#) 1 Consumer
 
 ---
 
@@ -235,12 +255,23 @@ than Mirrored Classic Queues
 
 ---
 
-## Why does <br>[Erlang Distribution traffic](#) <br>matter?
+## What happens with the <br>[50,000 msg/s](#) limit?
 <span class="menu-title">Erlang Distribution traffic</span>
 
 ---
 
-What happens within **Quorum Queue Raft**?
+{{< slide background="url(/img/observable-systems/erlang-otp-pr-2293-43.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">Erlang/OTP PR 2293</span>
+
+---
+
+Erlang Distribution Compression
+
+---
+
+## Can you show me <br>[Quorum Queue Raft](#) now?
+
+---
 
 {{< speaker_note >}}
 * log ops / s
