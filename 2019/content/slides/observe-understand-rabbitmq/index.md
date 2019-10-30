@@ -79,17 +79,20 @@ I assume that you have all seen Management UI not loading...
 
 ---
 
-{{< slide background-video="/img/observable-systems/collect-metrics.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/exporter-vs-plugin.png" background-size="cover" >}}
 
-There are no metrics to understand what is happening
+{{< speaker_note >}}
+Since management plugin provides the UI and the monitoring API, metrics are not available or very slow to collect when cluster is busy
+{{< /speaker_note >}}
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution.mp4" background-video-loop="false" background-size="cover" >}}
 
-And even if you had the expected RabbitMQ metrics, <br>you still wouldn't understand what is happening
-
-You need to have and look at <br>the Erlang Distribution metrics:
+{{< speaker_note >}}
+<!-- And even if you had the expected RabbitMQ metrics, <br>you still wouldn't understand what is happening -->
+<!-- You need to have and look at <br>the Erlang Distribution metrics: -->
+{{< /speaker_note >}}
 
 ---
 
@@ -104,11 +107,7 @@ You need to have and look at <br>the Erlang Distribution metrics:
 
 ---
 
-Let me show you how to get started
-
----
-
-The New RabbitMQ Overview
+{{< slide background-image="/img/observable-systems/rabbitmq-overview-1.png" background-size="cover" >}}
 
 {{< speaker_note >}}
 * is a transition from what you are familiar with
@@ -120,9 +119,10 @@ The New RabbitMQ Overview
 
 ---
 
-See your cluster's imbalances
+{{< slide background-image="/img/observable-systems/rabbitmq-overview-2.png" background-size="cover" >}}
 
 {{< speaker_note >}}
+See your cluster's imbalances
 * connections
 * queues
 {{< /speaker_note >}}
