@@ -79,9 +79,13 @@ I assume that you have all seen Management UI not loading...
 
 ---
 
+{{< slide background-video="/img/observable-systems/collect-metrics.mp4" background-video-loop="true" background-size="cover" >}}
+
 There are no metrics to understand what is happening
 
 ---
+
+{{< slide background-video="/img/observable-systems/erlang-distribution.mp4" background-video-loop="true" background-size="cover" >}}
 
 And even if you had the expected RabbitMQ metrics, <br>you still wouldn't understand what is happening
 
