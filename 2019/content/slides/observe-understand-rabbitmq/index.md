@@ -351,6 +351,7 @@ on Erlang Distribution than Mirrored Classic Queue
 ---
 
 {{< slide class="hiviz-dark" background-video="/img/observable-systems/erlang-distribution-43.mp4" background-video-loop="true" background-size="cover" >}}
+<span class="menu-title">One graph from one dashboard</span>
 
 {{< speaker_note >}}
 One graph from one dashboard:
@@ -393,18 +394,22 @@ One graph from one dashboard:
 ---
 
 ## Why did RabbitMQ <br>[eat all my memory](#)?
+<span class="menu-title">Who ate my memory?</span>
 
 ---
 
 {{< slide background="url(/img/observable-systems/erlang-memory-allocators-43.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">Erlang-Memory-Allocators</span>
 
 ---
 
 {{< slide background="url(/img/observable-systems/erlang-memory-allocators-binary-alloc-43.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">binary_alloc</span>
 
 ---
 
 {{< slide background="url(/img/observable-systems/erlang-memory-allocators-ets-alloc-43.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">ets_alloc</span>
 
 ---
 
@@ -477,7 +482,7 @@ Ranch
 
 ---
 
-## THINGS to [REMEMBER](#)
+# [KEY TAKE AWAYS](#)
 
 RabbitMQ v3.8 has many amazing features
 
@@ -485,4 +490,8 @@ We are investing heavily in observability
 
 It's a great time to understand your RabbitMQ
 
-[Show us your RabbitMQ!](#)
+[**Snapshot & share!**](#)
+
+---
+
+# [12/12](#) WEBINAR
