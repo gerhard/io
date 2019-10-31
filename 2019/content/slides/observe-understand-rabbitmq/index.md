@@ -43,7 +43,7 @@ slides:
 ---
 
 ### RabbitMQ Core Engineer
-<span class="menu-title">Gerhard Lazu - GL</span>
+<span class="menu-title">Gerhard Lazu</span>
 
 <img src="/img/observable-systems/gerhard.png" height="400">
 
@@ -52,7 +52,7 @@ slides:
 ---
 
 ### RabbitMQ for K8S PM
-<span class="menu-title">Michal Kuratczyk - MK</span>
+<span class="menu-title">Michal Kuratczyk</span>
 
 <img src="/img/observable-systems/mkuratczyk.jpeg" height="400">
 
@@ -209,13 +209,17 @@ slides:
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-<span class="menu-title">THIS IS AMAZING!</span>
+<span class="menu-title">HOW TO UNDERSTAND</span>
 
-* Limitations in RabbitMQ Management - PROBLEM
-* New metrics system in 3.8 - SOLUTION
-* **[THIS IS AMAZING!](#)**
-* I had no idea that this even existed
-* We are just getting started...
+RabbitMQ Management limitations
+
+New metrics system in RabbitMQ 3.8
+
+## [Understand like never before](#)
+
+**More CLI power to you**
+
+**What happens next?**
 
 {{< speaker_note >}}
 Now that you are starting to understand how all this fits together,
@@ -390,18 +394,17 @@ https://grafana.com/orgs/rabbitmq
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-<span class="menu-title">NO IDEA THIS EXISTED</span>
+<span class="menu-title">CLI POWER TO YOU</span>
 
-* ~~Intro~~
-* ~~I do not understand~~
-* ~~I am starting to get it~~
-* ~~This is amazing!~~
-* **[I HAD NO IDEA THAT THIS EVEN EXISTED](#)**
-* We are just getting started...
+RabbitMQ Management limitations
 
-{{< speaker_note >}}
-Now that most of you are amazed and inspired about what is possible when combining RabbitMQ with Prometheus and Grafana, let me amaze the rest of you...
-{{< /speaker_note >}}
+New metrics system in RabbitMQ 3.8
+
+Understand like never before
+
+## [More CLI power to you](#)
+
+**What happens next?**
 
 ---
 
@@ -425,16 +428,19 @@ Who where spends most of their time in the Terminal?
 
 ---
 
-<span class="menu-title">JUST GETTING STARTED</span>
-
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-* ~~Intro~~
-* ~~I do not understand~~
-* ~~I am starting to get it~~
-* ~~This is amazing!~~
-* ~~I had no idea that this even existed~~
-* **[WE ARE JUST GETTING STARTED...](#)**
+<span class="menu-title">WHAT HAPPENS NEXT?</span>
+
+RabbitMQ Management limitations
+
+New metrics system in RabbitMQ 3.8
+
+Understand like never before
+
+More CLI power to you
+
+## [What happens next?](#)
 
 ---
 
