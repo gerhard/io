@@ -27,7 +27,7 @@ slides:
   # https://developer.mozilla.org/en-US/docs/Web/CSS/background
 ---
 
-{{< slide class="hiviz-dark" background-video="/img/observable-systems/observe-understand-rabbitmq-intro.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/observe-understand-rabbitmq-intro-43.mp4" background-video-loop="true" background-size="cover" >}}
 
 ## Observe && <br> [Understand](#) <br> RabbitMQ
 <span class="menu-title">INTRO</span>
@@ -60,20 +60,7 @@ slides:
 
 ---
 
-{{< slide class="hiviz-dark" background-color="#161719">}}
-
-<span class="menu-title">I DO NOT UNDERSTAND</span>
-
-* ~~Intro~~
-* **[I DO NOT UNDERSTAND](#)**
-* I am starting to get it
-* This is amazing!
-* I had no idea that this even existed
-* We are just getting started...
-
----
-
-{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-video-loop="true" background-size="cover" >}}
 
 {{< speaker_note >}}
 
@@ -104,19 +91,6 @@ slides:
 * By the way, if you look carefully, you can see that even the new plugin is a bit slow on one of the nodes - we'll see why in a moment
 
 {{< /speaker_note >}}
-
----
-
-{{< slide class="hiviz-dark" background-color="#161719">}}
-
-<span class="menu-title">I AM STARTING TO GET IT</span>
-
-* ~~Intro~~
-* ~~I do not understand~~
-* **[I AM STARTING TO GET IT](#)**
-* This is amazing!
-* I had no idea that this even existed
-* We are just getting started...
 
 ---
 
@@ -212,6 +186,11 @@ slides:
 
 ---
 
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-4.mp4" background-size="cover" >}}
+<span class="menu-title">Take dashboard snapshot</span>
+
+---
+
 <span class="menu-title">MK take-aways</span>
 
 * RabbitMQ 3.8 provides a lot of new tools to help you understand what is going on
@@ -232,9 +211,8 @@ slides:
 
 <span class="menu-title">THIS IS AMAZING!</span>
 
-* ~~Intro~~
-* ~~I do not understand~~
-* ~~I am starting to get it~~
+* Limitations in RabbitMQ Management - PROBLEM
+* New metrics system in 3.8 - SOLUTION
 * **[THIS IS AMAZING!](#)**
 * I had no idea that this even existed
 * We are just getting started...
@@ -246,19 +224,21 @@ let's dig deeper so that you can better appreciate the opportunities that this o
 
 ---
 
-## What happens in the <br>[Erlang Distribution](#)?
-<span class="menu-title">Erlang Distribution - 3 nodes</span>
+## What happens in a <br>[RabbitMQ cluster](#)?
+<span class="menu-title">RabbitMQ Cluster - 3 nodes</span>
 
-RabbitMQ cluster with [3 nodes](#)
+Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
 ## [Mirrored Classic Queue](#)
 <br>
 
-* Master `+2` Slaves
+* Master `+2` Mirrors
 * 100 msg/s @ 10KiB
 * 1 Publisher [→](#) 1 Consumer
+* ~1MiB / s message ingress
+* ~1MiB / s message egress
 
 ---
 
@@ -283,10 +263,10 @@ RabbitMQ cluster with [3 nodes](#)
 
 | Erlang Distribution Link | Traffic  |
 | ---                      | ---      |
-| Master  → Slave 1        | [2MB](#) |
-| Slave 1 → Slave 2        | [1MB](#) |
-| Slave 2 → Master         | [1MB](#) |
-| Master  → Slave 2        | [1MB](#) |
+| Master 0 → Mirror 1      | [2MB](#) |
+| Mirror 1 → Mirror 2      | [1MB](#) |
+| Mirror 2 → Master 0      | [1MB](#) |
+| Master 0 → Mirror 2      | [1MB](#) |
 
 ---
 
@@ -297,49 +277,6 @@ RabbitMQ cluster with [3 nodes](#)
 
 {{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-10KB-43.png) 50% 50% / cover no-repeat" >}}
 <span class="menu-title">Link limit @ 10KB</span>
-
----
-
-## [50,000 msg/s](#) @ 10KiB
-Erlang Distribution link theoretical max
-
----
-
-## [25,000 msg/s](#) @ 10KiB
-
-Erlang Distribution link theoretical max <br>[when using **Mirrored Classic Queues**](#)
-
----
-
-## [Quorum Queue](#)
-<br>
-
-* Leader `+2` Followers
-* 100 msg/s @ 10KiB
-* 1 Publisher [→](#) 1 Consumer
-
----
-
-{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue.png" background-size="cover" >}}
-<span class="menu-title">QQ - Inter-node traffic</span>
-
----
-
-## [Quorum Queue](#) 2.5x [less pressure](#)
-on Erlang Distribution than Mirrored Classic Queue
-<span class="menu-title">QQ 2.5x less pressure</span>
-
-| MCQ Link | MCQ Traffic | QQ Link | QQ Traffic |
-| ---      | ---         | ---     | ---        |
-| M  → S1  | 2MB         | L → F1  | 1MB        |
-| S1 → S2  | 1MB         | L → F2  | 1MB        |
-| S2 → M   | 1MB         |         |            |
-| M  → S2  | 1MB         |         |            |
-
----
-
-## What happens with the <br>[50,000 msg/s](#) limit?
-<span class="menu-title">Erlang Distribution traffic</span>
 
 ---
 
@@ -361,53 +298,88 @@ One graph from one dashboard:
 
 ---
 
-## Can you show me <br>[Quorum Queue Raft](#) now?
-<span class="menu-title">RabbitMQ-Quorum-Queues-Raft</span>
+## [Quorum Queue](#)
+<br>
+
+* Leader `+2` Followers
+* 100 msg/s @ 10KiB
+* 1 Publisher [→](#) 1 Consumer
+* ~1MiB / s message ingress
+* ~1MiB / s message egress
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-1-43.mp4" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue.png" background-size="cover" >}}
+<span class="menu-title">QQ - Inter-node traffic</span>
+
+---
+
+## [Quorum Queue](#) 2.5x [less pressure](#)
+on Erlang Distribution than Mirrored Classic Queue
+<span class="menu-title">QQ 2.5x less pressure</span>
+
+| MCQ Link | MCQ Traffic | QQ Link | QQ Traffic |
+| ---      | ---         | ---     | ---        |
+| M0  → M1 | 2MB         | L0 → F1 | 1MB        |
+| M1 → M2  | 1MB         | L0 → F2 | 1MB        |
+| M2 → M0  | 1MB         |         |            |
+| M0  → M2 | 1MB         |         |            |
+
+---
+
+## Help me understand <br>[Quorum Queue](#) internals
+<span class="menu-title">RabbitMQ-Quorum-Queues-Raft</span>
+
+**RabbitMQ-Quorum-Queues-Raft**
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-1.mp4" background-size="cover" >}}
 <span class="menu-title">Log entries committed / s</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-2-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-2.mp4" background-size="cover" >}}
 <span class="menu-title">Log entry commit latency</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-3-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-3.mp4" background-size="cover" >}}
 <span class="menu-title">Raft members with >5k</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-4-43.mp4" background-size="cover" >}}
-<span class="menu-title">Take dashboard snapshot</span>
+## Hey Rabbit! <br>[Where is my memory?](#)
+<span class="menu-title">Where is my memory?</span>
+
+**Erlang-Memory-Allocators**
+
+Quorum Queues with no message backlog
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-5-43.mp4" background-size="cover" >}}
-<span class="menu-title">Share dashboard snapshot</span>
-
----
-
-## Why did RabbitMQ <br>[eat all my memory](#)?
-<span class="menu-title">Who ate my memory?</span>
-
----
-
-{{< slide background="url(/img/observable-systems/erlang-memory-allocators-43.png) 50% 50% / cover no-repeat" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-1.mp4" background-size="cover" >}}
 <span class="menu-title">Erlang-Memory-Allocators</span>
 
 ---
 
-{{< slide background="url(/img/observable-systems/erlang-memory-allocators-binary-alloc-43.png) 50% 50% / cover no-repeat" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-2.mp4" background-size="cover" >}}
 <span class="menu-title">binary_alloc</span>
 
 ---
 
-{{< slide background="url(/img/observable-systems/erlang-memory-allocators-ets-alloc-43.png) 50% 50% / cover no-repeat" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-3.mp4" background-size="cover" >}}
+<span class="menu-title">eheap_alloc</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-4.mp4" background-size="cover" >}}
 <span class="menu-title">ets_alloc</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-5.mp4" background-size="cover" >}}
+<span class="menu-title">Collapsed</span>
 
 ---
 
