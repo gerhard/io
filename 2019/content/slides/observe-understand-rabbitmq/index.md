@@ -215,9 +215,9 @@ slides:
 <span class="menu-title">MK take-aways</span>
 
 * RabbitMQ 3.8 provides a lot of new tools to help you understand what is going on
-* This data is not only useful for you but also for the whole community
+* This is useful for the whole community
 * With this we can improve RabbitMQ and Erlang
-* And to help solve your problems.
+* And solve your problems
 * It's really easy to get started so please do and share that data whenever you ask people to help you
 
 {{< speaker_note >}}
