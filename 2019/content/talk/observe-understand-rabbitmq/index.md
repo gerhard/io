@@ -28,3 +28,17 @@ url_video:
 slides: observe-understand-rabbitmq
 
 ---
+
+<!--
+
+# FEEDBACK
+
+* Add PerfTest dashboard to MK's part
+* Clarify the first Grafana graph - axes, etc.
+* Make it clearer that these are 3.8 features only
+* Emphasize that everybody needs to upgrade to 3.8 - these features are not available in 3.7
+* Mention that Mirrors & Slaves are used interchangly - ask Michael
+* Mention that 200GB is not the size of the Prometheus server that we expect users to have
+* Only mention Erlang-Memory-Allocators dashboard, do not go into any details
+
+-->
