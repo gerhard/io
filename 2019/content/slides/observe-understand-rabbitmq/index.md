@@ -60,6 +60,8 @@ slides:
 
 ---
 
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
 <span class="menu-title">I DO NOT UNDERSTAND</span>
 
 * ~~Intro~~
@@ -103,6 +105,8 @@ Management Plugin won't receive metrics from other nodes until all that data is 
 {{< /speaker_note >}}
 
 ---
+
+{{< slide class="hiviz-dark" background-color="#161719">}}
 
 <span class="menu-title">I AM STARTING TO GET IT</span>
 
@@ -153,6 +157,8 @@ This is what it looks like to rebalance queue masters / followers
 
 ---
 
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
 <span class="menu-title">THIS IS AMAZING!</span>
 
 * ~~Intro~~
@@ -169,10 +175,17 @@ let's dig deeper so that you can better appreciate the opportunities that this o
 
 ---
 
-## Mirrored Classic Queue
+## What happens in the <br>[Erlang Distribution](#)?
+<span class="menu-title">Erlang Distribution - 3 nodes</span>
+
+RabbitMQ cluster with [3 nodes](#)
+
+---
+
+## [Mirrored Classic Queue](#)
 <br>
 
-* 1 Master + 2 Slaves
+* Master `+2` Slaves
 * 100 msg/s @ 10KiB
 * 1 Publisher [→](#) 1 Consumer
 
@@ -183,19 +196,6 @@ let's dig deeper so that you can better appreciate the opportunities that this o
 
 ---
 
-## For [1MB](#) of message body payload
-
-This happens in a **Classic Queue with 3 Mirrors**
-
-| Links             | Traffic  |
-| ---               | ---      |
-| Master  → Slave 1 | [2MB](#) |
-| Slave 1 → Slave 2 | [1MB](#) |
-| Slave 2 → Master  | [1MB](#) |
-| Master  → Slave 2 | [1MB](#) |
-
----
-
 {{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-part-1.mp4" background-size="cover" >}}
 <span class="menu-title">CQ - Erlang Distribution</span>
 
@@ -203,6 +203,19 @@ This happens in a **Classic Queue with 3 Mirrors**
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-part-2.mp4" background-size="cover" >}}
 <span class="menu-title">CQ - Inter-node traffic</span>
+
+---
+
+## [1MB](#) worth of msg bodies
+
+[**Mirrored Classic Queue**](#): Master `+2` Slaves
+
+| Erlang Distribution Link | Traffic  |
+| ---                      | ---      |
+| Master  → Slave 1        | [2MB](#) |
+| Slave 1 → Slave 2        | [1MB](#) |
+| Slave 2 → Master         | [1MB](#) |
+| Master  → Slave 2        | [1MB](#) |
 
 ---
 
@@ -217,7 +230,6 @@ This happens in a **Classic Queue with 3 Mirrors**
 ---
 
 ## [50,000 msg/s](#) @ 10KiB
-
 Erlang Distribution link theoretical max
 
 ---
@@ -228,10 +240,10 @@ Erlang Distribution link theoretical max <br>[when using **Mirrored Classic Queu
 
 ---
 
-## Quorum Queue
+## [Quorum Queue](#)
 <br>
 
-* 1 Leader + 2 Followers
+* Leader `+2` Followers
 * 100 msg/s @ 10KiB
 * 1 Publisher [→](#) 1 Consumer
 
@@ -242,16 +254,16 @@ Erlang Distribution link theoretical max <br>[when using **Mirrored Classic Queu
 
 ---
 
-## [Quorum Queues](#) 2.5x [less pressure](#) <br>on the Erlang Distribution
-than Mirrored Classic Queues
+## [Quorum Queue](#) 2.5x [less pressure](#)
+on Erlang Distribution than Mirrored Classic Queue
 <span class="menu-title">QQ 2.5x less pressure</span>
 
-| CQ Links | CQ Traffic | QQ Links | QQ Traffic |
-| ---      | ---        | ---      | ---        |
-| M  → S1  | 2MB        | L → F1   | 1MB        |
-| S1 → S2  | 1MB        | L → F2   | 1MB        |
-| S2 → M   | 1MB        |          |            |
-| M  → S2  | 1MB        |          |            |
+| MCQ Link | MCQ Traffic | QQ Link | QQ Traffic |
+| ---      | ---         | ---     | ---        |
+| M  → S1  | 2MB         | L → F1  | 1MB        |
+| S1 → S2  | 1MB         | L → F2  | 1MB        |
+| S2 → M   | 1MB         |         |            |
+| M  → S2  | 1MB         |         |            |
 
 ---
 
@@ -265,39 +277,70 @@ than Mirrored Classic Queues
 
 ---
 
-Erlang Distribution Compression
-
----
-
-## Can you show me <br>[Quorum Queue Raft](#) now?
-
----
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/erlang-distribution-43.mp4" background-video-loop="true" background-size="cover" >}}
 
 {{< speaker_note >}}
-* log ops / s
-* log op latency
-* long logs
+One graph from one dashboard:
+
+* Makes limitations easy to spot
+* Confirms one benefit of Raft replication
+* Helps Erlang/OTP improve
 {{< /speaker_note >}}
 
 ---
 
-This is interesting! **Let's share** with Karl & Diana
+## Can you show me <br>[Quorum Queue Raft](#) now?
+<span class="menu-title">RabbitMQ-Quorum-Queues-Raft</span>
 
 ---
 
-RabbitMQ ate all my memory!
-
-Show an Erlang Solutions expert this: <br>**Erlang-Memory-Allocators**
-
----
-
-Discover more: <br>https://grafana.com/orgs/rabbitmq
+{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-1-43.mp4" background-size="cover" >}}
+<span class="menu-title">Log entries committed / s</span>
 
 ---
 
-Life on the cutting edge: <br>https://grafana.gcp.rabbitmq.com
+{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-2-43.mp4" background-size="cover" >}}
+<span class="menu-title">Log entry commit latency</span>
 
 ---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-3-43.mp4" background-size="cover" >}}
+<span class="menu-title">Raft members with >5k</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-4-43.mp4" background-size="cover" >}}
+<span class="menu-title">Take dashboard snapshot</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-raft-part-5-43.mp4" background-size="cover" >}}
+<span class="menu-title">Share dashboard snapshot</span>
+
+---
+
+## Why did RabbitMQ <br>[eat all my memory](#)?
+
+---
+
+{{< slide background="url(/img/observable-systems/erlang-memory-allocators-43.png) 50% 50% / cover no-repeat" >}}
+
+---
+
+{{< slide background="url(/img/observable-systems/erlang-memory-allocators-binary-alloc-43.png) 50% 50% / cover no-repeat" >}}
+
+---
+
+{{< slide background="url(/img/observable-systems/erlang-memory-allocators-ets-alloc-43.png) 50% 50% / cover no-repeat" >}}
+
+---
+
+## Discover more dashboards
+https://grafana.com/orgs/rabbitmq
+
+---
+
+{{< slide class="hiviz-dark" background-color="#161719">}}
 
 <span class="menu-title">NO IDEA THIS EXISTED</span>
 
@@ -336,6 +379,8 @@ Who where spends most of their time in the Terminal?
 
 <span class="menu-title">JUST GETTING STARTED</span>
 
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
 * ~~Intro~~
 * ~~I do not understand~~
 * ~~I am starting to get it~~
@@ -345,32 +390,26 @@ Who where spends most of their time in the Terminal?
 
 ---
 
-The problem with high cardinality
+## Managing High Cardinality
 
 ---
 
-Queue state
-
----
+## Missing Dashboards
 
 Erlang Microstate Accounting
 
----
+Queue State
 
-Compare Erlang Distributions alternatives <br>**Enterprise Feature**
-
-{{< speaker_note >}}
-Open Core business model - new value-add features applicable to enterprise environments
-{{< speaker_note >}}
+Ranch
 
 ---
 
-<span class="menu-title">REMEMBER THIS</span>
+## THINGS to [REMEMBER](#)
 
-* RabbitMQ v3.8 has many amazing features
-* We are investing heavily in observability
-* It's a great time to understand your RabbitMQ
+RabbitMQ v3.8 has many amazing features
 
----
+We are investing heavily in observability
 
-Show us your RabbitMQ!
+It's a great time to understand your RabbitMQ
+
+[Show us your RabbitMQ!](#)
