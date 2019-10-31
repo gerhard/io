@@ -152,9 +152,7 @@ slides:
 
 * Because all those metrics are collected from each node individually, we can easily spot imbalances
 * For example, here we can see all queue masters are on a single node.
-* This is a very common issue since, by default, the node you are connected to becomes the master for newly declared queues (this is no longer true for Quorum Queues by the way)
-
-TODO: fact check
+* This is a very common issue since, by default, the node you are connected to becomes the master for newly declared queues
 
 {{< /speaker_note >}}
 
