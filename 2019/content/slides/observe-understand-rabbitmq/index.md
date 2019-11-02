@@ -216,11 +216,12 @@ RabbitMQ Management limitations
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-transfer-43.mp4" background-size="cover" >}}
+<span class="menu-title">Distribution Link Data Transfer</span>
 
 {{< speaker_note >}}
 
 * How much data is transmitted between each set of nodes
-* And much, much more. 
+* And much, much more.
 * Hopefully you won't need all that data too often but it's invaluable when you actually do
 
 {{< /speaker_note >}}
@@ -228,6 +229,7 @@ RabbitMQ Management limitations
 ---
 
 {{< slide background-video="/img/observable-systems/data-in-port-driver-buffer-43.mp4" background-size="cover" >}}
+<span class="menu-title">Data in Port Driver Buffer</span>
 
 {{< speaker_note >}}
 
@@ -239,6 +241,17 @@ RabbitMQ Management limitations
 * it won't get an answer until all that data that was already in the buffer is transferred
 * This is another case where the Management plugin fails to deliver the insights you need, exactly when you need them
 
+{{< /speaker_note >}}
+
+---
+
+{{< slide background-video="/img/observable-systems/perf-test-43.mp4" background-size="cover" >}}
+<span class="menu-title">Perf-Test</span>
+
+{{< speaker_note >}}
+* What really matter is the performance from the user perspective
+* In this case, our users are RabbitMQ clients
+* You should expose the metrics from your apps as well
 {{< /speaker_note >}}
 
 ---
