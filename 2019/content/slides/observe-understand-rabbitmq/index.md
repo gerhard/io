@@ -62,9 +62,9 @@ slides:
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-<span class="menu-title">HOW TO UNDERSTAND</span>
+<span class="menu-title">MANAGEMENT LIMITATIONS</span>
 
-## [RabbitMQ Management limitations](#)
+## [RABBITMQ MANAGEMENT LIMITATIONS](#)
 
 **New metrics system in RabbitMQ 3.8**
 
@@ -80,6 +80,7 @@ slides:
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-video-loop="true" background-size="cover" >}}
+<span class="menu-title">Management not loading</span>
 
 {{< speaker_note >}}
 
@@ -93,6 +94,7 @@ slides:
 ---
 
 {{< slide background-image="/img/observable-systems/rabbitmq-exporter-duration-43.png" background-size="cover" >}}
+<span class="menu-title">Management API response</span>
 
 {{< speaker_note >}}
 
@@ -106,11 +108,11 @@ slides:
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-<span class="menu-title">HOW TO UNDERSTAND</span>
+<span class="menu-title">NEW METRICS IN 3.8</span>
 
 RabbitMQ Management limitations
 
-## [New metrics system in RabbitMQ 3.8](#)
+## [NEW METRICS SYSTEM IN RABBITMQ 3.8](#)
 
 **Understand like never before**
 
@@ -122,6 +124,9 @@ RabbitMQ Management limitations
 {{< /speaker_note >}}
 
 ---
+
+<span class="menu-title">Enable built-in plugin</span>
+
 `rabbitmq-plugins enable rabbitmq_prometheus`
 
 {{< speaker_note >}}
@@ -134,6 +139,8 @@ RabbitMQ Management limitations
 
 {{< slide background-image="/img/observable-systems/rabbitmq-exporter-vs-new-plugin-43.png" background-size="cover" >}}
 
+<span class="menu-title">Faster responses</span>
+
 {{< speaker_note >}}
 
 * You can see how much faster this new plugin is
@@ -145,6 +152,8 @@ RabbitMQ Management limitations
 ---
 
 {{< slide background-image="/img/observable-systems/rabbitmq-overview-1.png" background-size="cover" >}}
+
+<span class="menu-title">New Overview Dashboard</span>
 
 {{< speaker_note >}}
 
@@ -160,7 +169,9 @@ RabbitMQ Management limitations
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-overview-info-43.mp4" background-video-loop="false" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-overview-info-43.mp4" background-size="cover" >}}
+
+<span class="menu-title">Built-in explanations</span>
 
 {{< speaker_note >}}
 
@@ -172,6 +183,8 @@ RabbitMQ Management limitations
 
 {{< slide background-image="/img/observable-systems/rebalance-queues-before-43.png" background-size="cover" >}}
 
+<span class="menu-title">Spot imbalances</span>
+
 {{< speaker_note >}}
 
 * Because all those metrics are collected from each node individually, we can easily spot imbalances
@@ -181,6 +194,9 @@ RabbitMQ Management limitations
 {{< /speaker_note >}}
 
 ---
+
+<span class="menu-title">Rebalance all</span>
+
 `rabbitmq-queues rebalance all`
 
 {{< speaker_note >}}
@@ -194,6 +210,8 @@ RabbitMQ Management limitations
 
 {{< slide background-image="/img/observable-systems/rebalance-queues-after-43.png" background-size="cover" >}}
 
+<span class="menu-title">See the balance</span>
+
 {{< speaker_note >}}
 
 * Try to spot the moment we ran this command.
@@ -204,6 +222,8 @@ RabbitMQ Management limitations
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-links-43.mp4" background-size="cover" >}}
+
+<span class="menu-title">See node links</span>
 
 {{< speaker_note >}}
 
@@ -216,7 +236,7 @@ RabbitMQ Management limitations
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-transfer-43.mp4" background-size="cover" >}}
-<span class="menu-title">Distribution Link Data Transfer</span>
+<span class="menu-title">Data sent to peer</span>
 
 {{< speaker_note >}}
 
