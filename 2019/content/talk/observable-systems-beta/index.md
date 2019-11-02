@@ -40,8 +40,7 @@ slides: observable-systems-beta
 
 # FEEDBACK
 
-* end with key take-aways instead of talk journey
 * de-emphasize RabbitMQ/Erlang for this audience - Erlang Distribution links 🤯
-* end with key take-aways
+* end with key take-aways instead of talk journey
 
 -->

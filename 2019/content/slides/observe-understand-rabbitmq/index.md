@@ -285,7 +285,7 @@ RabbitMQ Management limitations
 
 New metrics system in RabbitMQ 3.8
 
-## [Understand like never before](#)
+## [UNDERSTAND LIKE NEVER BEFORE](#)
 
 **More CLI power to you**
 
@@ -298,8 +298,8 @@ let's dig deeper so that you can better appreciate the opportunities that this o
 
 ---
 
-## What happens in a <br>[RabbitMQ cluster](#)?
-<span class="menu-title">RabbitMQ Cluster - 3 nodes</span>
+## What happens in the <br>[Erlang Distribution](#)?
+<span class="menu-title">What happens in inet_dist?</span>
 
 Mirrored Classic Queue <br>vs Quorum Queue
 
@@ -311,36 +311,35 @@ Mirrored Classic Queue <br>vs Quorum Queue
 * Master `+2` Mirrors
 * 100 msg/s @ 10KiB
 * 1 Publisher [→](#) 1 Consumer
-* ~1MiB / s message ingress
-* ~1MiB / s message egress
+* 1 MiB / s constant message flow
 
 ---
 
-{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-management.png" background-size="cover" >}}
-<span class="menu-title">CQ - RabbitMQ Management</span>
+{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-management-43.png" background-size="cover" >}}
+<span class="menu-title">MCQ - Management</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-part-1.mp4" background-size="cover" >}}
-<span class="menu-title">CQ - Erlang Distribution</span>
+{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-43-part-1.mp4" background-size="cover" >}}
+<span class="menu-title">MCQ - Erlang Distribution</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-part-2.mp4" background-size="cover" >}}
-<span class="menu-title">CQ - Inter-node traffic</span>
+{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-43-part-2.mp4" background-size="cover" >}}
+<span class="menu-title">MCQ - Data sent to peer</span>
 
 ---
 
-## [1MB](#) worth of msg bodies
+## [1 Mebibyte](#) of message bodies
 
 [**Mirrored Classic Queue**](#): Master `+2` Slaves
 
-| Erlang Distribution Link | Traffic  |
-| ------------------------ | -------- |
-| Master 0 → Mirror 1      | [2MB](#) |
-| Mirror 1 → Mirror 2      | [1MB](#) |
-| Mirror 2 → Master 0      | [1MB](#) |
-| Master 0 → Mirror 2      | [1MB](#) |
+| Erlang Distribution Link | Traffic      |
+| ---                      | ---          |
+| Master 0 → Mirror 1      | [2MB / s](#) |
+| Mirror 1 → Mirror 2      | [1MB / s](#) |
+| Mirror 2 → Master 0      | [1MB / s](#) |
+| Master 0 → Mirror 2      | [1MB / s](#) |
 
 ---
 
@@ -359,16 +358,8 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-{{< slide class="hiviz-dark" background-video="/img/observable-systems/erlang-distribution-43.mp4" background-video-loop="true" background-size="cover" >}}
-<span class="menu-title">One graph from one dashboard</span>
-
-{{< speaker_note >}}
-One graph from one dashboard:
-
-* Makes limitations easy to spot
-* Confirms one benefit of Raft replication
-* Helps Erlang/OTP improve
-{{< /speaker_note >}}
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/erlang-distribution-stories-43.mp4" background-video-loop="true" background-size="cover" >}}
+<span class="menu-title">One graph...</span>
 
 ---
 
@@ -378,12 +369,11 @@ One graph from one dashboard:
 * Leader `+2` Followers
 * 100 msg/s @ 10KiB
 * 1 Publisher [→](#) 1 Consumer
-* ~1MiB / s message ingress
-* ~1MiB / s message egress
+* 1 MiB / s constant message flow
 
 ---
 
-{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue-43.png" background-size="cover" >}}
 <span class="menu-title">QQ - Inter-node traffic</span>
 
 ---
@@ -393,16 +383,16 @@ on Erlang Distribution than Mirrored Classic Queue
 <span class="menu-title">QQ 2.5x less pressure</span>
 
 | MCQ Link | MCQ Traffic | QQ Link | QQ Traffic |
-| -------- | ----------- | ------- | ---------- |
-| M0  → M1 | 2MB         | L0 → F1 | 1MB        |
-| M1 → M2  | 1MB         | L0 → F2 | 1MB        |
-| M2 → M0  | 1MB         |         |            |
-| M0  → M2 | 1MB         |         |            |
+| ---      | ---         | ---     | ---        |
+| M0 → M1  | 2MB / s     | L0 → F1 | 1MB / s    |
+| M1 → M2  | 1MB / s     | L0 → F2 | 1MB / s    |
+| M2 → M0  | 1MB / s     |         |            |
+| M0 → M2  | 1MB / s     |         |            |
 
 ---
 
 ## Help me understand <br>[Quorum Queue](#) internals
-<span class="menu-title">RabbitMQ-Quorum-Queues-Raft</span>
+<span class="menu-title">Understand QQ Raft</span>
 
 **RabbitMQ-Quorum-Queues-Raft**
 
@@ -419,7 +409,7 @@ on Erlang Distribution than Mirrored Classic Queue
 ---
 
 {{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-3.mp4" background-size="cover" >}}
-<span class="menu-title">Raft members with >5k</span>
+<span class="menu-title">Raft members with >5k entries</span>
 
 ---
 
@@ -427,8 +417,6 @@ on Erlang Distribution than Mirrored Classic Queue
 <span class="menu-title">Where is my memory?</span>
 
 **Erlang-Memory-Allocators**
-
-Quorum Queues with no message backlog
 
 ---
 
@@ -453,18 +441,25 @@ Quorum Queues with no message backlog
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-5.mp4" background-size="cover" >}}
-<span class="menu-title">Collapsed</span>
+<span class="menu-title">All memory allocators</span>
 
 ---
 
-## Discover more dashboards
-https://grafana.com/orgs/rabbitmq
+## Discover other [dashboards](#)
+
+<img data-src="/img/observable-systems/grafana-rabbitmq-org-43.png" />
+
+---
+
+## Make [dashboards](#)
+
+<img data-src="/img/observable-systems/make-dashboards-43.png" />
 
 ---
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-<span class="menu-title">CLI POWER TO YOU</span>
+<span class="menu-title">MORE CLI POWER TO YOU</span>
 
 RabbitMQ Management limitations
 
@@ -472,29 +467,70 @@ New metrics system in RabbitMQ 3.8
 
 Understand like never before
 
-## [More CLI power to you](#)
+## [MORE CLI POWER TO YOU](#)
 
 **What happens next?**
 
 ---
 
-`htop`
-
-{{< speaker_note >}}
-Who where spends most of their time in the Terminal?
-{{< /speaker_note >}}
+{{< slide background-video="/img/observable-systems/htop-43.mp4" background-video-loop="true" background-size="cover" >}}
+<span class="menu-title">Remember htop?</span>
 
 ---
+
+## [Observe](#) Erlang VM
+
+**RabbitMQ v3.8.0**
 
 `rabbitmq-diagnostics observer`
 
 ---
 
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-1.mp4" background-size="cover" >}}
+<span class="menu-title">observer_cli home</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-2.mp4" background-size="cover" >}}
+<span class="menu-title">observer_cli home reductions</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-3.mp4" background-size="cover" >}}
+<span class="menu-title">observer_cli inspect process</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-4.mp4" background-size="cover" >}}
+<span class="menu-title">observer_cli ETS</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-5.mp4" background-size="cover" >}}
+<span class="menu-title">observer_cli Mnesia</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-6.mp4" background-size="cover" >}}
+<span class="menu-title">observer_cli Apps</span>
+
+---
+
+## [See](#) RabbitMQ events
+
+**RabbitMQ v3.8.1**
+
 `rabbitmq-diagnostics consume_event_stream`
 
 ---
 
-`rabbitmq-diagnostics log_tail_stream`
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-events-43.mp4" background-size="cover" >}}
+<span class="menu-title">consume_event_stream</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-43.mp4" background-size="cover" >}}
+<span class="menu-title">rabbitmq-diagnostics help</span>
 
 ---
 
@@ -510,34 +546,63 @@ Understand like never before
 
 More CLI power to you
 
-## [What happens next?](#)
+## [WHAT HAPPENS NEXT?](#)
 
 ---
 
-## Managing High Cardinality
+## Expose [more metrics](#)
+
+and address high cardinality
+
+<img data-src="/img/observable-systems/rabbitmq-prometheus-pr-9-43.png" />
 
 ---
 
-## Missing Dashboards
+## Build [new dashboards](#)
 
-Erlang Microstate Accounting
+**Erlang-Microstate-Accounting**
 
-Queue State
-
-Ranch
+<img data-src="/img/observable-systems/prometheus.erl-pr-98-43.png" />
 
 ---
 
-# [KEY TAKE AWAYS](#)
+{{< slide background="url(/img/observable-systems/loki-logs.png) 0 115% / 100% no-repeat" >}}
 
-RabbitMQ v3.8 has many amazing features
+## Integrate [logs](#)
 
-We are investing heavily in observability
+I meant [**Events**](#)
 
-It's a great time to understand your RabbitMQ
-
-[**Snapshot & share!**](#)
+<br><br><br><br><br><br><br><br>
 
 ---
 
-# [12/12](#) WEBINAR
+## Try [OpenTelemetry](#)
+
+<img data-src="/img/observable-systems/opentelemtry-43.png" />
+
+---
+
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
+# [3 KEY TAKE AWAYS](#)
+
+---
+
+## Have [different conversations](#)
+
+**Observe, snapshot & share**
+
+---
+
+## Aim to [understand and improve](#)
+<span class="menu-title">Understand and improve</span>
+
+**This is an infinite game**
+
+---
+
+## [Ask questions](#) in the webinar
+
+**12th of December, 2019**
+
+[@RabbitMQ](https://twitter.com/RabbitMQ)
