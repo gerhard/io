@@ -60,6 +60,25 @@ slides:
 
 ---
 
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
+<span class="menu-title">HOW TO UNDERSTAND</span>
+
+## [RabbitMQ Management limitations](#)
+
+**New metrics system in RabbitMQ 3.8**
+
+**Understand like never before**
+
+**More CLI power to you**
+
+**What happens next?**
+
+{{< speaker_note >}}
+{{< /speaker_note >}}
+
+---
+
 {{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-video-loop="true" background-size="cover" >}}
 
 {{< speaker_note >}}
@@ -81,6 +100,25 @@ slides:
 * I takes milliseconds without load but half a minute when the cluster is loaded
 * That means we can only collect metrics once a minute
 
+{{< /speaker_note >}}
+
+---
+
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
+<span class="menu-title">HOW TO UNDERSTAND</span>
+
+RabbitMQ Management limitations
+
+## [New metrics system in RabbitMQ 3.8](#)
+
+**Understand like never before**
+
+**More CLI power to you**
+
+**What happens next?**
+
+{{< speaker_note >}}
 {{< /speaker_note >}}
 
 ---
@@ -165,15 +203,22 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution.mp4" background-video-loop="false" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-links-43.mp4" background-size="cover" >}}
 
 {{< speaker_note >}}
 
-* Ok, now we are entering a completely new territory
-* Here you can see a different dashboard - this one is focues on Erlang distribution
 * As you know RabbitMQ relies on Erlang for clustering
 * Which means you need to monitor Erlang to get the full picture of what's going on
 * You can see if the links between nodes are up
+
+{{< /speaker_note >}}
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-distribution-transfer-43.mp4" background-size="cover" >}}
+
+{{< speaker_note >}}
+
 * How much data is transmitted between each set of nodes
 * And much, much more. 
 * Hopefully you won't need all that data too often but it's invaluable when you actually do
@@ -182,14 +227,14 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/data-in-port-driver-buffer.png" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/data-in-port-driver-buffer-43.mp4" background-size="cover" >}}
 
 {{< speaker_note >}}
 
-* Remember our old friend Management plugin? Since the API has to collect metrics from all nodes
-* It actually relies on the same Erlang infrastructure to request and receive metrics that RabbitMQ uses for queue mirroring and other things
 * Here we zoom in on the data in port driver buffer
 * Which likely doesn't tell you anything but you can see there are is a 100 meg of data to be transferred
+* Remember our old friend Management plugin? Since the API has to collect metrics from all nodes
+* It actually relies on the same Erlang infrastructure to request and receive metrics that RabbitMQ uses for queue mirroring and other things
 * This means that if, for example, the Management plugin requests metrics from another node
 * it won't get an answer until all that data that was already in the buffer is transferred
 * This is another case where the Management plugin fails to deliver the insights you need, exactly when you need them
