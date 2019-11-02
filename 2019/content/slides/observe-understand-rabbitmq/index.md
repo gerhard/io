@@ -51,7 +51,7 @@ slides:
 
 ---
 
-### RabbitMQ for K8S PM
+### RabbitMQ for Kubernetes Product Manager
 <span class="menu-title">Michal Kuratczyk</span>
 
 <img src="/img/observable-systems/mkuratczyk.jpeg" height="400">
@@ -64,31 +64,43 @@ slides:
 
 {{< speaker_note >}}
 
-* Let's start with the good old Management UI. It serves the purpose until...
-* until you actually need it
+* Let's start with the good old Management UI. It serves the purpose until you actually need it
 * in a failing or very busy cluster, Management UI is usually one of the first things to fail
-* so you can't access Management UI exactly when you need it most
-* Also, if you restart a node, you no longer have the metrics history. If you restart all nodes to resolve an issue, you probably can't do post-mortem anymore
+* Also, if you restart a node, you no longer have the metrics history.
+* If you restart all nodes to resolve an issue, you probably can't do post-mortem anymore
 
 {{< /speaker_note >}}
 
 ---
 
-{{< slide background-image="/img/observable-systems/exporter-vs-plugin.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rabbitmq-exporter-duration-43.png" background-size="cover" >}}
 
 {{< speaker_note >}}
 
-* What's worse, it doesn't matter that you have external tools to monitor RabbitMQ
-* they all rely on the API provided by the Management plugin to collect metrics
-* so if you can't use the Management UI you probably don't get new metrics in your external system either
-* Here you can see how long it takes to collect metrics using the popular rabbitmq-exporter for Prometheus which relies on the Management API
-* just to be clear - the problem here is not the exporter but the Management plugin
-* the average here is almost half a minute and often it takes almost a minute to collect metrics
-* that means we can't collect them more than once a minute
-* RabbitMQ 3.8 includes a completely new prometheus plugin that does not rely on Management API
-* you can see how much faster it is - it takes a fraction of a second on average
-* which means we can collect metrics every 10 or 15 seconds which is much more useful
-* By the way, if you look carefully, you can see that even the new plugin is a bit slow on one of the nodes - we'll see why in a moment
+* We've measured how long it takes to collect metrics using the Management plugin
+* I takes milliseconds without load but half a minute when the cluster is loaded
+* That means we can only collect metrics once a minute
+
+{{< /speaker_note >}}
+
+---
+`rabbitmq-plugins enable rabbitmq_prometheus`
+
+{{< speaker_note >}}
+
+* Version 3.8 introduced a completely new plugin that provides Prometheus support and does not rely on the Management plugin
+
+{{< /speaker_note >}}
+
+---
+
+{{< slide background-image="/img/observable-systems/rabbitmq-exporter-vs-new-plugin-43.png" background-size="cover" >}}
+
+{{< speaker_note >}}
+
+* You can see how much faster this new plugin is
+* Which means we can collect metrics every 10 or 15 seconds which is much more useful
+* An important point is that you have to connect to each node individually to get all metrics
 
 {{< /speaker_note >}}
 
@@ -110,7 +122,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rabbitmq-overview-info.png" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-overview-info-43.mp4" background-video-loop="false" background-size="cover" >}}
 
 {{< speaker_note >}}
 
@@ -120,7 +132,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rebalance-queues-before.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rebalance-queues-before-43.png" background-size="cover" >}}
 
 {{< speaker_note >}}
 
@@ -142,7 +154,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rebalance-queues-after.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rebalance-queues-after-43.png" background-size="cover" >}}
 
 {{< speaker_note >}}
 
@@ -266,7 +278,7 @@ Mirrored Classic Queue <br>vs Quorum Queue
 [**Mirrored Classic Queue**](#): Master `+2` Slaves
 
 | Erlang Distribution Link | Traffic  |
-| ---                      | ---      |
+| ------------------------ | -------- |
 | Master 0 → Mirror 1      | [2MB](#) |
 | Mirror 1 → Mirror 2      | [1MB](#) |
 | Mirror 2 → Master 0      | [1MB](#) |
@@ -323,7 +335,7 @@ on Erlang Distribution than Mirrored Classic Queue
 <span class="menu-title">QQ 2.5x less pressure</span>
 
 | MCQ Link | MCQ Traffic | QQ Link | QQ Traffic |
-| ---      | ---         | ---     | ---        |
+| -------- | ----------- | ------- | ---------- |
 | M0  → M1 | 2MB         | L0 → F1 | 1MB        |
 | M1 → M2  | 1MB         | L0 → F2 | 1MB        |
 | M2 → M0  | 1MB         |         |            |
