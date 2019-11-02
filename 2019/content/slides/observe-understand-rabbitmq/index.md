@@ -51,7 +51,7 @@ slides:
 
 ---
 
-### RabbitMQ for Kubernetes Product Manager
+### RabbitMQ for Kubernetes <br> Product Manager
 <span class="menu-title">Michal Kuratczyk</span>
 
 <img src="/img/observable-systems/mkuratczyk.jpeg" height="400">
@@ -75,19 +75,26 @@ slides:
 **What happens next?**
 
 {{< speaker_note >}}
+
+* What was the problem? Why have we invested so much time into observability?
+* Until now, the Management plugin was the de facto tool to monitor your RabbitMQ
+
+* **Unfortunately, in a failing or very busy cluster, Management UI is usually one of the first things to fail**
+
 {{< /speaker_note >}}
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-size="cover" >}}
 <span class="menu-title">Management not loading</span>
 
 {{< speaker_note >}}
 
-* Let's start with the good old Management UI. It serves the purpose until you actually need it
-* in a failing or very busy cluster, Management UI is usually one of the first things to fail
-* Also, if you restart a node, you no longer have the metrics history.
+* Here's the Management UI of a busy RabbitMQ cluster
+* It takes a minute to load the page!
+* Metrics are not available if you restart a node
 * If you restart all nodes to resolve an issue, you probably can't do post-mortem anymore
+* **External monitoring tool probably relies on the Management plugin API to collect the metrics as well**
 
 {{< /speaker_note >}}
 
@@ -98,8 +105,8 @@ slides:
 
 {{< speaker_note >}}
 
-* We've measured how long it takes to collect metrics using the Management plugin
-* I takes milliseconds without load but half a minute when the cluster is loaded
+* This means that yur external tool will be affected by the same performance issues
+* As you can see, it takes milliseconds to get the metrics if there is no load but 30-40 seconds on a busy cluster
 * That means we can only collect metrics once a minute
 
 {{< /speaker_note >}}
@@ -121,17 +128,21 @@ RabbitMQ Management limitations
 **What happens next?**
 
 {{< speaker_note >}}
+
+It should be clear now why we decided to improve this situation
+
 {{< /speaker_note >}}
 
 ---
 
 <span class="menu-title">Enable built-in plugin</span>
 
-`rabbitmq-plugins enable rabbitmq_prometheus`
+##### `rabbitmq-plugins enable rabbitmq_prometheus`
 
 {{< speaker_note >}}
 
 * Version 3.8 introduced a completely new plugin that provides Prometheus support and does not rely on the Management plugin
+* **Let's compare the performance of this new plugin to what we saw before**
 
 {{< /speaker_note >}}
 
@@ -146,6 +157,7 @@ RabbitMQ Management limitations
 * You can see how much faster this new plugin is
 * Which means we can collect metrics every 10 or 15 seconds which is much more useful
 * An important point is that you have to connect to each node individually to get all metrics
+* **Now that we have a new, reliable, source of data, we also needed a new way to visualize that data**
 
 {{< /speaker_note >}}
 
@@ -157,25 +169,10 @@ RabbitMQ Management limitations
 
 {{< speaker_note >}}
 
-* So now that we have a new source for the metrics, we also needed a new tool to visualize them
-* Grafana is the de facto standard for visualizing metrics so we use it in combination with Prometheus
-* Here you can see a new RabbitMQ Overview dashboard which shows the same data you could find in the Management UI and then some
-* it works when you need it
-* we added sensible default thresholds
-* that you can obviously adjust
-* and because it's Grafana - you can customize everything you want, you can create your own dashboards and contribute back
-
-{{< /speaker_note >}}
-
----
-
-{{< slide background-video="/img/observable-systems/rabbitmq-overview-info-43.mp4" background-size="cover" >}}
-
-<span class="menu-title">Built-in explanations</span>
-
-{{< speaker_note >}}
-
-* Moreover, these new dashboards not only show you the raw data but also provide additional explanation and links to the relevant parts of the documentation
+* Grafana is a great tool for the job
+* RabbitMQ Overview dashboard shows roughly the same data you could find in the Management UI
+* This dashboard is already available - once you enable the plugin, deploy Prometheus and Grafana, just import this dashboard and that's it**
+* **Because all those metrics are collected from each node individually, we can easily spot imbalances**
 
 {{< /speaker_note >}}
 
@@ -187,9 +184,10 @@ RabbitMQ Management limitations
 
 {{< speaker_note >}}
 
-* Because all those metrics are collected from each node individually, we can easily spot imbalances
-* For example, here we can see all queue masters are on a single node.
+* For example, here we can see the number of queue masters per node
 * This is a very common issue since, by default, the node you are connected to becomes the master for newly declared queues
+* It is also what you'll see after a rolling upgrade or restart of your cluster
+* **Well, we now have an easy way to resolve this particular issue.**
 
 {{< /speaker_note >}}
 
@@ -201,8 +199,8 @@ RabbitMQ Management limitations
 
 {{< speaker_note >}}
 
-* Well, we now have an easy way to resolve this particular issue.
-* We can run `rabbitmq-queues rebalance all` on any node to reshuffle queue masters
+* We can rebalance some of the queues or all of them
+* **If you look carefully, you can see when the command was executed**
 
 {{< /speaker_note >}}
 
@@ -214,8 +212,8 @@ RabbitMQ Management limitations
 
 {{< speaker_note >}}
 
-* Try to spot the moment we ran this command.
-* It's not perfectly balanced but this is because we only have 10 queues
+* **As you know RabbitMQ relies on Erlang for clustering**
+* **Which means you need to monitor Erlang to get the full picture of what's going on**
 
 {{< /speaker_note >}}
 
@@ -227,8 +225,7 @@ RabbitMQ Management limitations
 
 {{< speaker_note >}}
 
-* As you know RabbitMQ relies on Erlang for clustering
-* Which means you need to monitor Erlang to get the full picture of what's going on
+* We have 6 connections in a 3-node cluster
 * You can see if the links between nodes are up
 
 {{< /speaker_note >}}
@@ -241,8 +238,7 @@ RabbitMQ Management limitations
 {{< speaker_note >}}
 
 * How much data is transmitted between each set of nodes
-* And much, much more.
-* Hopefully you won't need all that data too often but it's invaluable when you actually do
+* **And much, much more.**
 
 {{< /speaker_note >}}
 
@@ -254,12 +250,10 @@ RabbitMQ Management limitations
 {{< speaker_note >}}
 
 * Here we zoom in on the data in port driver buffer
-* Which likely doesn't tell you anything but you can see there are is a 100 meg of data to be transferred
-* Remember our old friend Management plugin? Since the API has to collect metrics from all nodes
-* It actually relies on the same Erlang infrastructure to request and receive metrics that RabbitMQ uses for queue mirroring and other things
-* This means that if, for example, the Management plugin requests metrics from another node
-* it won't get an answer until all that data that was already in the buffer is transferred
-* This is another case where the Management plugin fails to deliver the insights you need, exactly when you need them
+* Which likely doesn't tell you anything but it is a very important buffer
+* Anything that needs to be transmitted between node, is added to this buffer
+* This is actually explains why the Management plugin is slow in a busy cluster
+* **So we have RabbitMQ and Erlang metrics. Do we need anything else? Yes!**
 
 {{< /speaker_note >}}
 
@@ -269,28 +263,39 @@ RabbitMQ Management limitations
 <span class="menu-title">Perf-Test</span>
 
 {{< speaker_note >}}
+
 * What really matter is the performance from the user perspective
 * In this case, our users are RabbitMQ clients
 * You should expose the metrics from your apps as well
+
 {{< /speaker_note >}}
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-4.mp4" background-size="cover" >}}
-<span class="menu-title">Take dashboard snapshot</span>
+{{< slide background-image="/img/observable-systems/sharing-metrics-problem.png" background-size="cover" >}}
+<span class="menu-title">Problem</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/sharing-metrics-info.mp4" background-size="cover" >}}
+<span class="menu-title">Info</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/sharing-metrics-snapshot.mp4" background-size="cover" >}}
+<span class="menu-title">Snapshot</span>
 
 ---
 
 <span class="menu-title">MK take-aways</span>
 
-* RabbitMQ 3.8 provides a lot of new tools to help you understand what is going on
-* This is useful for the whole community
-* With this we can improve RabbitMQ and Erlang
-* And solve your problems
-* It's really easy to get started so please do and share that data whenever you ask people to help you
+* Upgrade to RabbitMQ 3.8
+* Get started in minutes
+* Collect and share your metrics
 
 {{< speaker_note >}}
 
+* Help us help you!
 * Gerhard will now show you even more awesomeness
 
 {{< /speaker_note >}}
@@ -355,7 +360,7 @@ Mirrored Classic Queue <br>vs Quorum Queue
 [**Mirrored Classic Queue**](#): Master `+2` Slaves
 
 | Erlang Distribution Link | Traffic      |
-| ---                      | ---          |
+| ------------------------ | ------------ |
 | Master 0 → Mirror 1      | [2MB / s](#) |
 | Mirror 1 → Mirror 2      | [1MB / s](#) |
 | Mirror 2 → Master 0      | [1MB / s](#) |
@@ -403,7 +408,7 @@ on Erlang Distribution than Mirrored Classic Queue
 <span class="menu-title">QQ 2.5x less pressure</span>
 
 | MCQ Link | MCQ Traffic | QQ Link | QQ Traffic |
-| ---      | ---         | ---     | ---        |
+| -------- | ----------- | ------- | ---------- |
 | M0 → M1  | 2MB / s     | L0 → F1 | 1MB / s    |
 | M1 → M2  | 1MB / s     | L0 → F2 | 1MB / s    |
 | M2 → M0  | 1MB / s     |         |            |
