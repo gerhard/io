@@ -113,31 +113,8 @@ slides:
 
 ---
 
-{{< slide class="hiviz-dark" background-color="#161719">}}
-
-<span class="menu-title">NEW METRICS IN 3.8</span>
-
-RabbitMQ Management limitations
-
-## [NEW METRICS SYSTEM IN RABBITMQ 3.8](#)
-
-**Understand like never before**
-
-**More CLI power to you**
-
-**What happens next?**
-
-{{< speaker_note >}}
-
-It should be clear now why we decided to improve this situation
-
-{{< /speaker_note >}}
-
----
-
-<span class="menu-title">New built-in plugin</span>
-
 ##### `rabbitmq-plugins enable rabbitmq_prometheus`
+<span class="menu-title">New built-in plugin</span>
 
 {{< speaker_note >}}
 
@@ -148,9 +125,9 @@ It should be clear now why we decided to improve this situation
 
 ---
 
-<span class="menu-title">Enable built-in plugin</span>
-
 {{< slide background-video="/img/observable-systems/rabbitmq-plugins-enable-prometheus.mp4" background-size="cover" >}}
+
+<span class="menu-title">Enable built-in plugin</span>
 
 {{< speaker_note >}}
 
@@ -178,7 +155,7 @@ It should be clear now why we decided to improve this situation
 
 {{< slide background-image="/img/observable-systems/rabbitmq-overview-1.png" background-size="cover" >}}
 
-<span class="menu-title">New Overview Dashboard</span>
+<span class="menu-title">New RabbitMQ-Overview</span>
 
 {{< speaker_note >}}
 
@@ -193,7 +170,7 @@ It should be clear now why we decided to improve this situation
 
 {{< slide background-image="/img/observable-systems/rebalance-queues-before-43.png" background-size="cover" >}}
 
-<span class="menu-title">Spot imbalances</span>
+<span class="menu-title">Spot queue imbalances</span>
 
 {{< speaker_note >}}
 
@@ -206,7 +183,7 @@ It should be clear now why we decided to improve this situation
 
 ---
 
-<span class="menu-title">Rebalance all</span>
+<span class="menu-title">Rebalance all queues</span>
 
 `rabbitmq-queues rebalance all`
 
@@ -221,7 +198,7 @@ It should be clear now why we decided to improve this situation
 
 {{< slide background-image="/img/observable-systems/rebalance-queues-after-43.png" background-size="cover" >}}
 
-<span class="menu-title">See the balance</span>
+<span class="menu-title">Evenly spread queues</span>
 
 {{< speaker_note >}}
 
@@ -258,7 +235,7 @@ It should be clear now why we decided to improve this situation
 ---
 
 {{< slide background-video="/img/observable-systems/data-in-port-driver-buffer-43.mp4" background-size="cover" >}}
-<span class="menu-title">Data in Port Driver Buffer</span>
+<span class="menu-title">Data in port driver buffer</span>
 
 {{< speaker_note >}}
 
@@ -273,13 +250,14 @@ It should be clear now why we decided to improve this situation
 ---
 
 {{< slide background-video="/img/observable-systems/perf-test-43.mp4" background-size="cover" >}}
-<span class="menu-title">Perf-Test</span>
+<span class="menu-title">Perf-Test dashboard - v1</span>
 
 {{< speaker_note >}}
 
-* What really matter is the performance from the user perspective
+* What really matters is the performance from the user perspective
 * In this case, our users are RabbitMQ clients
 * You should expose the metrics from your apps as well
+* Even though this dashboard is v1, a version with better UX is in the works
 
 {{< /speaker_note >}}
 
@@ -306,15 +284,25 @@ It should be clear now why we decided to improve this situation
 
 ---
 
-## [Upgrade](#) to RabbitMQ 3.8
+## [Upgrade](#) to RabbitMQ [3.8](#)
+
+**Discover all the new features**
+
+😱 Metricless Management 🤯
 
 ---
 
 ## [Enable & visualise](#) new metrics
+<span class="menu-title">Start using new metrics</span>
+
+**First step towards better conversations**
 
 ---
 
-## [Share metrics](#) when you need help
+## [Share metrics](#) when asking for help
+<span class="menu-title">Share snapshots</span>
+
+**Help us help you!**
 
 {{< speaker_note >}}
 
@@ -396,8 +384,10 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-{{< slide background="url(/img/observable-systems/erlang-distribution-link-limit-10KB-43.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">Link limit @ 10KB</span>
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/erlang-distribution-link-limit-10KB-43.png) center bottom / cover no-repeat" >}}
+
+## [470 MB/s](#) link max @ [10KB](#) in OTP [22](#)
+<span class="menu-title">inet_tcp link limit @ 10KB</span>
 
 ---
 
