@@ -366,7 +366,7 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-## [1 Mebibyte](#) of message bodies
+## [1 Mebibyte](#) of msg bodies
 
 [**Mirrored Classic Queue**](#): Master `+2` Slaves
 
