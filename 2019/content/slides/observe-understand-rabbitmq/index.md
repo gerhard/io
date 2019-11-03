@@ -300,11 +300,21 @@ It should be clear now why we decided to improve this situation
 
 ---
 
-<span class="menu-title">MK take-aways</span>
+{{< slide class="hiviz-dark" background-color="#161719">}}
 
-* Upgrade to RabbitMQ 3.8
-* Get started in minutes
-* Collect and share your metrics
+# [FIRST 3 TAKE AWAYS](#)
+
+---
+
+## [Upgrade](#) to RabbitMQ 3.8
+
+---
+
+## [Enable & visualise](#) new metrics
+
+---
+
+## [Share metrics](#) when you need help
 
 {{< speaker_note >}}
 
@@ -622,7 +632,7 @@ I meant [**Events**](#)
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-# [3 KEY TAKE AWAYS](#)
+# [LAST 3 TAKE AWAYS](#)
 
 ---
 
