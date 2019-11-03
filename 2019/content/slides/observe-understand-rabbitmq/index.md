@@ -135,9 +135,22 @@ It should be clear now why we decided to improve this situation
 
 ---
 
-<span class="menu-title">Enable built-in plugin</span>
+<span class="menu-title">New built-in plugin</span>
 
 ##### `rabbitmq-plugins enable rabbitmq_prometheus`
+
+{{< speaker_note >}}
+
+* Version 3.8 introduced a completely new plugin that provides Prometheus support and does not rely on the Management plugin
+* **Let's compare the performance of this new plugin to what we saw before**
+
+{{< /speaker_note >}}
+
+---
+
+<span class="menu-title">Enable built-in plugin</span>
+
+{{< slide background-video="/img/observable-systems/rabbitmq-plugins-enable-prometheus.mp4" background-size="cover" >}}
 
 {{< speaker_note >}}
 
