@@ -644,3 +644,8 @@ I meant [**Events**](#)
 **12th of December, 2019**
 
 [@RabbitMQ](https://twitter.com/RabbitMQ)
+
+---
+
+{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-video-loop="true" background-size="cover" >}}
+<span class="menu-title">PUBLIC SLIDES</span>
