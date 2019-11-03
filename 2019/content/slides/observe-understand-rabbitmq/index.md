@@ -396,11 +396,6 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-{{< slide class="hiviz-dark" background-video="/img/observable-systems/erlang-distribution-stories-43.mp4" background-video-loop="true" background-size="cover" >}}
-<span class="menu-title">One graph...</span>
-
----
-
 ## [Quorum Queue](#)
 <br>
 
@@ -544,16 +539,6 @@ Understand like never before
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-5.mp4" background-size="cover" >}}
-<span class="menu-title">observer_cli Mnesia</span>
-
----
-
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-6.mp4" background-size="cover" >}}
-<span class="menu-title">observer_cli Apps</span>
-
----
-
 ## [See](#) RabbitMQ events
 
 **RabbitMQ v3.8.1**
@@ -606,7 +591,7 @@ and address high cardinality
 
 {{< slide background="url(/img/observable-systems/loki-logs.png) 0 115% / 100% no-repeat" >}}
 
-## Integrate [logs](#)
+## See [logs](#) together with metrics
 
 I meant [**Events**](#)
 
@@ -639,7 +624,7 @@ I meant [**Events**](#)
 
 ---
 
-## [Ask questions](#) in the webinar
+## [Ask questions](#) in the [webinar](#)
 
 **12th of December, 2019**
 
@@ -647,5 +632,5 @@ I meant [**Events**](#)
 
 ---
 
-{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-size="cover" >}}
 <span class="menu-title">PUBLIC SLIDES</span>
