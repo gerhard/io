@@ -60,10 +60,8 @@ slides:
 
 ---
 
-## [https://bit.ly/2JL9A7A](https://bit.ly/2JL9A7A)
+{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-size="cover" >}}
 <span class="menu-title">Slides on your device</span>
-
-**View slides on your device**
 
 ---
 
@@ -636,8 +634,3 @@ I meant [**Events**](#)
 **12th of December, 2019**
 
 [@RabbitMQ](https://twitter.com/RabbitMQ)
-
----
-
-{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-size="cover" >}}
-<span class="menu-title">PUBLIC SLIDES</span>
