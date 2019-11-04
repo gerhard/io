@@ -7,9 +7,9 @@ categories: []
 date: "2019-11-04T11:50:00Z"
 slides:
   # see available slides. options in layouts/slides/baseof.html
-  height: 768
+  height: 720
   theme: solarized
-  width: 1024
+  width: 1280
   style: |
     .reveal a {
       color: #3274D9;
@@ -60,7 +60,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/observe-understand-rabbitmq-live-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Slides on your device</span>
 
 ---
@@ -90,7 +90,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-management-unresponsive-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Management not loading</span>
 
 {{< speaker_note >}}
@@ -105,7 +105,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rabbitmq-exporter-duration-43.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rabbitmq-exporter-duration-43.png" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Management API response</span>
 
 {{< speaker_note >}}
@@ -118,7 +118,7 @@ slides:
 
 ---
 
-##### `rabbitmq-plugins enable rabbitmq_prometheus`
+#### `rabbitmq-plugins enable rabbitmq_prometheus`
 <span class="menu-title">New built-in plugin</span>
 
 {{< speaker_note >}}
@@ -130,7 +130,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-plugins-enable-prometheus.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-plugins-enable-prometheus.mp4" background-color="#161719" background-size="contain" >}}
 
 <span class="menu-title">Enable built-in plugin</span>
 
@@ -143,7 +143,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rabbitmq-exporter-vs-new-plugin-43.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rabbitmq-exporter-vs-new-plugin-43.png" background-color="#161719" background-size="contain" >}}
 
 <span class="menu-title">Faster responses</span>
 
@@ -158,7 +158,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rabbitmq-overview-1.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rabbitmq-overview-1.png" background-color="#161719" background-size="contain" >}}
 
 <span class="menu-title">New RabbitMQ-Overview</span>
 
@@ -173,7 +173,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rebalance-queues-before-43.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rebalance-queues-before-43.png" background-color="#161719" background-size="contain" >}}
 
 <span class="menu-title">Spot queue imbalances</span>
 
@@ -190,7 +190,7 @@ slides:
 
 <span class="menu-title">Rebalance all queues</span>
 
-`rabbitmq-queues rebalance all`
+#### `rabbitmq-queues rebalance all`
 
 {{< speaker_note >}}
 
@@ -201,7 +201,7 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/rebalance-queues-after-43.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/rebalance-queues-after-43.png" background-color="#161719" background-size="contain" >}}
 
 <span class="menu-title">Evenly spread queues</span>
 
@@ -214,7 +214,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-links-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-links-43.mp4" background-color="#161719" background-size="contain" >}}
 
 <span class="menu-title">See node links</span>
 
@@ -227,7 +227,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-transfer-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-transfer-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Data sent to peer</span>
 
 {{< speaker_note >}}
@@ -239,7 +239,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/data-in-port-driver-buffer-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/data-in-port-driver-buffer-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Data in port driver buffer</span>
 
 {{< speaker_note >}}
@@ -254,7 +254,7 @@ slides:
 
 ---
 
-{{< slide background-video="/img/observable-systems/perf-test-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/perf-test-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Perf-Test dashboard - v1</span>
 
 {{< speaker_note >}}
@@ -268,17 +268,17 @@ slides:
 
 ---
 
-{{< slide background-image="/img/observable-systems/sharing-metrics-problem.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/sharing-metrics-problem.png" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Problem</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/sharing-metrics-info.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/sharing-metrics-info.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Info</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/sharing-metrics-snapshot.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/sharing-metrics-snapshot.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Snapshot</span>
 
 ---
@@ -356,17 +356,17 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-management-43.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/erlang-distribution-mirrored-queue-rabbitmq-management-43.png" background-size="contain" >}}
 <span class="menu-title">MCQ - Management</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-43-part-1.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-43-part-1.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">MCQ - Erlang Distribution</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-43-part-2.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-distribution-mirrored-queue-43-part-2.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">MCQ - Data sent to peer</span>
 
 ---
@@ -389,14 +389,14 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-{{< slide class="hiviz-dark" background="url(/img/observable-systems/erlang-distribution-link-limit-10KB-43.png) center bottom / cover no-repeat" >}}
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/erlang-distribution-link-limit-10KB-43.png) center bottom / contain no-repeat #161719" >}}
 
 ## [470 MB/s](#) link max @ [10KB](#) in OTP [22](#)
 <span class="menu-title">inet_tcp link limit @ 10KB</span>
 
 ---
 
-{{< slide background="url(/img/observable-systems/erlang-otp-pr-2293-43.png) 50% 50% / cover no-repeat" >}}
+{{< slide background="url(/img/observable-systems/erlang-otp-pr-2293-43.png) 50% 50% / contain no-repeat" >}}
 <span class="menu-title">Erlang/OTP PR 2293</span>
 
 ---
@@ -411,7 +411,7 @@ Mirrored Classic Queue <br>vs Quorum Queue
 
 ---
 
-{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue-43.png" background-size="cover" >}}
+{{< slide background-image="/img/observable-systems/erlang-distribution-quorum-queue-43.png" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">QQ - Inter-node traffic</span>
 
 ---
@@ -436,17 +436,17 @@ on Erlang Distribution than Mirrored Classic Queue
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-1.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-1.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Log entries committed / s</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-2.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-2.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Log entry commit latency</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-3.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-qq-raft-43-part-3.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Raft members with >5k entries</span>
 
 ---
@@ -458,27 +458,27 @@ on Erlang Distribution than Mirrored Classic Queue
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-1.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-1.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">Erlang-Memory-Allocators</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-2.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-2.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">binary_alloc</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-3.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-3.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">eheap_alloc</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-4.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-4.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">ets_alloc</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-5.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-43-part-5.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">All memory allocators</span>
 
 ---
@@ -511,7 +511,7 @@ Understand like never before
 
 ---
 
-{{< slide background-video="/img/observable-systems/htop-43.mp4" background-video-loop="true" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/htop-43.mp4" background-color="#161719" background-video-loop="true" background-size="contain" >}}
 <span class="menu-title">Remember htop?</span>
 
 ---
@@ -524,22 +524,22 @@ Understand like never before
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-1.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-1.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">observer_cli home</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-2.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-2.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">observer_cli home reductions</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-3.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-3.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">observer_cli inspect process</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-4.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-observer-43-part-4.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">observer_cli ETS</span>
 
 ---
@@ -552,12 +552,12 @@ Understand like never before
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-events-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-events-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">consume_event_stream</span>
 
 ---
 
-{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-43.mp4" background-size="cover" >}}
+{{< slide background-video="/img/observable-systems/rabbitmq-diagnostics-43.mp4" background-color="#161719" background-size="contain" >}}
 <span class="menu-title">rabbitmq-diagnostics help</span>
 
 ---
@@ -594,7 +594,7 @@ and address high cardinality
 
 ---
 
-{{< slide background="url(/img/observable-systems/loki-logs.png) 0 115% / 100% no-repeat" >}}
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/loki-logs.png) 0 100% / cover no-repeat" >}}
 
 ## See [logs](#) together with metrics
 
