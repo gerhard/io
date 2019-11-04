@@ -1,9 +1,18 @@
 ---
 title: Observe and Understand RabbitMQ
-summary: What happened when RabbitMQ became more observable? How does it work?
+summary: RabbitMQ 3.8 ships observability features that make it easy to understand what happens in the different layers of this complex, distributed stateful system. We will share why what we had didn't work, how we went about rethinking our approach to metrics and the unexpected benefits that we have uncovered while on this journey.
 abstract: |
-  RabbitMQ 3.8 exposes metrics and healthchecks that answer all questions.
-  Let us answer the most common questions by looking at the new RabbitMQ metrics.
+  RabbitMQ 3.8 ships observability features that make it easy to understand what happens in the different layers of this complex, distributed stateful system.
+
+  We will share why what we had didn't work, how we went about rethinking our approach to metrics and the unexpected benefits that we have uncovered while on this journey.
+
+  **Agenda**
+
+  * RabbitMQ Management Limitations
+  * New metrics system in RabbitMQ 3.8
+  * Understand like never before
+  * More CLI power to you
+  * What happens next?
 date: "2019-11-04T12:00:00Z"
 
 event: RabbitMQ Summit
