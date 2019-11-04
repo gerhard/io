@@ -520,7 +520,7 @@ Understand like never before
 
 ## [Observe](#) Erlang VM
 
-**RabbitMQ v3.8.0**
+**RabbitMQ [v3.8.0](#)**
 
 `rabbitmq-diagnostics observer`
 
@@ -548,7 +548,7 @@ Understand like never before
 
 ## [See](#) RabbitMQ events
 
-**RabbitMQ v3.8.1**
+**RabbitMQ [v3.8.0](#)**
 
 `rabbitmq-diagnostics consume_event_stream`
 
