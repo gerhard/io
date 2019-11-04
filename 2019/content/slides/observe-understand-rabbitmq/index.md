@@ -60,6 +60,13 @@ slides:
 
 ---
 
+## [https://bit.ly/2JL9A7A](https://bit.ly/2JL9A7A)
+<span class="menu-title">Slides on your device</span>
+
+**View slides on your device**
+
+---
+
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
 <span class="menu-title">MANAGEMENT LIMITATIONS</span>
