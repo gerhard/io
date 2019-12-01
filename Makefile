@@ -81,6 +81,18 @@ help:
 	@awk -F"[:#]" '/^[^\.][a-zA-Z\._\-]+:+.+##.+$$/ { printf "\033[36m%-24s\033[0m %s\n", $$1, $$4 }' $(MAKEFILE_LIST) \
 	| sort
 
+define MAKE_TARGETS
+  awk -F: '/^[^\.%\t][a-zA-Z\._\-]*:+.*$$/ { printf "%s\n", $$1 }' $(MAKEFILE_LIST)
+endef
+define BASH_AUTOCOMPLETE
+  complete -W \"$$($(MAKE_TARGETS) | sort | uniq)\" make gmake m
+endef
+.PHONY: bash_autocomplete
+bash_autocomplete: ## ba | Configure bash autocompletion - eval "$(make bash_autocomplete)"
+	@echo "$(BASH_AUTOCOMPLETE)"
+.PHONY: bac
+bac: bash_autocomplete
+
 .PHONY: build
 build: $(HUGO_THEME) $(HUGO) clean
 	@cd 2019 && $(HUGO) --buildFuture
