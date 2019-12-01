@@ -72,12 +72,10 @@ $(FFMPEG):
 #
 .DEFAULT_GOAL := help
 
-SEPARATOR := --------------------------------------------------------
 .PHONY: help
 help:
-	@grep -E '^[0-9a-zA-Z_-]+:+.*?## .*$$' $(MAKEFILE_LIST) | \
-	awk 'BEGIN { FS = "[:#]" } ; { printf "$(SEPARATOR)\n\033[36m%-12s\033[0m %s\n", $$1, $$4 }' ; \
-	echo $(SEPARATOR)
+	@awk -F"[:#]" '/^[^\.][a-zA-Z\._\-]+:+.+##.+$$/ { printf "\033[36m%-24s\033[0m %s\n", $$1, $$4 }' $(MAKEFILE_LIST) \
+	| sort
 
 .PHONY: build
 build: $(HUGO_THEME) $(HUGO) clean
