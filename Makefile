@@ -106,23 +106,23 @@ clean: $(FD) ## c  | Clean cached content
 .PHONY: c
 c: clean
 
-.PHONY: gcloud-login
-gcloud-login: $(GCLOUD_CONFIG) $(JQ)
+.PHONY: gcloud_login
+gcloud_login: $(GCLOUD_CONFIG) $(JQ)
 	@( $(GCLOUD) auth list --format=json | \
 	   $(JQ) '.[] | select(.status == "ACTIVE")' | \
 	   grep --silent "$(GCP_USER)" ) || \
 	$(GCLOUD) auth login $(GCP_USER)
 
-.PHONY: gcloud-config
-gcloud-config: gcloud-login
+.PHONY: gcloud_config
+gcloud_config: gcloud_login
 	@($(GSUTIL) ls -L -b gs://$(WEB_DOMAIN) $(SILENT) || $(GSUTIL) mb -l $(WEB_GCP_REGION) gs://$(WEB_DOMAIN)) && \
 	$(GSUTIL) iam ch allUsers:objectViewer gs://$(WEB_DOMAIN) && \
 	$(GSUTIL) web set -m index.html -e 404.html gs://$(WEB_DOMAIN)
 .PHONY: gc
-gc: gcloud-config
+gc: gcloud_config
 
 .PHONY: gcloud
-gcloud: gcloud-config build
+gcloud: gcloud_config build
 	@cd 2019 && $(GSUTIL) -m rsync -c -d -r public gs://$(WEB_DOMAIN)
 .PHONY: g
 g: gcloud
