@@ -167,10 +167,3 @@ endif
 	  $(subst .mov,.mp4,$(F))
 .PHONY: v
 v: video
-
-.PHONY: v169
-v169: video
-
-.PHONY: v43
-v43: SCALE = 'min(2048,iw)':'min(1536,ih)'
-v43: video
