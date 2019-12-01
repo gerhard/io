@@ -58,14 +58,6 @@ HUGO := /usr/local/bin/hugo
 $(HUGO):
 	@brew install hugo
 
-S3CMD := /usr/local/bin/s3cmd
-$(S3CMD):
-	@brew install s3cmd
-
-S3CFG := $(HOME)/.s3cfg
-$(S3CFG): $(S3CMD)
-	@$(S3CMD) --configure
-
 DOCKER := /usr/local/bin/docker
 $(DOCKER):
 	@brew cask install docker
@@ -121,30 +113,6 @@ gcloud: gcloud-config build
 .PHONY: g
 g: gcloud
 
-LINODE_OBJECT_STORAGE_INFO := https://www.linode.com/docs/platform/object-storage/how-to-use-object-storage/
-LINODE_OBJECT_STORAGE_STATIC := https://www.linode.com/docs/platform/object-storage/host-static-site-object-storage/
-.PHONY: linode-config
-linode-config: $(S3CMD)
-	@( $(S3CMD) --dump-config | grep --silent 'host_.*linodeobjects.com' ) || \
-	( echo "How to configure Linode Object Storage: $(INFO)$(LINODE_OBJECT_STORAGE_INFO)$(NORMAL) " && \
-	  echo "How to host a Static Site: $(INFO)$(LINODE_OBJECT_STORAGE_STATIC)$(NORMAL) " && \
-	  $(S3CMD) --configure )
-.PHONY: lc
-lc: linode-config
-
-.PHONY: linode
-linode: build
-	@$(S3CMD) ws-create --ws-index=index.html --ws-error=404.html s3://gerhard && \
-	$(S3CMD) --no-mime-magic --acl-public --delete-removed --delete-after sync 2019/public/ s3://gerhard
-.PHONY: l
-l: linode
-
-.PHONY: linode-info
-linode-info: linode-config
-	@$(S3CMD) ws-info s3://gerhard
-.PHONY: li
-li: linode-info
-
 .PHONY: $(HUGO_THEME)
 $(HUGO_THEME):
 	@git submodule update --init --recursive
@@ -166,7 +134,7 @@ readme: $(DOCKER) ## r  | Preview README
 r: readme
 
 .PHONY: update
-update: gcloud linode ## u  | Update public website
+update: gcloud ## u  | Update public website
 .PHONY: u
 u: update
 
