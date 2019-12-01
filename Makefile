@@ -45,6 +45,10 @@ JQ := /usr/local/bin/jq
 $(JQ):
 	@brew install jq
 
+FD := /usr/local/bin/fd
+$(FD):
+	@brew install fd
+
 GCLOUD_CONFIG := $(HOME)/.config/gcloud/configurations/config_$(GCP_PROJECT)
 $(GCLOUD_CONFIG): $(GCLOUD)
 	@($(GCLOUD) config configurations describe $(GCP_PROJECT) || $(GCLOUD) config configurations create $(GCP_PROJECT) --no-activate) && \
@@ -84,9 +88,9 @@ build: $(HUGO_THEME) $(HUGO) clean
 b: build
 
 .PHONY: clean
-clean: ## c  | Clean cached content
+clean: $(FD) ## c  | Clean cached content
 	@rm -fr 2019/resources/_gen 2019/public && \
-	fd -IH .DS_Store -x rm
+	$(FD) -IH .DS_Store -x rm
 .PHONY: c
 c: clean
 
