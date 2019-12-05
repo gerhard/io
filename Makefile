@@ -1,16 +1,11 @@
 SHELL := bash# we want bash behaviour in all shell invocations
 
-RED := $(shell tput setaf 1)
-GREEN := $(shell tput setaf 2)
-YELLOW := $(shell tput setaf 3)
-BLUE := $(shell tput setaf 12)
-BOLD := $(shell tput bold)
-NORMAL := $(shell tput sgr0)
-
-INFO := $(BOLD)
-NAME := $(BOLD)$(BLUE)
-LINK := $(BOLD)$(GREEN)
-TIP := $(BOLD)$(YELLOW)
+# https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
+RED := \033[1;31m
+GREEN := \033[1;32m
+YELLOW := \033[1;33m
+BOLD := \033[1m
+NORMAL := \033[0m
 
 SILENT := 1>/dev/null 2>&1
 
@@ -95,14 +90,15 @@ bac: bash_autocomplete
 
 .PHONY: build
 build: $(HUGO_THEME) $(HUGO) clean
-	@cd 2019 && $(HUGO) --buildFuture
+	@cd 2019 \
+	&& $(HUGO) --buildFuture
 .PHONY: b
 b: build
 
 .PHONY: clean
 clean: $(FD) ## c  | Clean cached content
-	@rm -fr 2019/resources/_gen 2019/public && \
-	$(FD) -IH .DS_Store -x rm
+	@rm -fr 2019/resources/_gen 2019/public \
+	&& $(FD) -IH .DS_Store -x rm
 .PHONY: c
 c: clean
 
@@ -115,15 +111,17 @@ gcloud_login: $(GCLOUD_CONFIG) $(JQ)
 
 .PHONY: gcloud_config
 gcloud_config: gcloud_login
-	@($(GSUTIL) ls -L -b gs://$(WEB_DOMAIN) $(SILENT) || $(GSUTIL) mb -l $(WEB_GCP_REGION) gs://$(WEB_DOMAIN)) && \
-	$(GSUTIL) iam ch allUsers:objectViewer gs://$(WEB_DOMAIN) && \
-	$(GSUTIL) web set -m index.html -e 404.html gs://$(WEB_DOMAIN)
+	@($(GSUTIL) ls -L -b gs://$(WEB_DOMAIN) $(SILENT) \
+	  || $(GSUTIL) mb -l $(WEB_GCP_REGION) gs://$(WEB_DOMAIN)) \
+	&& $(GSUTIL) iam ch allUsers:objectViewer gs://$(WEB_DOMAIN) \
+	&& $(GSUTIL) web set -m index.html -e 404.html gs://$(WEB_DOMAIN)
 .PHONY: gc
 gc: gcloud_config
 
 .PHONY: gcloud
 gcloud: gcloud_config build
-	@cd 2019 && $(GSUTIL) -m rsync -c -d -r public gs://$(WEB_DOMAIN)
+	@cd 2019 \
+	&& $(GSUTIL) -m rsync -c -d -r public gs://$(WEB_DOMAIN)
 .PHONY: g
 g: gcloud
 
@@ -133,7 +131,8 @@ $(HUGO_THEME):
 
 .PHONY: preview
 preview: $(HUGO_THEME) $(HUGO) ## p  | Preview local website
-	@cd 2019 && $(HUGO) server --buildExpired --buildDrafts --buildFuture --bind 0.0.0.0
+	@cd 2019 \
+	&& $(HUGO) server --buildExpired --buildDrafts --buildFuture --bind 0.0.0.0
 .PHONY: p
 p: preview
 
@@ -158,7 +157,7 @@ SCALE = 'min(1920,iw)':'min(1080,ih)'
 .PHONY: video
 video: $(FFMPEG) ## v  | Convert MOVs to mobile-friendly MP4s
 ifndef F
-	$(error $(BOLD)F$(NORMAL) variable must reference a valid mov file path)
+	$(error F variable must reference a valid mov file path)
 endif
 	@$(FFMPEG) -i $(F) \
 	  -vcodec h264 \
