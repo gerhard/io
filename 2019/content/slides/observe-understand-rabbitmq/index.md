@@ -1,10 +1,10 @@
 ---
+date: "2019-11-04T11:50:00Z"
 title: Observe and Understand RabbitMQ
 summary: RabbitMQ 3.8 ships observability features that make it easy to understand what happens in the different layers of this complex, distributed stateful system. We will share why what we had didn't work, how we went about rethinking our approach to metrics and the unexpected benefits that we have uncovered while on this journey.
 authors: []
 tags: []
 categories: []
-date: "2019-11-04T11:50:00Z"
 slides:
   # see available slides. options in layouts/slides/baseof.html
   height: 720
