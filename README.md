@@ -5,11 +5,11 @@
 - [ ] convert interestings.gerhard.io to a new gerhard.io section
   - update regularly to share current context flow
 - [ ] post about how to write slides
-- [ ] host on GCS, S3, LOS & DOS
-  - [ ] add gcs.gerhard.io, s3.gerhard.io, los.gerhard.io & dos.gerhard.io
+- [ ] host on GCS & S3
+  - [ ] add gcs.gerhard.io & s3.gerhard.io
   - [ ] proxy gerhard.io to all
   - [ ] blog about a globally distributed blog - capture cost
-- [ ] how to make Cloudflare cache content stored on GCS / S3 / LOS / DOS
+- [ ] how to make Cloudflare cache content stored on GCS / S3
 - [ ] integrate Algolia search
 - [ ] [gerhard icon](https://github.com/ryanj/gist-reveal/blob/master/index.html#L19-L41)
 
