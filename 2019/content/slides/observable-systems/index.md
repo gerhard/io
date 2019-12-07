@@ -50,7 +50,7 @@ slides:
 
 {{< slide background-video="/img/observable-systems/rabbitmq-management-overview-dist-tls-stuck.mp4" background-video-loop="true" background-size="cover" >}}
 # 😤
-<span class="menu-title">Peakaboo! 😤</span>
+<span class="menu-title">Peekaboo! 😤</span>
 
 ---
 
@@ -117,7 +117,7 @@ slides:
 
 {{< slide background-video="/img/observable-systems/erlang-distribution-pressure-dist-tls.mp4" background-size="cover" >}}
 # 🤯
-<span class="menu-title">Make me understand</span>
+<span class="menu-title">Make me understand 🤯</span>
 
 ---
 
@@ -208,7 +208,7 @@ What is RabbitMQ?
 
 {{< slide class="hiviz-dark" background-color="#161719">}}
 
-<span class="menu-title">WHAT IS MOST IMPORTANT?</span>
+<span class="menu-title">WHAT IS IMPORTANT?</span>
 
 What is RabbitMQ?
 
@@ -216,6 +216,82 @@ Where should I begin?
 
 # [WHAT IS MOST IMPORTANT?](#)
 
-**Why does it matter?**
+**Why does this matter?**
+
+**When am I done?**
+
+---
+
+# [Focus on the story](#)
+## that you are telling
+
+* What questions are you answering?
+* Which part of the system are you describing?
+* What is the correlation between various elements shown?
+
+---
+
+# Let me share [a story about memory](#)
+<span class="menu-title">Let me share a story</span>
+
+---
+
+## Out of [1k issues](#)...
+
+<img data-src="/img/observable-systems/rabbitmq-server-issues.png" />
+
+---
+
+## [20%](#) are about memory
+
+<img data-src="/img/observable-systems/rabbitmq-server-memory-issues.png" />
+
+---
+
+## [Counting the right memory](#) made a big difference
+<span class="menu-title">So counting the right memory</span>
+
+<img data-src="/img/observable-systems/rabbitmq-server-1223.png" />
+
+---
+
+## [Better Erlang VM memory allocator defaults](#) helped even more
+<span class="menu-title">And better mem_alloc defaults</span>
+
+<img data-src="/img/observable-systems/rabbitmq-users-better-erlang-mem-alloc-defaults.png" />
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-1.mp4" background-size="cover" >}}
+<span class="menu-title">And easy concepts</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-2.mp4" background-size="cover" >}}
+<span class="menu-title">That are well-correlated</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-3.mp4" background-size="cover" >}}
+<span class="menu-title">At the right level</span>
+
+---
+
+{{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-4.mp4" background-size="cover" >}}
+<span class="menu-title">Makes it easy to improve</span>
+
+---
+
+{{< slide class="hiviz-dark" background-color="#161719">}}
+
+<span class="menu-title">WHY DOES THIS MATTER?</span>
+
+What is RabbitMQ?
+
+Where should I begin?
+
+What is most important?
+
+# [WHY DOES THIS MATTER?](#)
 
 **When am I done?**
