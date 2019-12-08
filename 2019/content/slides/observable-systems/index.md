@@ -166,8 +166,6 @@ What is RabbitMQ?
 
 **Why does this matter?**
 
-**When am I done?**
-
 ---
 
 # 1/2 [Expose metrics](#)
@@ -206,23 +204,29 @@ What is RabbitMQ?
 
 ---
 
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/rabbitmq-summit-2019-jack-vanlightly.png) 50% 50% / cover no-repeat" >}}
+
 # We are now...
+
+---
+
+# And also...
 
 <img data-src="/img/observable-systems/grafana-rabbitmq-org-2019-12.png" />
 
 ---
 
-# A SaaS [may work for you](#)
+# Other [alternatives](#)
 
-* Datadog / New Relic / Dynatrace
-* Honeycomb / LighStep / Wavefront
+* New Relic / Datadog / Dynatrace
+* LighStep / Honeycomb / Wavefront
 * etc.
 
 ---
 
 # [Do what works for you](#)
 <br>
-## Only you know what that is
+## Only you can answer this
 
 ---
 
@@ -237,8 +241,6 @@ Where should I begin?
 # [WHAT IS MOST IMPORTANT?](#)
 
 **Why does this matter?**
-
-**When am I done?**
 
 ---
 
@@ -275,7 +277,7 @@ Where should I begin?
 
 ---
 
-# Improving [memory allocators defaults](#)
+# Improve [memory allocators defaults](#)
 <span class="menu-title">and better mem_alloc defaults</span>
 
 <img data-src="/img/observable-systems/rabbitmq-users-better-erlang-mem-alloc-defaults.png" />
@@ -319,4 +321,47 @@ What is most important?
 
 # [WHY DOES THIS MATTER?](#)
 
-**When am I done?**
+---
+
+# An increasing number of people <br>[depend on the software](#) <br>that you develop.
+
+---
+
+# [Make it understandable](#), <br>simple to work with, <br>[and predictable](#).
+
+---
+
+# Software is means to an end, <br>[it's not an end in itself](#).
+
+---
+
+{{< slide class="hiviz-light" background="url(/img/observable-systems/cncf-2019-12.png) 50% 50% / cover no-repeat" >}}
+<span class="menu-title">There is a big ecosystem waiting to be discovered.</span>
+
+---
+
+# [You are not alone, first or last](#). <br>Learn from others, and pass it on, <br>like I am doing now.
+
+---
+
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-complex-pipeline.png) 50% 50% / cover no-repeat" >}}
+
+# So that we can all enjoy nice things
+
+---
+
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-dashboard.png) 50% 50% / cover no-repeat" >}}
+
+# And be proud of the work that we do
+
+---
+
+# And [continue great conversations](https://content.pivotal.io/webinars/dec-12-understand-rabbitmq-for-developers-and-operators-webinar?utm_campaign=rabbitmq-devops-erlang_q419&utm_source=gerhard&utm_medium=social)
+
+<img data-src="/img/observable-systems/understand-rabbitmq-webinar-2019-12-12.png" />
+
+---
+
+<span class="menu-title">See the journey of this talk</span>
+
+<img data-src="/img/observable-systems/talk-journey-2019-12.png" />
