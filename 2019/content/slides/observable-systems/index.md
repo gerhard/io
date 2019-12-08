@@ -43,6 +43,8 @@ slides:
 
 ---
 
+{{< slide class="hiviz-light" background="url(/img/observable-systems/rabbitmq-management-overview-dist-tls.png) 50% 50% / cover no-repeat" >}}
+
 # 😤 🤬 🤯
 <span class="menu-title">Context</span>
 
@@ -127,8 +129,29 @@ slides:
 ## 😤 🤬 🤯
 <br>
 ### 😤 🤬 🤯
+
+---
+
+# How does this relate to [my Rubby](#)?
+<span class="menu-title">How does this relate?</span>
+
+| ERLANG                             | RUBY                               |
+| --------                           | -----------                        |
+| Message passing                    | Message passing                    |
+| [Processes](#) respond to messages | [Objects](#) respond to messages   |
+| FAT runtime                        | FAT runtime                        |
+| [Complex](#) runtime               | [Opaque](#) runtime                |
+| Love-hate relationship with memory | Love-hate relationship with memory |
+| [Phoenix](#) web framework         | [Rails](#) web framework           |
+
+---
+
+{{< slide class="hiviz-light" background="url(/img/observable-systems/cncf-2019-12.png) 50% 50% / cover no-repeat" >}}
+
+# Expected to [run well in ~~the cloud~~ K8S](#)
+<span class="menu-title">The great UNIFIER</span>
 <br>
-#### 😤 🤬 🤯
+## Or at least explain, understand & improve
 
 ---
 
@@ -167,32 +190,29 @@ What is RabbitMQ?
 ---
 
 {{< slide class="hiviz-dark" background-video="/img/observable-systems/intro-20191206.mp4" background-video-loop="true" background-size="cover" >}}
-# [You are in](#) <br>the game
+# Et voilá!
+
+---
+
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/we-started-by-visualising-memory.png) 50% 50% / cover no-repeat" >}}
+
+# We started by...
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/same-metrics-different-contexts.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">We started by...</span>
 
-# We started by <br>[understanding <br>user issues](#)
-
----
-
-## We continued by [providing a better way to talk about issues](#)
-<span class="menu-title">We continued by...</span>
-
-<img data-src="/img/observable-systems/erlang-distribution-2291.png" />
+# We continued by...
 
 ---
 
-{{< slide background="url(/img/observable-systems/red_crayon.jpg) 50% 50% / cover no-repeat" >}}
-## You may want to start with...
-<br><br>
-# LETS [USE](#) RED
+# We are now...
+
+<img data-src="/img/observable-systems/grafana-rabbitmq-org-2019-12.png" />
 
 ---
 
-# [Or maybe](#) a Saas?
+# A SaaS [may work for you](#)
 
 * Datadog / New Relic / Dynatrace
 * Honeycomb / LighStep / Wavefront
@@ -222,8 +242,8 @@ Where should I begin?
 
 ---
 
-# [Focus on the story](#)
-## that you are telling
+# [Focus on the story](#) that you are telling
+<span class="menu-title">Focus on the story</span>
 
 * What questions are you answering?
 * Which part of the system are you describing?
@@ -236,49 +256,54 @@ Where should I begin?
 
 ---
 
-## Out of [1k issues](#)...
+# Out of [1,000 issues](#)
 
 <img data-src="/img/observable-systems/rabbitmq-server-issues.png" />
 
 ---
 
-## [20%](#) are about memory
+# [200 are](#) about [memory](#)
 
 <img data-src="/img/observable-systems/rabbitmq-server-memory-issues.png" />
 
 ---
 
-## [Counting the right memory](#) made a big difference
+# Start by [counting the right memory](#)
 <span class="menu-title">So counting the right memory</span>
 
 <img data-src="/img/observable-systems/rabbitmq-server-1223.png" />
 
 ---
 
-## [Better Erlang VM memory allocator defaults](#) helped even more
-<span class="menu-title">And better mem_alloc defaults</span>
+# Improving [memory allocators defaults](#)
+<span class="menu-title">and better mem_alloc defaults</span>
 
 <img data-src="/img/observable-systems/rabbitmq-users-better-erlang-mem-alloc-defaults.png" />
 
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-1.mp4" background-size="cover" >}}
-<span class="menu-title">And easy concepts</span>
+<span class="menu-title">and easy concepts</span>
 
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-2.mp4" background-size="cover" >}}
-<span class="menu-title">That are well-correlated</span>
+<span class="menu-title">that are well-correlated</span>
 
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-3.mp4" background-size="cover" >}}
-<span class="menu-title">At the right level</span>
+<span class="menu-title">at the right level</span>
 
 ---
 
 {{< slide background-video="/img/observable-systems/erlang-memory-allocators-part-4.mp4" background-size="cover" >}}
-<span class="menu-title">Makes it easy to improve</span>
+<span class="menu-title">made improving easy</span>
+
+---
+
+# [Make it easy to improve,](#) <br>so that improving is easy, <br>[and so that anyone can do it](#)
+<span class="menu-title">Make it easy to improve</span>
 
 ---
 
