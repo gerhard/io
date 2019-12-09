@@ -2,6 +2,8 @@
 date: "2019-12-09T18:00:00Z"
 title: Make Your System Observable
 summary: This is what happened when RabbitMQ became more observable
+footer:
+  right: Make Your System Observable, LRUG, 2019-12-09
 authors: []
 tags: []
 categories: []
