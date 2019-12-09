@@ -7,11 +7,12 @@ abstract: |
 
   The same benefits apply to your product too. Let me show you why.
 
-  What does it mean for a system to be observable?
-  <br>Why is observability a requirement?
-  <br>How does it make everything better?
-
   **Agenda**
+
+  * What is RabbitMQ?
+  * Where should I begin?
+  * What is most important?
+  * Why does this matter?
 
 event: LRUG
 event_url: http://lrug.org/meetings/2019/december/
