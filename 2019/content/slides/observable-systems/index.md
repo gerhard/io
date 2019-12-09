@@ -3,6 +3,7 @@ date: "2019-12-09T18:00:00Z"
 title: Make Your System Observable
 summary: This is what happened when RabbitMQ became more observable
 footer:
+  left: gerhard.io
   right: Make Your System Observable, LRUG, 2019-12-09
 authors: []
 tags: []
@@ -134,17 +135,16 @@ slides:
 
 ---
 
-# How does this relate to [my Rubby](#)?
+# How does this relate to [my Ruby](#)?
 <span class="menu-title">How does this relate?</span>
 
 | ERLANG                             | RUBY                               |
 | --------                           | -----------                        |
 | Message passing                    | Message passing                    |
 | [Processes](#) respond to messages | [Objects](#) respond to messages   |
-| FAT runtime                        | FAT runtime                        |
-| [Complex](#) runtime               | [Opaque](#) runtime                |
 | Love-hate relationship with memory | Love-hate relationship with memory |
 | [Phoenix](#) web framework         | [Rails](#) web framework           |
+| @michaelklishin                    | @michaelklishin                    |
 
 ---
 
@@ -358,7 +358,7 @@ What is most important?
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-dashboard-2019-12.png) 50% 40% / 110% no-repeat" >}}
 
-# And healthy ecosystems
+# And builds healthy ecosystems
 
 ---
 
@@ -393,6 +393,8 @@ What is most important?
 <img data-src="/img/observable-systems/understand-rabbitmq-webinar-2019-12-12.png" />
 
 ---
+
+{{< slide class="hiviz-dark" background-color="#161719">}}
 
 # Four [other versions of this talk](#)
 
