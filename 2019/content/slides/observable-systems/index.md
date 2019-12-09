@@ -151,7 +151,7 @@ slides:
 # Expected to [run well in ~~the cloud~~ K8S](#)
 <span class="menu-title">The great UNIFIER</span>
 <br>
-## Or at least explain, understand & improve
+## [Or at least explain, understand & improve](#)
 
 ---
 
@@ -218,7 +218,7 @@ What is RabbitMQ?
 
 # Other [alternatives](#)
 
-* New Relic / Datadog / Dynatrace
+* New Relic / Datadog / Dynatrace / Grafana E.
 * LighStep / Honeycomb / Wavefront
 * etc.
 
@@ -350,18 +350,43 @@ What is most important?
 
 ---
 
-{{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-dashboard.png) 50% 50% / cover no-repeat" >}}
+{{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-dashboard-2019-12.png) 50% 40% / 110% no-repeat" >}}
 
 # And be proud of the work that we do
 
 ---
 
-# And [continue great conversations](https://content.pivotal.io/webinars/dec-12-understand-rabbitmq-for-developers-and-operators-webinar?utm_campaign=rabbitmq-devops-erlang_q419&utm_source=gerhard&utm_medium=social)
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/rabbitmq-prometheus-local-part-1.mp4" background-size="cover" >}}
+<span class="menu-title">Download it</span>
+
+---
+
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/rabbitmq-prometheus-local-part-2.mp4" background-size="cover" >}}
+<span class="menu-title">Look at it</span>
+
+---
+
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/rabbitmq-prometheus-local-part-3.mp4" background-size="cover" >}}
+<span class="menu-title">Read about it</span>
+
+---
+
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/rabbitmq-prometheus-local-part-4.mp4" background-size="cover" >}}
+<span class="menu-title">Understand it</span>
+
+---
+
+{{< slide class="hiviz-dark" background-video="/img/observable-systems/rabbitmq-prometheus-local-part-5.mp4" background-size="cover" >}}
+<span class="menu-title">Explore further</span>
+
+---
+
+# [Learn more this coming Thursday](https://content.pivotal.io/webinars/dec-12-understand-rabbitmq-for-developers-and-operators-webinar?utm_campaign=rabbitmq-devops-erlang_q419&utm_source=gerhard&utm_medium=social)
 
 <img data-src="/img/observable-systems/understand-rabbitmq-webinar-2019-12-12.png" />
 
 ---
 
-<span class="menu-title">See the journey of this talk</span>
+# Four other versions of this talk
 
 <img data-src="/img/observable-systems/talk-journey-2019-12.png" />
