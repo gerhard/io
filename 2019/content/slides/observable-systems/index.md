@@ -148,7 +148,7 @@ slides:
 
 {{< slide class="hiviz-light" background="url(/img/observable-systems/cncf-2019-12.png) 50% 50% / cover no-repeat" >}}
 
-# Expected to [run well in ~~the cloud~~ K8S](#)
+# Expected to [run well in](#) ~~the cloud~~ [K8S](#)
 <span class="menu-title">The great UNIFIER</span>
 <br>
 ## [Or at least explain, understand & improve](#)
@@ -194,23 +194,23 @@ What is RabbitMQ?
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/we-started-by-visualising-memory.png) 50% 50% / cover no-repeat" >}}
 
-# We started by...
+# We [started](#) by
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/same-metrics-different-contexts.png) 50% 50% / cover no-repeat" >}}
 
-# We continued by...
+# We [continued](#) by
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/rabbitmq-summit-2019-jack-vanlightly.png) 50% 50% / cover no-repeat" >}}
 
-# We are now...
+# We [are](#) now
 
 ---
 
-# And also...
+# Because [sharing is caring](#)
 
 <img data-src="/img/observable-systems/grafana-rabbitmq-org-2019-12.png" />
 
@@ -333,7 +333,7 @@ What is most important?
 
 ---
 
-# Software is means to an end, <br>[it's not an end in itself](#).
+# [Software is means to an end](#), <br>it's not an end in itself.
 <span class="menu-title">It's means to an end</span>
 
 ---
@@ -343,7 +343,7 @@ What is most important?
 
 ---
 
-# [You are not alone, first or last](#). <br>Learn from others, and pass it on, <br>like I am doing now.
+# [You are not alone, first or last.](#) <br>Learn from others, and pass it on, <br>like I am doing now.
 <span class="menu-title">Learn from others & pass it on</span>
 
 ---
@@ -392,6 +392,6 @@ What is most important?
 
 ---
 
-# Four other versions of this talk
+# Four [other versions of this talk](#)
 
 <img data-src="/img/observable-systems/talk-journey-2019-12.png" />
