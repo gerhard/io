@@ -324,35 +324,39 @@ What is most important?
 ---
 
 # An increasing number of people <br>[depend on the software](#) <br>that you develop.
+<span class="menu-title">People depend on it</span>
 
 ---
 
 # [Make it understandable](#), <br>simple to work with, <br>[and predictable](#).
+<span class="menu-title">People appreciate simple</span>
 
 ---
 
 # Software is means to an end, <br>[it's not an end in itself](#).
+<span class="menu-title">It's means to an end</span>
 
 ---
 
 {{< slide class="hiviz-light" background="url(/img/observable-systems/cncf-2019-12.png) 50% 50% / cover no-repeat" >}}
-<span class="menu-title">There is a big ecosystem waiting to be discovered.</span>
+<span class="menu-title">Look around...</span>
 
 ---
 
 # [You are not alone, first or last](#). <br>Learn from others, and pass it on, <br>like I am doing now.
+<span class="menu-title">Learn from others & pass it on</span>
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-complex-pipeline.png) 50% 50% / cover no-repeat" >}}
 
-# So that we can all enjoy nice things
+# That's what makes nice things
 
 ---
 
 {{< slide class="hiviz-dark" background="url(/img/observable-systems/concourse-dashboard-2019-12.png) 50% 40% / 110% no-repeat" >}}
 
-# And be proud of the work that we do
+# And healthy ecosystems
 
 ---
 
@@ -381,7 +385,8 @@ What is most important?
 
 ---
 
-# [Learn more this coming Thursday](https://content.pivotal.io/webinars/dec-12-understand-rabbitmq-for-developers-and-operators-webinar?utm_campaign=rabbitmq-devops-erlang_q419&utm_source=gerhard&utm_medium=social)
+# Maybe learn more [this coming Thursday](https://content.pivotal.io/webinars/dec-12-understand-rabbitmq-for-developers-and-operators-webinar?utm_campaign=rabbitmq-devops-erlang_q419&utm_source=gerhard&utm_medium=social)
+<span class="menu-title">And maybe learn more</span>
 
 <img data-src="/img/observable-systems/understand-rabbitmq-webinar-2019-12-12.png" />
 
