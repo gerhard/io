@@ -1,9 +1,9 @@
 ---
 date: "2019-12-09T18:00:00Z"
 title: Make Your System Observable
-summary: This is what happened when RabbitMQ became more observable
+summary: This is what happened when RabbitMQ did
 abstract: |
-  This is what happened when RabbitMQ became more observable.
+  This is what happened when RabbitMQ became observable.
 
   The same benefits apply to your product too. Let me show you why.
 

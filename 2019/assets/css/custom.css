@@ -32,26 +32,12 @@
   padding-bottom: 0;
 }
 
-.dark .btn-outline-primary {
-  color: #4bb4e3;
-  border-color: #4bb4e3;
-}
-.dark .btn-outline-primary:hover {
-  background-color: #536069;
+nav.navbar.navbar-light {
+  background: #f7f7f7 !important;
 }
 
-.dark a,
-.dark .experience .card h4 a {
-  color: #4bb4e3;
-}
-
-.dark .experience .m-2 .border,
-.dark .experience .m-2 .border.exp-fill,
-.dark .experience .col.border-right {
-  border-color: #fff !important;
-}
-.dark .experience .m-2 .border.exp-fill {
-  background-color: #fff !important;
+nav.navbar button.navbar-toggler {
+  display: none;
 }
 
 #talk_list h3 {
@@ -61,4 +47,40 @@
 #talk_list {
   border-top: 1px solid rgba(0, 0, 0, 0.09);
   padding-top: 1rem;
+}
+
+#talks {
+  padding: 1rem 0;
+}
+
+#experience {
+  padding: 1rem 0 0 0;
+}
+
+#talks.home-section .see-all {
+  margin: 1rem 0 0 0;
+}
+
+#talks.home-section .card-simple {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+#talks.home-section .card-simple .article-style {
+  margin: 2px 0 4px 0;
+}
+
+#talks.home-section .section-heading,
+#experience.home-section .section-heading {
+  display: none;
+}
+
+footer.site-footer {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+footer.site-footer p {
+  margin: 0;
 }
