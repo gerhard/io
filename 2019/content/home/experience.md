@@ -19,13 +19,28 @@ date_format = "2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
-  title = "Go, Erlang, RMQ, CF, Concourse, BOSH, Kubernetes, GCP"
+  title = "Principal Software Engineer"
+  company = "VMware"
+  company_url = "https://www.vmware.com/"
+  location = ""
+  date_start = "2019-12-30"
+  date_end = ""
+  description = """
+* Matured RabbitMQ observability <br>
+* Battle-hardened RabbitMQ on Kubernetes <br>
+* Helped deliver RabbitMQ Enterprise <br>
+* **Erlang, RabbitMQ, Kubernetes, Tanzu**<br>
+  """
+
+[[experience]]
+  title = "Principal Software Engineer"
   company = "Pivotal"
   company_url = "https://www.pivotal.io/"
   location = ""
-  date_start = "2016-11-15"
-  date_end = ""
+  date_start = "2015-12-21"
+  date_end = "2019-12-30"
   description = """
+* [Acquired by VMware](https://blogs.vmware.com/cloudnative/2019/08/22/transforming-software-on-kubernetes/) <br>
 * Contributed observability to RabbitMQ via [Prometheus &amp; Grafana](https://next.rabbitmq.com/prometheus.html) <br>
 * Set up [long-term RabbitMQ observability](https://grafana.gcp.rabbitmq.com/d/Kn5xm-gZk/rabbitmq-overview?orgId=1) <br>
 * Captured [baselines for various RabbitMQ workloads](https://github.com/rabbitmq/workloads) <br>
@@ -35,51 +50,41 @@ date_format = "2006"
 * [Optimised Erlang VM memory allocators for RabbitMQ](https://groups.google.com/forum/#!msg/rabbitmq-users/LSYaac9frYw/LNZDZUlrBAAJ) <br>
 * Improved Erlang [ERL-430](https://bugs.erlang.org/browse/ERL-430), [ERL-448](https://bugs.erlang.org/browse/ERL-448), [ERL-959](https://bugs.erlang.org/browse/ERL-959) &amp; [PR #2270](https://github.com/erlang/otp/pull/2270) <br>
 * Helped Pivotal enterprise customers succeed with RabbitMQ <br>
+* **Erlang, RabbitMQ, Concourse, BOSH, vSphere, AWS, Google Cloud** <br>
   """
 
 [[experience]]
-  title = "Elixir, PostgreSQL, CircleCI, Docker, Terraform, Linode"
-  company = "Changelog"
+  title = "Site Reliability Engineer"
+  company = "Changelog Media"
   company_url = "https://www.changelog.com/"
   location = ""
   date_start = "2016-07-04"
   date_end = ""
   description = """
-* Revamped the entire changelog.com setup for 2019: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2019) + [Episode #344](https://changelog.com/podcast/344) <br>
-* [Open-sourced the code behind Changelog's infrastructure](https://changelog.com/posts/the-code-behind-changelog-infrastructure) <br>
-* Set up the initial Changelog infrastructure in 2016: [Episode #254](https://changelog.com/podcast/254) <br>
+* New changelog.com setup for 2019: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2019) + [Episode #344](https://changelog.com/podcast/344) <br>
+* [Open-sourced the code behind changelog.com infrastructure](https://changelog.com/posts/the-code-behind-changelog-infrastructure) <br>
+* Set up the initial changelog.com infrastructure: [Episode #254](https://changelog.com/podcast/254) <br>
+* **Elixir, PostgreSQL, CircleCI, Docker Swarm, Terraform, Linode** <br>
   """
 
 [[experience]]
-  title = "Ruby, Go, Cassandra, RMQ, CF, BOSH, AWS"
-  company = "Pivotal"
-  company_url = "https://www.pivotal.io/"
-  location = ""
-  date_start = "2015-12-21"
-  date_end = "2016-11-15"
-  description = """
-* Helped [RabbitMQ for Pivotal Cloud Foundry](https://pivotal.io/platform/services-marketplace/messaging-and-integration/rabbitmq) improve <br>
-* Product manager for [DSE Cassandra for Pivotal Cloud Foundry](https://pivotal.io/platform/services-marketplace/data-management/datastax) <br>
-* Product manager for Pivotal Labs <br>
-  """
-
-[[experience]]
-  title = "Ruby, Go, Jenkins, Concourse, CF, BOSH, vSphere"
+  title = "DevOps Consultant"
   company = "CloudCredo"
   company_url = "http://www.cloudcredo.com/"
   location = ""
   date_start = "2014-09-15"
   date_end = "2015-12-21"
   description = """
-* From early beginnings up to the [Pivotal acquisition](http://pivotal.io/platform/press-release/pivotal-bolsters-its-cloud-native-platform-team-with-acquisition-of-cloudcredo) <br>
+* [Acquired by Pivotal](http://pivotal.io/platform/press-release/pivotal-bolsters-its-cloud-native-platform-team-with-acquisition-of-cloudcredo) <br>
 * Anchored the first [IBM Bluemix Garage in Europe](http://garage.mybluemix.net/) <br>
-* Helped deliver the CloudCredo Platform (years ahead of its time) <br>
-* The CloudCredo Platform MVP managed the entire [Comic Relief 2015 platform](https://cfsummiteu2015.sched.org/event/532d88570fd1a394d599d113f1c5131b#.VkP2866rRTY) <br>
-* Was part of the team that built the bulk of [Pivotal Cloud Foundry Services](https://network.pivotal.io/) <br>
+* CloudCredo Platform MVP helped run [Comic Relief 2015](https://cfsummiteu2015.sched.org/event/532d88570fd1a394d599d113f1c5131b#.VkP2866rRTY) <br>
+* Helped deliver the CloudCredo Platform <br>
+* Was part of the team that kicked off [Pivotal Cloud Foundry Services](https://network.pivotal.io/) <br>
+* **Ruby, Golang, Concourse, CloudFoundry, BOSH, vSphere** <br>
   """
 
 [[experience]]
-  title = "Ruby on Rails, RMQ, Elasticsearch"
+  title = "Ruby Consultant"
   company = "FreeAgent"
   company_url = "https://www.freeagent.com/"
   location = ""
@@ -87,12 +92,13 @@ date_format = "2006"
   date_end = "2014-09-15"
   description = """
 * Built the SOA foundation for de-composing a mighty Rails monolith <br>
-* Leveraged RabbitMQ for event distribution & Elasticsearch for event indexing <br>
-* Proposed Fluentd as an alternative to not invented here <br>
+* Used RabbitMQ for event distribution & Elasticsearch for indexing <br>
+* Proposed Fluentd as an alternative to not invented here (NIH) <br>
+*  **Ruby on Rails, RabbitMQ, Elasticsearch** <br>
   """
 
 [[experience]]
-  title = "Ruby, MySQL, Redis, Chef, AWS"
+  title = "Lead Engineer"
   company = "How Are You?"
   company_url = "https://blog.howareyou.com/"
   location = ""
@@ -101,43 +107,46 @@ date_format = "2006"
   description = """
 * Hired & lead the entire technical team <br>
 * De-composed a Rails monolith into many microservices <br>
-* Set up infrastructure management on AWS with Chef ([open-sourced cookbooks](https://github.com/gchef)) <br>
+* Set up all infrastructure on AWS with Chef ([OSS cookbooks](https://github.com/gchef)) <br>
 * Set up continuous deployment with Jenkins <br>
-* Wrote about [using Jenkins with Docker for continuous deployment](http://blog.howareyou.com/post/65048170054/continuous-delivery-with-docker-and-jenkins-part) <br>
+* Blogged about [using Jenkins with Docker for continuous deployment](http://blog.howareyou.com/post/65048170054/continuous-delivery-with-docker-and-jenkins-part) <br>
+* **Ruby, MySQL, Redis, Jenkins, Chef, AWS** <br>
   """
 
 [[experience]]
-  title = "Ruby, node.js, MySQL, Redis, RMQ, Chef, AWS"
+  title = "Senior Software Engineer"
   company = "GoSquared"
   company_url = "https://www.gosquared.com/"
   location = ""
   date_start = "2011-06-15"
   date_end = "2012-06-15"
   description = """
-* Built a dozen Ruby microservices, half of them in EventMachine/Goliath <br>
+* Built a dozen Ruby microservices, mostly in EventMachine/Goliath <br>
 * Set up and configured Graphite as the primary analytics data store <br>
-* Managed a hybrid, clustered infrastructure with Chef ([open-sourced cookbooks](https://github.com/gchef])) <br>
-* Created a [pure bash deployment tool](https://github.com/gerhard/deliver) <br>
-* Inspired the [Elixir & Erlang deployment tool](https://github.com/boldpoker/edeliver) <br>
+* Managed a hybrid infrastructure with Chef ([OSS cookbooks](https://github.com/gchef])) <br>
+* Created a better alternative to Capistrano, [deliver](https://github.com/gerhard/deliver) <br>
+* Inspired the Elixir & Erlang deployment tool [edeliver](https://github.com/boldpoker/edeliver) <br>
 * [Mitigated a botnet attack with awk + iptables](https://www.gosquared.com/blog/how-to-stop-a-botnet-attack) <br>
+* **Ruby, node.js, MySQL, Redis, Graphite, RabbitMQ, Chef, AWS** <br>
   """
 
 [[experience]]
-  title = "Ruby, PostgreSQL, MongoDB, Redis, Chef, AWS"
+  title = "Software Engineer"
   company = "Paper Cavalier"
   company_url = "https://www.papercavalier.com/"
   location = ""
   date_start = "2010-06-15"
   date_end = "2011-06-15"
   description = """
-* Rewrote a legacy AWS arbitrage engine from PHP to Ruby & EventMachine <br>
-* Kept ~350mil Amazon book offers in sync within the Amazon API limitations <br>
-* Managed a hybrid, clustered infrastructure with Chef - [gchef](https://github.com/gchef) <br>
-* Wrote about [knife integration with AWS](http://gerhardlazu.com.s3-website-eu-west-1.amazonaws.com/2010/08/using-chef-to-manage-amazon-ec2-instances-part2/) <br>
+* Rewrote an Amazon arbitrage engine from PHP to Ruby <br>
+* Kept ~350mil Amazon book offers in sync with Amazon API limits <br>
+* Managed a hybrid infrastructure with [gchef](https://github.com/gchef) <br>
+* Blogged about [knife integration with AWS](http://gerhardlazu.com.s3-website-eu-west-1.amazonaws.com/2010/08/using-chef-to-manage-amazon-ec2-instances-part2/) <br>
+* **Ruby, EventMachine, PostgreSQL, MongoDB, Redis, Chef, AWS** <br>
   """
 
 [[experience]]
-  title = "HTML, CSS, Prototype, Ruby, MySQL"
+  title = "Front-end Developer"
   company = "1 Click 2 Fame"
   company_url = ""
   location = ""
@@ -148,36 +157,39 @@ date_format = "2006"
 * Wrote my first JS unit tests in the framework that inspired mocha <br>
 * Built an iTunes carousel clone in plain JS and CSS <br>
 * Promoted CSS 3 transformations and animations <br>
+* **HTML, CSS, Prototype.js, Merb, MySQL, Capistrano** <br>
   """
 
 [[experience]]
-  title = "HTML, CSS, Prototype, Ruby on Rails, MySQL, Capistrano"
+  title = "Ruby-on-Rails Developer"
   company = "Jobsgopublic"
   company_url = ""
   location = ""
   date_start = "2008-06-15"
   date_end = "2009-06-15"
   description = """
-* Front-end developer on one of the busiest Ruby on Rails sites of its time <br>
-* Solved all memory leaks by migrating production from Mongrel to Passenger <br>
+* Worked on one of the busiest Ruby on Rails sites of its time <br>
+* Solved all memory leaks by migrating from Mongrel to Passenger <br>
 * Set up zero-downtime deployments <br>
+* **HTML, CSS, Prototype.js, Ruby on Rails, MySQL, Capistrano** <br>
   """
 
 [[experience]]
-  title = "HTML, CSS, jQuery, Zend, Ruby on Rails, MySQL, cPanel"
+  title = "Front-end Developer"
   company = "Ultraspeed Group"
   company_url = ""
   location = ""
   date_start = "2007-06-15"
   date_end = "2008-06-15"
   description = """
-* Designed and developed websites for various company divisions <br>
+* Designed and developed websites for various departments <br>
 * Worked on the in-house PHP & MySQL customer portal <br>
-* Switched customer portal to Ruby on Rails so that we could iterate quicker <br>
+* Migrated customer portal to Ruby on Rails <br>
+* **HTML, CSS, jQuery, Zend, Ruby on Rails, MySQL, cPanel** <br>
   """
 
 [[experience]]
-  title = "HTML, CSS, JS, PHP, MySQL, Textpattern, Plesk"
+  title = "Front-end & Back-end Developer"
   company = "Freelancer"
   company_url = ""
   location = ""
@@ -187,8 +199,9 @@ date_format = "2006"
 * Promoted the use of CSS on Hayes & Finch microsites <br>
 * Spearheaded AJAX in plain Javascript - a revoluion at the time <br>
 * Wrote PHP 4 &amp; MySQL 3 with no frameworks, not even Zend <br>
-* Developed one of the most popular [Textpattern](https://textpattern.com/) plugins: [glz_custom_fields](https://forum.textpattern.com/viewtopic.php?id=23996) <br>
-* I still do web hosting for websites that I have designed and built in early 2000s <br>
+* [Developed one of the most popular Textpattern plugins](https://forum.textpattern.com/viewtopic.php?id=23996) <br>
+* I still do web hosting for websites that I have built in early 2000s <br>
+* **HTML, CSS, JS, PHP, MySQL, Textpattern, Plesk** <br>
   """
 
 +++
