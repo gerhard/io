@@ -27,10 +27,16 @@ GCR_HOST := eu.gcr.io
 
 HUGO_THEME := 2019/themes/academic/layouts
 
+LOCAL_BIN := $(CURDIR)/bin
+PATH := $(LOCAL_BIN):$(PATH)
+export PATH
+
 
 
 ### DEPS ###
 #
+CURL ?= /usr/bin/curl
+
 GCLOUD := /usr/local/bin/gcloud
 GSUTIL := /usr/local/bin/gsutil
 $(GCLOUD) $(GSUTIL):
@@ -53,9 +59,29 @@ $(GCLOUD_CONFIG): $(GCLOUD)
 	$(GCLOUD) config set compute/region $(GCP_REGION) && \
 	$(GCLOUD) config set compute/zone $(GCP_ZONE)
 
-HUGO := /usr/local/bin/hugo
+# https://github.com/gohugoio/hugo/releases
+# In Hugo v0.60.0 Markdown rendering library changed from Blackfriday to Goldmark.
+# This broke all slides formatting: every single slide appears on the same page, one on top of the other 🤦
+#
+# Pinning Hugo to v0.59.1 until I make time to update Academic theme (latest stable is v4.7.0, currently using v4.0.0),
+# and keep it in lock-step with Hugo version, as well as address the slides formatting issue.
+HUGO_VERSION := 0.59.1
+HUGO_BIN_DIR := hugo_extended_$(HUGO_VERSION)_macOS-64bit
+HUGO_URL := https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_BIN_DIR).tar.gz
+HUGO := $(LOCAL_BIN)/$(HUGO_BIN_DIR)/hugo
 $(HUGO):
-	@brew install hugo
+	@mkdir -p $(LOCAL_BIN) \
+	&& cd $(LOCAL_BIN) \
+	&& $(CURL) --progress-bar --fail --location --output $(HUGO_BIN_DIR).tar.gz "$(HUGO_URL)" \
+	&& mkdir -p $(HUGO_BIN_DIR) \
+	&& tar zxf $(HUGO_BIN_DIR).tar.gz -C $(HUGO_BIN_DIR) \
+	&& touch $(HUGO) \
+	&& chmod +x $(HUGO) \
+	&& $(HUGO) version \
+	   | grep $(HUGO_VERSION) \
+	&& ln -sf $(HUGO) $(LOCAL_BIN)/hugo
+.PHONY: hugo
+hugo: $(HUGO)
 
 DOCKER := /usr/local/bin/docker
 $(DOCKER):
