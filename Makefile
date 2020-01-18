@@ -40,19 +40,19 @@ CURL ?= /usr/bin/curl
 GCLOUD := /usr/local/bin/gcloud
 GSUTIL := /usr/local/bin/gsutil
 $(GCLOUD) $(GSUTIL):
-	@brew cask install google-cloud-sdk
+	brew cask install google-cloud-sdk
 
 JQ := /usr/local/bin/jq
 $(JQ):
-	@brew install jq
+	brew install jq
 
 FD := /usr/local/bin/fd
 $(FD):
-	@brew install fd
+	brew install fd
 
 GCLOUD_CONFIG := $(HOME)/.config/gcloud/configurations/config_$(GCP_PROJECT)
 $(GCLOUD_CONFIG): $(GCLOUD)
-	@($(GCLOUD) config configurations describe $(GCP_PROJECT) || $(GCLOUD) config configurations create $(GCP_PROJECT) --no-activate) && \
+	($(GCLOUD) config configurations describe $(GCP_PROJECT) || $(GCLOUD) config configurations create $(GCP_PROJECT) --no-activate) && \
 	$(GCLOUD) config configurations activate $(GCP_PROJECT) && \
 	$(GCLOUD) config set account $(GCP_ACCOUNT) && \
 	$(GCLOUD) config set project $(GCP_PROJECT) && \
@@ -70,7 +70,7 @@ HUGO_BIN_DIR := hugo_extended_$(HUGO_VERSION)_macOS-64bit
 HUGO_URL := https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_BIN_DIR).tar.gz
 HUGO := $(LOCAL_BIN)/$(HUGO_BIN_DIR)/hugo
 $(HUGO):
-	@mkdir -p $(LOCAL_BIN) \
+	mkdir -p $(LOCAL_BIN) \
 	&& cd $(LOCAL_BIN) \
 	&& $(CURL) --progress-bar --fail --location --output $(HUGO_BIN_DIR).tar.gz "$(HUGO_URL)" \
 	&& mkdir -p $(HUGO_BIN_DIR) \
@@ -85,11 +85,11 @@ hugo: $(HUGO)
 
 DOCKER := /usr/local/bin/docker
 $(DOCKER):
-	@brew cask install docker
+	brew cask install docker
 
 FFMPEG := /usr/local/bin/ffmpeg
 $(FFMPEG):
-	@brew install ffmpeg
+	brew install ffmpeg
 
 LPASS := /usr/local/bin/lpass
 $(LPASS):
@@ -120,28 +120,28 @@ bac: bash_autocomplete
 
 .PHONY: build
 build: $(HUGO_THEME) $(HUGO) clean
-	@cd 2019 \
+	cd 2019 \
 	&& $(HUGO) --buildFuture
 .PHONY: b
 b: build
 
 .PHONY: clean
 clean: $(FD) ## c  | Clean cached content
-	@rm -fr 2019/resources/_gen 2019/public \
+	rm -fr 2019/resources/_gen 2019/public \
 	&& $(FD) -IH .DS_Store -x rm
 .PHONY: c
 c: clean
 
 .PHONY: gcloud_login
 gcloud_login: $(GCLOUD_CONFIG) $(JQ)
-	@( $(GCLOUD) auth list --format=json | \
+	( $(GCLOUD) auth list --format=json | \
 	   $(JQ) '.[] | select(.status == "ACTIVE")' | \
 	   grep --silent "$(GCP_USER)" ) || \
 	$(GCLOUD) auth login $(GCP_USER)
 
 .PHONY: gcloud_config
 gcloud_config: gcloud_login
-	@($(GSUTIL) ls -L -b gs://$(WEB_DOMAIN) $(SILENT) \
+	($(GSUTIL) ls -L -b gs://$(WEB_DOMAIN) $(SILENT) \
 	  || $(GSUTIL) mb -l $(WEB_GCP_REGION) gs://$(WEB_DOMAIN)) \
 	&& $(GSUTIL) iam ch allUsers:objectViewer gs://$(WEB_DOMAIN) \
 	&& $(GSUTIL) web set -m index.html -e 404.html gs://$(WEB_DOMAIN)
@@ -150,25 +150,25 @@ gc: gcloud_config
 
 .PHONY: gcloud
 gcloud: gcloud_config build
-	@cd 2019 \
+	cd 2019 \
 	&& $(GSUTIL) -m rsync -c -d -r public gs://$(WEB_DOMAIN)
 .PHONY: g
 g: gcloud
 
 .PHONY: $(HUGO_THEME)
 $(HUGO_THEME):
-	@git submodule update --init --recursive
+	git submodule update --init --recursive
 
 .PHONY: preview
 preview: $(HUGO_THEME) $(HUGO) ## p  | Preview local website
-	@cd 2019 \
+	cd 2019 \
 	&& $(HUGO) server --buildExpired --buildDrafts --buildFuture --bind 0.0.0.0
 .PHONY: p
 p: preview
 
 .PHONY: readme
 readme: $(DOCKER) ## r  | Preview README
-	@$(DOCKER) run --interactive --tty --rm --name gerhard_md \
+	$(DOCKER) run --interactive --tty --rm --name gerhard_md \
 	  --volume $(CURDIR):/data \
 	  --volume $(HOME)/.grip:/.grip \
 	  --expose 5000 --publish 5000:5000 \
@@ -189,7 +189,7 @@ video: $(FFMPEG) ## v  | Convert MOVs to mobile-friendly MP4s
 ifndef F
 	$(error F variable must reference a valid mov file path)
 endif
-	@$(FFMPEG) -i $(F) \
+	$(FFMPEG) -i $(F) \
 	  -vcodec h264 \
 	  -vf "scale=$(SCALE)" \
 	  -profile:v high -level 4.2 \
