@@ -23,13 +23,13 @@ date_format = "2006"
   company = "VMware"
   company_url = "https://www.vmware.com/"
   location = ""
-  date_start = "2019-12-30"
+  date_start = "2020-02-29"
   date_end = ""
   description = """
 * Matured RabbitMQ observability <br>
 * Battle-hardened RabbitMQ on Kubernetes <br>
 * Helped deliver RabbitMQ Enterprise <br>
-* **Erlang, RabbitMQ, Kubernetes, Tanzu**<br>
+* **Erlang, RabbitMQ, Kubernetes, VMware Tanzu**<br>
   """
 
 [[experience]]
@@ -38,7 +38,7 @@ date_format = "2006"
   company_url = "https://www.pivotal.io/"
   location = ""
   date_start = "2015-12-21"
-  date_end = "2019-12-30"
+  date_end = "2020-02-29"
   description = """
 * [Acquired by VMware](https://blogs.vmware.com/cloudnative/2019/08/22/transforming-software-on-kubernetes/) <br>
 * Contributed observability to RabbitMQ via [Prometheus &amp; Grafana](https://next.rabbitmq.com/prometheus.html) <br>
@@ -68,7 +68,7 @@ date_format = "2006"
   """
 
 [[experience]]
-  title = "DevOps Consultant"
+  title = "CloudFoundry & BOSH Consultant"
   company = "CloudCredo"
   company_url = "http://www.cloudcredo.com/"
   location = ""
