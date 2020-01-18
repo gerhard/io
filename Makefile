@@ -91,6 +91,10 @@ FFMPEG := /usr/local/bin/ffmpeg
 $(FFMPEG):
 	@brew install ffmpeg
 
+LPASS := /usr/local/bin/lpass
+$(LPASS):
+	brew install lastpass-cli
+
 
 
 ### TARGETS ###
@@ -192,3 +196,10 @@ endif
 	  $(subst .mov,.mp4,$(F))
 .PHONY: v
 v: video
+
+purge-cache: $(LPASS)
+	CLOUDFLARE_API_TOKEN=$$($(LPASS) show 7005219450073236934 --notes) \
+	&& curl --request POST "https://api.cloudflare.com/client/v4/zones/6255d920b1d0e94f542e4d642410ef67/purge_cache" \
+	  --header "Authorization: Bearer $$CLOUDFLARE_API_TOKEN" \
+	  --header "Content-Type: application/json" \
+	  --data '{"purge_everything":true}'
