@@ -19,11 +19,11 @@ date_format = "2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
-  title = "Principal Software Engineer"
+  title = "Staff Software Engineer"
   company = "VMware"
   company_url = "https://www.vmware.com/"
   location = ""
-  date_start = "2020-02-29"
+  date_start = "2020-04-06"
   date_end = ""
   description = """
 * Matured RabbitMQ observability <br>
@@ -38,7 +38,7 @@ date_format = "2006"
   company_url = "https://www.pivotal.io/"
   location = ""
   date_start = "2015-12-21"
-  date_end = "2020-02-29"
+  date_end = "2020-04-06"
   description = """
 * [Acquired by VMware](https://blogs.vmware.com/cloudnative/2019/08/22/transforming-software-on-kubernetes/) <br>
 * Contributed observability to RabbitMQ via [Prometheus &amp; Grafana](https://next.rabbitmq.com/prometheus.html) <br>
@@ -51,20 +51,6 @@ date_format = "2006"
 * Improved Erlang [ERL-430](https://bugs.erlang.org/browse/ERL-430), [ERL-448](https://bugs.erlang.org/browse/ERL-448), [ERL-959](https://bugs.erlang.org/browse/ERL-959) &amp; [PR #2270](https://github.com/erlang/otp/pull/2270) <br>
 * Helped Pivotal enterprise customers succeed with RabbitMQ <br>
 * **Erlang, RabbitMQ, Concourse, BOSH, vSphere, AWS, Google Cloud** <br>
-  """
-
-[[experience]]
-  title = "Site Reliability Engineer"
-  company = "Changelog Media"
-  company_url = "https://www.changelog.com/"
-  location = ""
-  date_start = "2016-07-04"
-  date_end = ""
-  description = """
-* New changelog.com setup for 2019: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2019) + [Episode #344](https://changelog.com/podcast/344) <br>
-* [Open-sourced the code behind changelog.com infrastructure](https://changelog.com/posts/the-code-behind-changelog-infrastructure) <br>
-* Set up the initial changelog.com infrastructure: [Episode #254](https://changelog.com/podcast/254) <br>
-* **Elixir, PostgreSQL, CircleCI, Docker Swarm, Terraform, Linode** <br>
   """
 
 [[experience]]
