@@ -32,7 +32,7 @@ links:
 url_code: https://github.com/rabbitmq/rabbitmq-prometheus/tree/v3.8.0
 url_pdf:
 url_slides:
-url_video: https://www.youtube.com/watch?v=6qUD5bLHPUY
+url_video: https://www.youtube.com/watch?v=L-tYXpirbpA
 
 slides: observe-understand-rabbitmq
 
