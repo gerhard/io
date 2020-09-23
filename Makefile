@@ -31,6 +31,10 @@ LOCAL_BIN := $(CURDIR)/bin
 PATH := $(LOCAL_BIN):$(PATH)
 export PATH
 
+# https://github.com/GoogleCloudPlatform/gsutil/issues/961#issuecomment-663565856
+CLOUDSDK_PYTHON=/usr/bin/python
+export CLOUDSDK_PYTHON
+
 
 
 ### DEPS ###
