@@ -25,7 +25,7 @@ WEB_GCP_REGION := eu
 
 GCR_HOST := eu.gcr.io
 
-HUGO_THEME := 2019/themes/academic/layouts
+HUGO_THEME := site/themes/academic/layouts
 
 LOCAL_BIN := $(CURDIR)/bin
 PATH := $(LOCAL_BIN):$(PATH)
@@ -124,14 +124,14 @@ bac: bash_autocomplete
 
 .PHONY: build
 build: $(HUGO_THEME) $(HUGO) clean
-	cd 2019 \
+	cd site \
 	&& $(HUGO) --buildFuture
 .PHONY: b
 b: build
 
 .PHONY: clean
 clean: $(FD) ## c  | Clean cached content
-	rm -fr 2019/resources/_gen 2019/public \
+	rm -fr site/resources/_gen site/public \
 	&& $(FD) -IH .DS_Store -x rm
 .PHONY: c
 c: clean
@@ -154,7 +154,7 @@ gc: gcloud_config
 
 .PHONY: gcloud
 gcloud: gcloud_config build
-	cd 2019 \
+	cd site \
 	&& $(GSUTIL) -m rsync -c -d -r public gs://$(WEB_DOMAIN)
 .PHONY: g
 g: gcloud
@@ -165,7 +165,7 @@ $(HUGO_THEME):
 
 .PHONY: preview
 preview: $(HUGO_THEME) $(HUGO) ## p  | Preview local website
-	cd 2019 \
+	cd site \
 	&& $(HUGO) server --buildExpired --buildDrafts --buildFuture --bind 0.0.0.0
 .PHONY: p
 p: preview
