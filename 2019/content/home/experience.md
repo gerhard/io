@@ -26,10 +26,28 @@ date_format = "2006"
   date_start = "2020-04-06"
   date_end = ""
   description = """
-* Matured RabbitMQ observability <br>
+* Shipped [Tanzu RabbitMQ](https://rabbitmq.com/tanzu), the commercial edition of RabbitMQ<br>
+* Championed the [monorepo](https://github.com/rabbitmq/rabbitmq-server) as an alternative to 44 repositories, one per plugin
+* Invested in Basecamp to improve remote work & have healthier conversations
+* Created [TGIR](https://www.youtube.com/playlist?list=PLfX-LA-Cf6rE16woOuRmi3goM_K8PUAhQ), a semi-regular video series on RabbitMQ<br>
 * Battle-hardened RabbitMQ on Kubernetes <br>
-* Helped deliver RabbitMQ Enterprise <br>
-* **Erlang, RabbitMQ, Kubernetes, VMware Tanzu**<br>
+* **Erlang, RabbitMQ, Prometheus, Grafana, Kubernetes, AWS, Azure & GCP**<br>
+  """
+
+[[experience]]
+  title = "Tech Lead"
+  company = "Changelog"
+  company_url = "https://www.changelog.com/"
+  location = ""
+  date_start = "2016-07-04"
+  date_end = ""
+  description = """
+* [Running in Production #63](https://runninginproduction.com/podcast/63-changelog-is-a-news-and-podcast-platform-for-developers) <br>
+* New changelog.com setup for 2020: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2020) + [Episode #419](https://changelog.com/podcast/419) <br>
+* New changelog.com setup for 2019: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2019) + [Episode #344](https://changelog.com/podcast/344) <br>
+* [Open-sourced the code behind changelog.com infrastructure](https://changelog.com/posts/the-code-behind-changelog-infrastructure) <br>
+* Set up the initial changelog.com infrastructure: [Episode #254](https://changelog.com/podcast/254) <br>
+* **Elixir, PostgreSQL, Prometheus, Grafana, Loki, Kubernetes, Terraform & Linode** <br>
   """
 
 [[experience]]
@@ -42,7 +60,7 @@ date_format = "2006"
   description = """
 * [Acquired by VMware](https://blogs.vmware.com/cloudnative/2019/08/22/transforming-software-on-kubernetes/) <br>
 * Contributed observability to RabbitMQ via [Prometheus &amp; Grafana](https://next.rabbitmq.com/prometheus.html) <br>
-* Set up [long-term RabbitMQ observability](https://grafana.gcp.rabbitmq.com/d/Kn5xm-gZk/rabbitmq-overview?orgId=1) <br>
+* Set up long-term RabbitMQ observability <br>
 * Captured [baselines for various RabbitMQ workloads](https://github.com/rabbitmq/workloads) <br>
 * Helped put together the [RabbitMQ continuous delivery system](https://ci.rabbitmq.com) <br>
 * Ensured that [the RabbitMQ continuous delivery system is observable](https://metrics.ci.rabbitmq.com/d/000000001/concourse?refresh=5m&orgId=1&from=now%2Fd&to=now) <br>
@@ -50,7 +68,7 @@ date_format = "2006"
 * [Optimised Erlang VM memory allocators for RabbitMQ](https://groups.google.com/forum/#!msg/rabbitmq-users/LSYaac9frYw/LNZDZUlrBAAJ) <br>
 * Improved Erlang [ERL-430](https://bugs.erlang.org/browse/ERL-430), [ERL-448](https://bugs.erlang.org/browse/ERL-448), [ERL-959](https://bugs.erlang.org/browse/ERL-959) &amp; [PR #2270](https://github.com/erlang/otp/pull/2270) <br>
 * Helped Pivotal enterprise customers succeed with RabbitMQ <br>
-* **Erlang, RabbitMQ, Concourse, BOSH, vSphere, AWS, Google Cloud** <br>
+* **Erlang, RabbitMQ, Concourse, BOSH, vSphere, AWS & GCP** <br>
   """
 
 [[experience]]
@@ -63,10 +81,10 @@ date_format = "2006"
   description = """
 * [Acquired by Pivotal](http://pivotal.io/platform/press-release/pivotal-bolsters-its-cloud-native-platform-team-with-acquisition-of-cloudcredo) <br>
 * Anchored the first [IBM Bluemix Garage in Europe](http://garage.mybluemix.net/) <br>
-* CloudCredo Platform MVP helped run [Comic Relief 2015](https://cfsummiteu2015.sched.org/event/532d88570fd1a394d599d113f1c5131b#.VkP2866rRTY) <br>
+* Contributed to [Comic Relief 2015](https://cfsummiteu2015.sched.org/event/532d88570fd1a394d599d113f1c5131b#.VkP2866rRTY) via the CloudCredo Platform <br>
 * Helped deliver the CloudCredo Platform <br>
 * Was part of the team that kicked off [Pivotal Cloud Foundry Services](https://network.pivotal.io/) <br>
-* **Ruby, Golang, Concourse, CloudFoundry, BOSH, vSphere** <br>
+* **Ruby, Golang, Concourse, CloudFoundry, BOSH & vSphere** <br>
   """
 
 [[experience]]
@@ -79,7 +97,7 @@ date_format = "2006"
   description = """
 * Built the SOA foundation for de-composing a mighty Rails monolith <br>
 * Used RabbitMQ for event distribution & Elasticsearch for indexing <br>
-* Proposed Fluentd as an alternative to not invented here (NIH) <br>
+* Proposed Fluentd as an alternative to Not Invented Here (NIH) <br>
 *  **Ruby on Rails, RabbitMQ, Elasticsearch** <br>
   """
 
@@ -96,7 +114,7 @@ date_format = "2006"
 * Set up all infrastructure on AWS with Chef ([OSS cookbooks](https://github.com/gchef)) <br>
 * Set up continuous deployment with Jenkins <br>
 * Blogged about [using Jenkins with Docker for continuous deployment](http://blog.howareyou.com/post/65048170054/continuous-delivery-with-docker-and-jenkins-part) <br>
-* **Ruby, MySQL, Redis, Jenkins, Chef, AWS** <br>
+* **Ruby, MySQL, Redis, Jenkins, Chef & AWS** <br>
   """
 
 [[experience]]
@@ -113,7 +131,7 @@ date_format = "2006"
 * Created a better alternative to Capistrano, [deliver](https://github.com/gerhard/deliver) <br>
 * Inspired the Elixir & Erlang deployment tool [edeliver](https://github.com/boldpoker/edeliver) <br>
 * [Mitigated a botnet attack with awk + iptables](https://www.gosquared.com/blog/how-to-stop-a-botnet-attack) <br>
-* **Ruby, node.js, MySQL, Redis, Graphite, RabbitMQ, Chef, AWS** <br>
+* **Ruby, node.js, MySQL, Redis, Graphite, RabbitMQ, Chef & AWS** <br>
   """
 
 [[experience]]
@@ -128,7 +146,7 @@ date_format = "2006"
 * Kept ~350mil Amazon book offers in sync with Amazon API limits <br>
 * Managed a hybrid infrastructure with [gchef](https://github.com/gchef) <br>
 * Blogged about [knife integration with AWS](http://gerhardlazu.com.s3-website-eu-west-1.amazonaws.com/2010/08/using-chef-to-manage-amazon-ec2-instances-part2/) <br>
-* **Ruby, EventMachine, PostgreSQL, MongoDB, Redis, Chef, AWS** <br>
+* **Ruby, EventMachine, PostgreSQL, MongoDB, Redis, Chef & AWS** <br>
   """
 
 [[experience]]
