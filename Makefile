@@ -50,10 +50,6 @@ JQ := /usr/local/bin/jq
 $(JQ):
 	brew install jq
 
-FD := /usr/local/bin/fd
-$(FD):
-	brew install fd
-
 GCLOUD_CONFIG := $(HOME)/.config/gcloud/configurations/config_$(GCP_PROJECT)
 $(GCLOUD_CONFIG): $(GCLOUD)
 	($(GCLOUD) config configurations describe $(GCP_PROJECT) || $(GCLOUD) config configurations create $(GCP_PROJECT) --no-activate) && \
@@ -130,9 +126,9 @@ build: $(HUGO_THEME) $(HUGO) clean
 b: build
 
 .PHONY: clean
-clean: $(FD) ## c  | Clean cached content
+clean: ## c  | Clean cached content
 	rm -fr site/resources/_gen site/public \
-	&& $(FD) -IH .DS_Store -x rm
+	&& find $(CURDIR) -name .DS_Store -exec rm {} \;
 .PHONY: c
 c: clean
 
