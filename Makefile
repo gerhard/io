@@ -32,8 +32,10 @@ PATH := $(LOCAL_BIN):$(PATH)
 export PATH
 
 # https://github.com/GoogleCloudPlatform/gsutil/issues/961#issuecomment-663565856
-CLOUDSDK_PYTHON=/usr/bin/python
+CLOUDSDK_PYTHON := $(shell which python)
 export CLOUDSDK_PYTHON
+
+INSTALL_PATH := $(shell brew --prefix)
 
 
 
@@ -41,12 +43,12 @@ export CLOUDSDK_PYTHON
 #
 CURL ?= /usr/bin/curl
 
-GCLOUD := /usr/local/bin/gcloud
-GSUTIL := /usr/local/bin/gsutil
+GCLOUD := $(INSTALL_PATH)/bin/gcloud
+GSUTIL := $(INSTALL_PATH)/bin/gsutil
 $(GCLOUD) $(GSUTIL):
-	brew cask install google-cloud-sdk
+	brew install google-cloud-sdk
 
-JQ := /usr/local/bin/jq
+JQ := $(INSTALL_PATH)/bin/jq
 $(JQ):
 	brew install jq
 
@@ -83,15 +85,15 @@ $(HUGO):
 .PHONY: hugo
 hugo: $(HUGO)
 
-DOCKER := /usr/local/bin/docker
+DOCKER := $(INSTALL_PATH)/bin/docker
 $(DOCKER):
-	brew cask install docker
+	brew install docker
 
-FFMPEG := /usr/local/bin/ffmpeg
+FFMPEG := $(INSTALL_PATH)/bin/ffmpeg
 $(FFMPEG):
 	brew install ffmpeg
 
-LPASS := /usr/local/bin/lpass
+LPASS := $(INSTALL_PATH)/bin/lpass
 $(LPASS):
 	brew install lastpass-cli
 
