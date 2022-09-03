@@ -19,12 +19,26 @@ date_format = "2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
+  title = "Senior Software Engineer"
+  company = "Dagger"
+  company_url = "https://dagger.io/"
+  location = ""
+  date_start = "2022-01-04"
+  date_end = ""
+  description = """
+* Kept [dagger/dagger](https://github.com/dagger/dagger) pull requests flowing
+* Set up [weekly auto-releases](https://github.com/dagger/dagger/pull/1372)
+* [Helped launch Dagger v0.2.0](https://changelog.com/shipit/48), Project Europa
+* **Go, CUE, BuildKit, GitHub Actions, AWS, Digital Ocean**<br>
+  """
+
+[[experience]]
   title = "Staff Software Engineer"
   company = "VMware"
   company_url = "https://www.vmware.com/"
   location = ""
   date_start = "2020-04-06"
-  date_end = ""
+  date_end = "2022-01-03"
   description = """
 * Shipped [Tanzu RabbitMQ](https://tanzu.vmware.com/rabbitmq), the commercial edition of RabbitMQ<br>
 * Championed the [monorepo](https://github.com/rabbitmq/rabbitmq-server) as an alternative to 44 repositories, one per plugin
