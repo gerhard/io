@@ -26,7 +26,7 @@ date_format = "2006"
   date_start = "2020-04-06"
   date_end = ""
   description = """
-* Shipped [Tanzu RabbitMQ](https://rabbitmq.com/tanzu), the commercial edition of RabbitMQ<br>
+* Shipped [Tanzu RabbitMQ](https://tanzu.vmware.com/rabbitmq), the commercial edition of RabbitMQ<br>
 * Championed the [monorepo](https://github.com/rabbitmq/rabbitmq-server) as an alternative to 44 repositories, one per plugin
 * Invested in Basecamp to improve remote work & have healthier conversations
 * Created [TGIR](https://www.youtube.com/playlist?list=PLfX-LA-Cf6rE16woOuRmi3goM_K8PUAhQ), a semi-regular video series on RabbitMQ<br>
