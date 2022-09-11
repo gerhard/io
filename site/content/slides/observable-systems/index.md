@@ -14,6 +14,10 @@ slides:
   theme: solarized
   width: 1920
   style: |
+    body {
+      background: #FFF;
+      background-color: #FFF;
+    }
     .reveal a {
       color: #3274D9;
     }
