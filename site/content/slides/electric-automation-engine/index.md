@@ -4,7 +4,7 @@ title: An Electric Automation Engine
 summary: We are trying to build the electric car equivalent of CI/CD
 footer:
   left: dagger.io
-  right: Electric Automation Engine - Gerhard Lazu - Cloud Native Day 🇨🇭 - September 14, 2022
+  right: Electric Automation Engine - Gerhard Lazu - Cloud Native Day 🇨🇭 🏔 - September 14, 2022
 authors: []
 tags: []
 categories: []
@@ -87,7 +87,7 @@ slides:
 ---
 
 {{< slide background="/img/electric-automation-engine/neofetch.gif" background-size="100%" background-position="0 0" >}}
-<span class="menu-title">Linux host, 8 vCPU, 16GB RAM</span>
+<span class="menu-title">Linux VM, 8 vCPU, 16GB RAM</span>
 
 {{< speaker_note >}}
 apt-get update
@@ -194,17 +194,17 @@ time ./bin/dagger do lint
 ---
 
 {{< slide background="/img/electric-automation-engine/erik-sipsma-1-platformcon-2022.png" >}}
-<span class="menu-title">Erik Sipmsa, PlatformCon 22 - 1</span>
+<span class="menu-title">Erik S. - BuildKit FS DAG</span>
 
 ---
 
 {{< slide background="/img/electric-automation-engine/erik-sipsma-2-platformcon-2022.png" >}}
-<span class="menu-title">Erik Sipmsa, PlatformCon 22 - 2</span>
+<span class="menu-title">Erik S. - What BuildKit Does</span>
 
 ---
 
 {{< slide background="/img/electric-automation-engine/erik-sipsma-3-platformcon-2022.png" >}}
-<span class="menu-title">Erik Sipmsa, PlatformCon 22 - 3</span>
+<span class="menu-title">Erik S. - Full LLB DAG</span>
 
 ---
 
@@ -234,7 +234,7 @@ Dagger is 2 things:
 
 ---
 
-# Can we go [one step further](#)?
+# What else is [Dagger](#)?
 
 ---
 

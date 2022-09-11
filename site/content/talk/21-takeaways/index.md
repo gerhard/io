@@ -1,5 +1,5 @@
 ---
-date: "2022-06-22T14:00:00Z"
+date: "2022-06-22T15:00:00Z"
 title: 21 Takeaways
 summary: The most relevant takeaways from the first 21 https://shipit.show episodes
 abstract: |
