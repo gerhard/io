@@ -4,7 +4,7 @@ title: An Electric Automation Engine
 summary: We are trying to build the electric car equivalent of CI/CD
 footer:
   left: dagger.io
-  right: Electric Automation Engine - Gerhard Lazu - Cloud Native Day 🇨🇭 🏔 - September 14, 2022
+  right: Electric Automation Engine - Gerhard Lazu - Swiss Cloud Native Day 🇨🇭 🏔 - September 14, 2022
 authors: []
 tags: []
 categories: []
