@@ -19,7 +19,7 @@ abstract: |
   I believe that Dagger is the Docker moment of CI/CD.
   Let me show you why.
 
-   https://cloudnativeday.ch/an-electric-automation-engine/
+  https://cloudnativeday.ch/an-electric-automation-engine/
 
 event: Swiss Cloud Native Day
 location: Bern, Switzerland
