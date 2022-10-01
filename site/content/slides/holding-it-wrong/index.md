@@ -51,27 +51,31 @@ slides:
 
 ---
 
-# _One does not simply deploy to Kubernetes_ (Ned)
-
-## GitOps 🤘
-
----
-
-# You need Kubernetes before you can deploy to Kubernetes
-
-## 🐣
+{{< slide background="/img/holding-it-wrong/robot.gif" >}}
+# [GitOps](#)
 
 ---
 
-# YOLO
+<span class="menu-title">Need K8s to K8s 🐣</span>
 
-## `kubectl`
+# [You need Kubernetes](#)
+## before you can deploy to Kubernetes
+
+<img src="/img/holding-it-wrong/truck-on-truck.gif"/>
 
 ---
 
-# Could we encode ops knowledge? 🙇‍♀️
+{{< slide background="/img/holding-it-wrong/coding.gif" >}}
 
-## Maybe share it as artefacts? 🙇‍♂️
+# [`kubectl`](#)
+
+---
+
+<span class="menu-title">Encode & share devops</span>
+
+# Could we encode devops knowledge? 🙇‍♀️
+
+## 🙇‍♂️  Maybe share it as artefacts?
 
 ---
 
@@ -86,7 +90,7 @@ slides:
 ---
 
 {{< slide background="/img/holding-it-wrong/civo-k8s-create.png" background-size="contain" >}}
-<span class="menu-title">civo package 👉 #K8s.create definition</span>
+<span class="menu-title">civo.#K8s.create</span>
 
 ---
 
@@ -121,8 +125,10 @@ slides:
 
 ---
 
-## How do we GitOps with
-# [GitHub Actions](#), [Dagger](#) & [ArgoCD](#)?
+<span class="menu-title">GitOps: GHA, Dagger & ArgoCD</span>
+
+# How do we GitOps with
+## [GitHub Actions](#), [Dagger](#) & [ArgoCD](#)?
 
 ---
 
@@ -130,7 +136,12 @@ slides:
 
 ---
 
-# What change should we GitOps?
+{{< slide background="/img/holding-it-wrong/app-verify.png" background-size="contain" >}}
+<span class="menu-title">cosign</span>
+
+---
+
+# What should we GitOps?
 
 https://argocd.kubehuddle.gerhard.io
 
@@ -143,7 +154,7 @@ https://argocd.kubehuddle.gerhard.io
 ---
 
 {{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/andrew-gazdecki-tweet.png" background-size="68%" background-position="50% 0" >}}
-<span class="menu-title">Andrew Gazdecki Tweet</span>
+<span class="menu-title">How you build a startup</span>
 
 ---
 

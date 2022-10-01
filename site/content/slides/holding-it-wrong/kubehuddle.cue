@@ -43,36 +43,36 @@ dagger.#Plan & {
 		}
 
 		// Show available K8s apps
-		k8s_apps: civo.#K8S.apps & {
+		k8s_apps: civo.#K8s.apps & {
 			apiKey: client.env.CIVO_API_KEY
 		}
 
 		// Destroy a K8s cluster
-		k8s_rm: civo.#K8S.destroy & {
+		k8s_rm: civo.#K8s.destroy & {
 			apiKey:      client.env.CIVO_API_KEY
 			clusterName: client.env.NAME
 		}
 
 		// Create a K8s cluster
-		k8s: civo.#K8S.create & {
+		k8s: civo.#K8s.create & {
 			apiKey:      client.env.CIVO_API_KEY
 			clusterName: client.env.NAME
 		}
 
 		// Show K8s cluster info
-		k8s_info: civo.#K8S.info & {
+		k8s_info: civo.#K8s.info & {
 			apiKey:      client.env.CIVO_API_KEY
 			clusterName: client.env.NAME
 		}
 
 		// Get K8s config
-		k8s_config: civo.#K8S.config & {
+		k8s_config: civo.#K8s.config & {
 			apiKey:      k8s.apiKey
 			clusterName: k8s.clusterName
 		}
 
 		// Get K8s public IP
-		k8s_ip: civo.#K8S.ip & {
+		k8s_ip: civo.#K8s.ip & {
 			apiKey:      k8s.apiKey
 			clusterName: k8s.clusterName
 		}
@@ -150,7 +150,6 @@ dagger.#Plan & {
 				}
 			}
 			manifest: {
-				// ALT: https://garethr.dev/2019/04/configuring-kubernetes-with-cue/
 				_image: docker.#Build & {
 					steps: [
 						docker.#Pull & {
@@ -176,6 +175,7 @@ dagger.#Plan & {
 					}
 					export: directories: "/yaml": dagger.#FS
 				}
+				// ALT: https://garethr.dev/2019/04/configuring-kubernetes-with-cue/
 			}
 		}
 	}

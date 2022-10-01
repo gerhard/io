@@ -6,7 +6,7 @@ import (
 	"universe.dagger.io/bash"
 )
 
-#K8S: {
+#K8s: {
 	apps: {
 		apiKey: dagger.#Secret
 		docker.#Run & {
