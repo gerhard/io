@@ -32,7 +32,7 @@ jobs:
         env:
           DAGGER_LOG_FORMAT: plain
           CIVO_API_KEY: ${{ secrets.CIVO_API_KEY }}
-          REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
 
       - name: Commit
         # https://github.com/marketplace/actions/git-auto-commit
