@@ -15,7 +15,7 @@ dagger.#Plan & {
 			CIVO_API_KEY:      dagger.#Secret
 			NAME:              string | *"kubehuddle"
 			FQDN:              string | *"kubehuddle.gerhard.io"
-			DOCKER_HOST:       string
+			DOCKER_HOST:       string | *""
 			REGISTRY_USERNAME: string | *"gerhard"
 			REGISTRY_PASSWORD: dagger.#Secret
 		}
