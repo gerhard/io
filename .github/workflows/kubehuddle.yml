@@ -8,7 +8,7 @@ on:
       - "site/content/slides/holding-it-wrong/app"
       - "site/content/slides/holding-it-wrong/**.cue"
       - ".github/workflows/kubehuddle.yml"
-  # Enable manual triggering when debugging
+  # Enable manual trigger for easier debugging
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
   workflow_dispatch:
 
@@ -39,5 +39,5 @@ jobs:
         # https://github.com/marketplace/actions/git-auto-commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Save new app image references"
+          commit_message: "Save new app image reference"
           file_pattern: "site/content/slides/holding-it-wrong/app/yaml/deployment.yaml"
