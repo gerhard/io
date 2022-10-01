@@ -6,8 +6,6 @@ on:
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
     paths:
       - "site/content/slides/holding-it-wrong/app"
-      - "site/content/slides/holding-it-wrong/**.cue"
-      - ".github/workflows/kubehuddle.yml"
   # Enable manual trigger for easier debugging
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
   workflow_dispatch:
