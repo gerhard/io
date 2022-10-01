@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/gerhard/io.git
-    targetRevision: kubehuddle22
+    targetRevision: main
     path: site/content/slides/holding-it-wrong/app/yaml
   destination:
     server: https://kubernetes.default.svc

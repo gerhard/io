@@ -7,6 +7,7 @@ on:
     paths:
       - "site/content/slides/holding-it-wrong/app"
       - "site/content/slides/holding-it-wrong/**.cue"
+      - ".github/workflows/kubehuddle.yml"
   # Enable manual triggering when debugging
   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
   workflow_dispatch:
