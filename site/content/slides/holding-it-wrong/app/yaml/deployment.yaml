@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ghcr.io/gerhard/kubehuddle22:latest@sha256:007955d3826a19b09dacdf5566c814946efe0caeb59fffae0e514eb752c89af1
+          image: ghcr.io/gerhard/kubehuddle22:latest@sha256:f6f4c52c4b863e9a79393f2aa9ec811a0b759f25550a9620cfc43dcea40dcbc2
           ports:
             - name: http
               containerPort: 8080
