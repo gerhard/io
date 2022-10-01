@@ -1,0 +1,42 @@
+name: "KubeHuddle"
+
+on:
+  push:
+    branches: [ main ]
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+    paths:
+      - "site/content/slides/holding-it-wrong/app"
+      - "site/content/slides/holding-it-wrong/**.cue"
+  # Enable manual triggering when debugging
+  # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Build
+        uses: dagger/dagger-for-github@v3
+        with:
+          # https://github.com/dagger/dagger/releases
+          version: v0.2.35
+          workdir: site/content/slides/holding-it-wrong
+          cmds: |
+            do app
+        env:
+          DAGGER_LOG_FORMAT: plain
+          CIVO_API_KEY: ${{ secrets.CIVO_API_KEY }}
+          REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit
+        # https://github.com/marketplace/actions/git-auto-commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Save new app image references"
+          file_pattern: "site/content/slides/holding-it-wrong/app/yaml/deployment.yaml"
