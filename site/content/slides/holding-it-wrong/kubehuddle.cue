@@ -32,24 +32,47 @@ dagger.#Plan & {
 	}
 
 	actions: {
+		// Show available instance sizes
+		sizes: civo.#Sizes & {
+			apiKey: client.env.CIVO_API_KEY
+		}
+
+		// Show available regions
+		regions: civo.#Regions & {
+			apiKey: client.env.CIVO_API_KEY
+		}
+
+		// Show available K8s apps
+		k8s_apps: civo.#K8S.apps & {
+			apiKey: client.env.CIVO_API_KEY
+		}
+
+		// Destroy a K8s cluster
+		k8s_rm: civo.#K8S.destroy & {
+			apiKey:      client.env.CIVO_API_KEY
+			clusterName: client.env.NAME
+		}
+
 		// Create a K8s cluster
 		k8s: civo.#K8S.create & {
 			apiKey:      client.env.CIVO_API_KEY
 			clusterName: client.env.NAME
 		}
 
+		// Show K8s cluster info
+		k8s_info: civo.#K8S.info & {
+			apiKey:      client.env.CIVO_API_KEY
+			clusterName: client.env.NAME
+		}
+
 		// Get K8s config
 		k8s_config: civo.#K8S.config & {
-			// Requires this K8s cluster to exist
-			env: MUST_EXIST: "\(k8s.success)"
 			apiKey:      k8s.apiKey
 			clusterName: k8s.clusterName
 		}
 
 		// Get K8s public IP
 		k8s_ip: civo.#K8S.ip & {
-			// Requires this K8s cluster to exist
-			env: MUST_EXIST: "\(k8s.success)"
 			apiKey:      k8s.apiKey
 			clusterName: k8s.clusterName
 		}
@@ -62,8 +85,6 @@ dagger.#Plan & {
 				fqdn:   client.env.FQDN
 			}
 			record: civo.#Domain.record & {
-				// Requires a K8s cluster IP
-				env: MUST_EXIST: "\(k8s_ip.success)"
 				apiKey: k8s.apiKey
 				fqdn:   client.env.FQDN
 				record: "*"

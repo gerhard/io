@@ -17,12 +17,18 @@ slides:
   # https://github.com/hakimel/reveal.js/blob/3.8.0/README.md
   #
   # https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
+  #
+  # https://www.flagcolorcodes.com/royal-banner-of-scotland
+  # https://www.flagcolorcodes.com/scotland
   style: |
     .reveal a {
-      color: #0065BF;
+      color: #FFD228;
+    }
+    .reveal a:hover {
+      color: #FFFFFF;
     }
     .reveal .progress {
-      color: #0065BF;
+      color: #FFD228;
     }
     footer {
       color: #FFFFFF;
@@ -37,23 +43,23 @@ slides:
 {{< slide background="/img/holding-it-wrong/blueballfixed.ytmnd.com.gif" background-size="initial" background-repeat="repeat" >}}
 <span class="menu-title">A typical pipeline</span>
 
-# You are holding it wrong
+# [You are holding it wrong](#)
 
 ---
 
-# How do you deploy your code to Kubernetes?
+# How do you deploy to K8s?
 
 ---
 
 # _One does not simply deploy to Kubernetes_ (Ned)
 
-## You have to GitOps
+## GitOps 🤘
 
 ---
 
 # You need Kubernetes before you can deploy to Kubernetes
 
-## Control plane vs workload plane
+## 🐣
 
 ---
 
@@ -63,12 +69,94 @@ slides:
 
 ---
 
-# Could we encode ops knowledge
+# Could we encode ops knowledge? 🙇‍♀️
 
-## Share as immutable artefacts
+## Maybe share it as artefacts? 🙇‍♂️
 
 ---
 
-# <i class="fa fa-rocket"></i> <a href="https://dagger.io" target="_blank">dagger.io</a>
-## <i class="fab fa-twitter"></i> <a href="https://twitter.com/gerhardlazu" target="_blank">gerhardlazu</a>
-### <i class="fa fa-home"></i> <a href="https://gerhard.io" target="_blank">k8s.gerhard.io</a>
+# `dagger do k8s`
+## `dagger do k8s_info`
+
+---
+
+{{< slide background="/img/holding-it-wrong/dagger-plan-k8s-action.png" background-size="contain" >}}
+<span class="menu-title">dagger plan 👉 k8s action</span>
+
+---
+
+{{< slide background="/img/holding-it-wrong/civo-k8s-create.png" background-size="contain" >}}
+<span class="menu-title">civo package 👉 #K8s.create definition</span>
+
+---
+
+# I didn't have to use [Dagger](#)
+### It was just convenient
+
+---
+
+# `dagger do k8s_dns`
+## [🤔](https://github.com/kubernetes-sigs/external-dns/pull/2852)
+## `dagger do k8s_bootstrap`
+
+---
+
+{{< slide background="/img/holding-it-wrong/dagger-do-k8s_config.png" background-size="contain" >}}
+<span class="menu-title">dagger do k8s_config</span>
+
+---
+
+{{< slide background="/img/holding-it-wrong/k9s.png" background-size="contain" >}}
+<span class="menu-title">k9s</span>
+
+---
+
+{{< slide background="/img/holding-it-wrong/argocd.png" background-size="contain" >}}
+<span class="menu-title">argocd</span>
+
+---
+
+{{< slide background="/img/holding-it-wrong/argocd-app.png" background-size="contain" >}}
+<span class="menu-title">argocd app</span>
+
+---
+
+## How do we GitOps with
+# [GitHub Actions](#), [Dagger](#) & [ArgoCD](#)?
+
+---
+
+# GitHub Actions Workflow
+
+---
+
+# What change should we GitOps?
+
+https://argocd.kubehuddle.gerhard.io
+
+---
+
+{{< slide background-color="#FFFFFF" >}}
+
+# And...
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/andrew-gazdecki-tweet.png" background-size="68%" background-position="50% 0" >}}
+<span class="menu-title">Andrew Gazdecki Tweet</span>
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/dagger___project_cloak.png" background-size="contain" >}}
+<span class="menu-title">Project Cloak</span>
+
+---
+
+{{< slide background-color="#FFFFFF" >}}
+# `dagger v0.3.x` peek
+
+---
+
+# <i class="fa fa-users"></i> <a href="https://dagger.io" target="_blank">dagger.io</a>
+## <i class="fab fa-twitter"></i> gerhardlazu
+### <i class="fab fa-github"></i> <a href="https://gerhard.io" target="_blank">github.com/gerhard/kubehuddle22</a>

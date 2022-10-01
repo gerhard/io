@@ -52,6 +52,24 @@ import (
 		}
 	}
 
+	info: {
+		apiKey:      dagger.#Secret
+		clusterName: string
+		docker.#Run & {
+			_image: #CLI & {
+				env: CIVO_API_KEY: apiKey
+			}
+			input:  _image.output
+			always: true
+			command: {
+				name: "civo"
+				args: [
+					"k8s", "show", clusterName,
+				]
+			}
+		}
+	}
+
 	config: {
 		apiKey:      dagger.#Secret
 		clusterName: string
