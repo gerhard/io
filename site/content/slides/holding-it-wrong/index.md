@@ -47,7 +47,7 @@ slides:
 
 ---
 
-# How do you deploy to K8s?
+# How do you deploy to [Kubernetes](#)?
 
 ---
 
@@ -56,12 +56,11 @@ slides:
 
 ---
 
+{{< slide background="/img/holding-it-wrong/truck-on-truck.gif">}}
 <span class="menu-title">Need K8s to K8s 🐣</span>
 
 # [You need Kubernetes](#)
 ## before you can deploy to Kubernetes
-
-<img src="/img/holding-it-wrong/truck-on-truck.gif"/>
 
 ---
 
@@ -73,7 +72,7 @@ slides:
 
 <span class="menu-title">Encode & share devops</span>
 
-# Could we encode devops knowledge? 🙇‍♀️
+# Could we [encode devops knowledge](#)? 🙇‍♀️
 
 ## 🙇‍♂️  Maybe share it as artefacts?
 
@@ -127,17 +126,23 @@ slides:
 
 <span class="menu-title">GitOps: GHA, Dagger & ArgoCD</span>
 
-# How do we GitOps with
+# How to GitOps with
 ## [GitHub Actions](#), [Dagger](#) & [ArgoCD](#)?
 
 ---
 
-# GitHub Actions Workflow
+{{< slide background="/img/holding-it-wrong/github-actions-workflow.png" >}}
+<span class="menu-title">GitHub Actions Workflow</span>
 
 ---
 
-{{< slide background="/img/holding-it-wrong/app-verify.png" background-size="contain" >}}
-<span class="menu-title">cosign</span>
+{{< slide background="/img/holding-it-wrong/github-actions-workflow-run.png" background-size="contain" >}}
+<span class="menu-title">GitHub Actions Workflow - 15s</span>
+
+---
+
+{{< slide background="/img/holding-it-wrong/github-actions-workflow-commit.png" background-size="contain" >}}
+<span class="menu-title">GHA Workflow - Commit</span>
 
 ---
 
@@ -147,27 +152,56 @@ https://argocd.kubehuddle.gerhard.io
 
 ---
 
-{{< slide background-color="#FFFFFF" >}}
-
-# And...
+https://app.kubehuddle.gerhard.io
 
 ---
 
-{{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/andrew-gazdecki-tweet.png" background-size="68%" background-position="50% 0" >}}
-<span class="menu-title">How you build a startup</span>
+{{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/dagger_reads_config_from_cue_files___runs_ops_in_buildkit.png" background-size="contain" >}}
+<span class="menu-title">dagger v0.2.x</span>
 
 ---
 
-{{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/dagger___project_cloak.png" background-size="contain" >}}
-<span class="menu-title">Project Cloak</span>
+{{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/dagger_v0_3.png" background-size="contain" >}}
+<span class="menu-title">dagger v0.3.x</span>
 
 ---
 
-{{< slide background-color="#FFFFFF" >}}
-# `dagger v0.3.x` peek
+{{< slide background-color="#FFFFFF" background="/img/electric-automation-engine/solomon-vmware-explore-2022.png" background-size="contain" >}}
+<span class="menu-title">Dagger, VMware Explore 2022</span>
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/graphiql.png" background-position="0 0" >}}
+<span class="menu-title">dagger v0.3 PEEK</span>
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/cloak-do-file.png" background-position="0 0" >}}
+<span class="menu-title">cloak do -f k8s.graphql</span>
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/cloak-do-file-stdout.png" background-position="0 0" >}}
+<span class="menu-title">cloak do -f k8s.graphql stdout</span>
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/github-dagger-cloak.png" background-position="0 0" >}}
+<span class="menu-title">github.com/dagger cloak branch</span>
 
 ---
 
 # <i class="fa fa-users"></i> <a href="https://dagger.io" target="_blank">dagger.io</a>
 ## <i class="fab fa-twitter"></i> gerhardlazu
-### <i class="fab fa-github"></i> <a href="https://gerhard.io" target="_blank">github.com/gerhard/kubehuddle22</a>
+### <br>
+### <i class="fab fa-github"></i> <a href="https://github.com/gerhard/kubehuddle" target="_blank">github.com/gerhard/kubehuddle</a>
+
+---
+
+{{< slide background-color="#FFFFFF" >}}
+# [One more thing...](#)
+
+---
+
+{{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/app-verify.png" background-size="contain" >}}
+<span class="menu-title">cosign</span>
