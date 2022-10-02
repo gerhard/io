@@ -1,10 +1,10 @@
 ---
 date: "2022-10-03T10:50:00Z"
-title: You're holding it wrong
+title: You are holding it wrong
 summary: What if I told you that you've been holding CI/CD wrong all this time?
 footer:
   left: dagger.io
-  right: You're holding it wrong - Gerhard Lazu - KubeHuddle 🏴󠁧󠁢󠁳󠁣󠁴󠁿 October 3, 2022
+  right: You are holding it wrong - Gerhard Lazu - KubeHuddle 🏴󠁧󠁢󠁳󠁣󠁴󠁿 October 3, 2022
 authors: []
 tags: []
 categories: []
@@ -47,6 +47,7 @@ slides:
 
 ---
 
+<span class="menu-title">How do you deploy to K8s?</span>
 # How do you deploy to [Kubernetes](#)?
 
 ---
@@ -115,12 +116,12 @@ slides:
 ---
 
 {{< slide background="/img/holding-it-wrong/argocd.png" background-size="contain" >}}
-<span class="menu-title">argocd</span>
+<span class="menu-title">ArgoCD</span>
 
 ---
 
 {{< slide background="/img/holding-it-wrong/argocd-app.png" background-size="contain" >}}
-<span class="menu-title">argocd app</span>
+<span class="menu-title">ArgoCD app</span>
 
 ---
 
@@ -152,6 +153,7 @@ https://argocd.kubehuddle.gerhard.io
 
 ---
 
+<span class="menu-title">app.kubehuddle.gerhard.io</span>
 https://app.kubehuddle.gerhard.io
 
 ---
@@ -204,4 +206,4 @@ https://app.kubehuddle.gerhard.io
 ---
 
 {{< slide background-color="#FFFFFF" background="/img/holding-it-wrong/app-verify.png" background-size="contain" >}}
-<span class="menu-title">cosign</span>
+<span class="menu-title">Verify your images</span>

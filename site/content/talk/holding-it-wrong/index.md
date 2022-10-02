@@ -1,6 +1,6 @@
 ---
 date: "2022-10-03T10:50:00Z"
-title: You've been holding it wrong
+title: You are holding it wrong
 summary: What if I told you that you've been holding CI/CD wrong all this time?
 abstract: |
   What if I told you that you've been holding CI/CD wrong all this time?
