@@ -79,11 +79,6 @@ slides:
 
 ---
 
-# `dagger do k8s`
-## `dagger do k8s_info`
-
----
-
 {{< slide background="/img/holding-it-wrong/dagger-plan-k8s-action.png" background-size="contain" >}}
 <span class="menu-title">dagger plan 👉 k8s action</span>
 
@@ -91,6 +86,11 @@ slides:
 
 {{< slide background="/img/holding-it-wrong/civo-k8s-create.png" background-size="contain" >}}
 <span class="menu-title">civo.#K8s.create</span>
+
+---
+
+# `dagger do k8s`
+## `dagger do k8s_info`
 
 ---
 
@@ -122,6 +122,11 @@ slides:
 
 {{< slide background="/img/holding-it-wrong/argocd-app.png" background-size="contain" >}}
 <span class="menu-title">ArgoCD app</span>
+
+---
+
+{{< slide background="/img/holding-it-wrong/just-push.gif" background-size="contain" >}}
+<span class="menu-title">Devs should just git push</span>
 
 ---
 
