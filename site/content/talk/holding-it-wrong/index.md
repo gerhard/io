@@ -19,10 +19,10 @@ image:
   caption:
   focal_point: Center
 
-url_code:
+url_code: https://github.com/gerhard/kubehuddle
 url_pdf:
 url_slides:
-url_video:
+url_video: https://www.youtube.com/watch?v=cdEfbrzRuoc&t=4701s
 
 slides: holding-it-wrong
 
