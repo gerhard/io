@@ -93,9 +93,9 @@ FFMPEG := $(INSTALL_PATH)/bin/ffmpeg
 $(FFMPEG):
 	brew install ffmpeg
 
-LPASS := $(INSTALL_PATH)/bin/lpass
-$(LPASS):
-	brew install lastpass-cli
+OP := $(INSTALL_PATH)/bin/op
+$(OP):
+	brew install 1password-cli
 
 
 
@@ -199,8 +199,8 @@ endif
 .PHONY: v
 v: video
 
-purge-cache: $(LPASS)
-	CLOUDFLARE_API_TOKEN=$$($(LPASS) show 7005219450073236934 --notes) \
+purge-cache: $(OP)
+	CLOUDFLARE_API_TOKEN=$$($(OP) read op://Private/cloudflare-gerhard-io-cache-token/credential --account my.1password.com --cache) \
 	&& curl --request POST "https://api.cloudflare.com/client/v4/zones/6255d920b1d0e94f542e4d642410ef67/purge_cache" \
 	  --header "Authorization: Bearer $$CLOUDFLARE_API_TOKEN" \
 	  --header "Content-Type: application/json" \
