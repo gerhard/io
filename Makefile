@@ -32,7 +32,7 @@ PATH := $(LOCAL_BIN):$(PATH)
 export PATH
 
 # https://github.com/GoogleCloudPlatform/gsutil/issues/961#issuecomment-663565856
-CLOUDSDK_PYTHON := $(shell which python)
+CLOUDSDK_PYTHON := $(shell which python3.11)
 export CLOUDSDK_PYTHON
 
 INSTALL_PATH := $(shell brew --prefix)
@@ -135,7 +135,7 @@ clean: ## c  | Clean cached content
 c: clean
 
 .PHONY: gcloud_login
-gcloud_login: $(GCLOUD_CONFIG) $(JQ)
+gcloud_login: $(GCLOUD_CONFIG) $(JQ) $(GSUTIL)
 	( $(GCLOUD) auth list --format=json | \
 	   $(JQ) '.[] | select(.status == "ACTIVE")' | \
 	   grep --silent "$(GCP_USER)" ) || \
@@ -198,10 +198,3 @@ endif
 	  $(subst .mov,.mp4,$(F))
 .PHONY: v
 v: video
-
-purge-cache: $(OP)
-	CLOUDFLARE_API_TOKEN=$$($(OP) read op://Private/cloudflare-gerhard-io-cache-token/credential --account my.1password.com --cache) \
-	&& curl --request POST "https://api.cloudflare.com/client/v4/zones/6255d920b1d0e94f542e4d642410ef67/purge_cache" \
-	  --header "Authorization: Bearer $$CLOUDFLARE_API_TOKEN" \
-	  --header "Content-Type: application/json" \
-	  --data '{"purge_everything":true}'
