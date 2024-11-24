@@ -31,10 +31,6 @@ LOCAL_BIN := $(CURDIR)/bin
 PATH := $(LOCAL_BIN):$(PATH)
 export PATH
 
-# https://github.com/GoogleCloudPlatform/gsutil/issues/961#issuecomment-663565856
-CLOUDSDK_PYTHON := $(shell which python3.11)
-export CLOUDSDK_PYTHON
-
 INSTALL_PATH := $(shell brew --prefix)
 
 
@@ -43,23 +39,9 @@ INSTALL_PATH := $(shell brew --prefix)
 #
 CURL ?= /usr/bin/curl
 
-GCLOUD := $(INSTALL_PATH)/bin/gcloud
-GSUTIL := $(INSTALL_PATH)/bin/gsutil
-$(GCLOUD) $(GSUTIL):
-	brew install google-cloud-sdk
-
-JQ := $(INSTALL_PATH)/bin/jq
-$(JQ):
-	brew install jq
-
-GCLOUD_CONFIG := $(HOME)/.config/gcloud/configurations/config_$(GCP_PROJECT)
-$(GCLOUD_CONFIG): $(GCLOUD)
-	($(GCLOUD) config configurations describe $(GCP_PROJECT) || $(GCLOUD) config configurations create $(GCP_PROJECT) --no-activate) && \
-	$(GCLOUD) config configurations activate $(GCP_PROJECT) && \
-	$(GCLOUD) config set account $(GCP_ACCOUNT) && \
-	$(GCLOUD) config set project $(GCP_PROJECT) && \
-	$(GCLOUD) config set compute/region $(GCP_REGION) && \
-	$(GCLOUD) config set compute/zone $(GCP_ZONE)
+RCLONE := $(INSTALL_PATH)/bin/rclone
+$(RCLONE):
+	brew install rclone
 
 # https://github.com/gohugoio/hugo/releases
 # In Hugo v0.60.0 Markdown rendering library changed from Blackfriday to Goldmark.
@@ -85,10 +67,6 @@ $(HUGO):
 .PHONY: hugo
 hugo: $(HUGO)
 
-DOCKER := $(INSTALL_PATH)/bin/docker
-$(DOCKER):
-	brew install docker
-
 FFMPEG := $(INSTALL_PATH)/bin/ffmpeg
 $(FFMPEG):
 	brew install ffmpeg
@@ -105,20 +83,12 @@ $(OP):
 
 .PHONY: help
 help:
-	@awk -F"[:#]" '/^[^\.][a-zA-Z\._\-]+:+.+##.+$$/ { printf "\033[36m%-24s\033[0m %s\n", $$1, $$4 }' $(MAKEFILE_LIST) \
+	@awk -F"[:#]" '/^[^\.][a-zA-Z\._\-]+:+.+##.+$$/ { printf "\033[36m%-12s\033[0m %s\n", $$1, $$4 }' $(MAKEFILE_LIST) \
 	| sort
 
 define MAKE_TARGETS
   awk -F: '/^[^\.%\t][a-zA-Z\._\-]*:+.*$$/ { printf "%s\n", $$1 }' $(MAKEFILE_LIST)
 endef
-define BASH_AUTOCOMPLETE
-  complete -W \"$$($(MAKE_TARGETS) | sort | uniq)\" make gmake m
-endef
-.PHONY: bash_autocomplete
-bash_autocomplete: ## ba | Configure bash autocompletion - eval "$(make bash_autocomplete)"
-	@echo "$(BASH_AUTOCOMPLETE)"
-.PHONY: bac
-bac: bash_autocomplete
 
 .PHONY: build
 build: $(HUGO_THEME) $(HUGO) clean
@@ -134,54 +104,26 @@ clean: ## c  | Clean cached content
 .PHONY: c
 c: clean
 
-.PHONY: gcloud_login
-gcloud_login: $(GCLOUD_CONFIG) $(JQ) $(GSUTIL)
-	( $(GCLOUD) auth list --format=json | \
-	   $(JQ) '.[] | select(.status == "ACTIVE")' | \
-	   grep --silent "$(GCP_USER)" ) || \
-	$(GCLOUD) auth login $(GCP_USER)
-
-.PHONY: gcloud_config
-gcloud_config: gcloud_login
-	($(GSUTIL) ls -L -b gs://$(WEB_DOMAIN) $(SILENT) \
-	  || $(GSUTIL) mb -l $(WEB_GCP_REGION) gs://$(WEB_DOMAIN)) \
-	&& $(GSUTIL) iam ch allUsers:objectViewer gs://$(WEB_DOMAIN) \
-	&& $(GSUTIL) web set -m index.html -e 404.html gs://$(WEB_DOMAIN)
-.PHONY: gc
-gc: gcloud_config
-
-.PHONY: gcloud
-gcloud: gcloud_config build
-	cd site \
-	&& $(GSUTIL) -o "GSUtil:parallel_process_count=1" -m rsync -c -d -r public gs://$(WEB_DOMAIN)
-.PHONY: g
-g: gcloud
-
 .PHONY: $(HUGO_THEME)
 $(HUGO_THEME):
 	git submodule update --init --recursive
 
 .PHONY: preview
-preview: $(HUGO_THEME) $(HUGO) ## p  | Preview local website
+preview: $(HUGO_THEME) $(HUGO) ## p  | Preview website locally
 	cd site \
 	&& $(HUGO) server --buildExpired --buildDrafts --buildFuture --bind 0.0.0.0
 .PHONY: p
 p: preview
 
-.PHONY: readme
-readme: $(DOCKER) ## r  | Preview README
-	$(DOCKER) run --interactive --tty --rm --name gerhard_md \
-	  --volume $(CURDIR):/data \
-	  --volume $(HOME)/.grip:/.grip \
-	  --expose 5000 --publish 5000:5000 \
-	  mbentley/grip --context=. 0.0.0.0:5000
-.PHONY: r
-r: readme
-
-.PHONY: update
-update: gcloud ## u  | Update public website
-.PHONY: u
-u: update
+.PHONY: deploy
+deploy: ## d  | Deploy website
+	export PARALLEL_OPS=20 BW_LIMIT=100M \
+		RCLONE_FTP_HOST=storage.bunnycdn.com \
+		RCLONE_FTP_USERNAME=gerhard-io \
+	&& rclone config create bunny ftp --non-interactive \
+	&& rclone --checkers="$$PARALLEL_OPS" --fast-list sync site/public/ r2:"$$RCLONE_S3_BUCKET" --transfers="$$PARALLEL_OPS" --bwlimit="$$BW_LIMIT" --progress
+.PHONY: d
+d: deploy
 
 # https://trac.ffmpeg.org/wiki/Encode/H.264#iOS
 # https://trac.ffmpeg.org/wiki/Scaling
@@ -198,3 +140,11 @@ endif
 	  $(subst .mov,.mp4,$(F))
 .PHONY: v
 v: video
+
+
+uncache: $(OP) ## u   | Purge cache
+	CLOUDFLARE_API_TOKEN=$$($(OP) read op://Private/cloudflare-gerhard-io-cache-token/credential --account my.1password.com --cache) \
+	&& curl --request POST "https://api.cloudflare.com/client/v4/zones/6255d920b1d0e94f542e4d642410ef67/purge_cache" \
+		--header "Authorization: Bearer $$CLOUDFLARE_API_TOKEN" \
+		--header "Content-Type: application/json" \
+		--data '{"purge_everything":true}'
