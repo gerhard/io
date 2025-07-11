@@ -19,16 +19,16 @@ date_format = "2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
-  title = "Film Producer"
+  title = "Content Creator"
   company = "Make it Work"
   company_url = "https://makeitwork.tv/"
   location = ""
   date_start = "2024-02-29"
   date_end = ""
   description = """
-* Movies for infra nerds: [makeitwork.tv](https://makeitwork.tv)
-* Infra podcast: [makeitwork.fm](https://makeitwork.fm)
-* **Next.js, Go, Talos.dev, Bunny.net, DaVinci Resolve, Riverside.fm & Canva.com** <br>
+* Long-form videos: [makeitwork.tv](https://makeitwork.tv)
+* Podcast: [makeitwork.fm](https://makeitwork.fm)
+* **VDO.Ninja, OBS, DaVinci Resolve Studio & Canva.com** <br>
   """
 
 [[experience]]
@@ -40,7 +40,7 @@ date_format = "2006"
   date_end = ""
   description = """
 * Setup & managed the infra team
-* Owner of [status.dagger.io](https://status.dagger.io)
+* Responsible for [status.dagger.io](https://status.dagger.io)
 * Lead [releasing](https://github.com/dagger/dagger/blob/main/RELEASING.md) + [blog](https://dagger.io/blog/how-dagger-releases)
 * Kept [dagger/dagger](https://github.com/dagger/dagger) pull requests flowing
 * Set up [weekly auto-releases](https://github.com/dagger/dagger/pull/1372)
@@ -56,9 +56,9 @@ date_format = "2006"
   date_start = "2016-07-04"
   date_end = ""
   description = """
-* Owner of [status.changelog.com](https://status.changelog.com)
+* Responsible for [status.changelog.com](https://status.changelog.com)
 * Talking about [changelog.com improvements](https://changelog.com/topic/kaizen) every 3 months
-* Hosted [90+ infrastructure-related episodes](https://changelog.com/person/gerhard)
+* Hosted [90+ podcast episodes](https://changelog.com/person/gerhard)
 * New changelog.com setup for 2020: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2020) + [Episode #419](https://changelog.com/podcast/419)
 * New changelog.com setup for 2019: [Blog post](https://changelog.com/posts/the-new-changelog-setup-for-2019) + [Episode #344](https://changelog.com/podcast/344)
 * [Open-sourced the code behind changelog.com infrastructure](https://changelog.com/posts/the-code-behind-changelog-infrastructure)

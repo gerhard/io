@@ -31,8 +31,7 @@ LOCAL_BIN := $(CURDIR)/bin
 PATH := $(LOCAL_BIN):$(PATH)
 export PATH
 
-# https://github.com/GoogleCloudPlatform/gsutil/issues/961#issuecomment-663565856
-CLOUDSDK_PYTHON := $(shell which python3.11)
+CLOUDSDK_PYTHON := $(shell which python3.12)
 export CLOUDSDK_PYTHON
 
 INSTALL_PATH := $(shell brew --prefix)
